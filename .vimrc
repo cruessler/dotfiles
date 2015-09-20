@@ -6,6 +6,9 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 
+set list
+set listchars=tab:»\ ,trail:·
+
 set background=dark
 " https://github.com/tomasr/molokai
 colorscheme molokai

@@ -6,6 +6,10 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 
+" prevent split windows on opening a new buffer when the current buffer is
+" unsaved
+set hidden
+
 set list
 set listchars=tab:»\ ,trail:·
 

@@ -27,5 +27,4 @@ let g:airline#extensions#tabline#enabled=1
 let g:ctrlp_cmd = 'CtrlPMixed'
 
 " :help colorcolumn
-set cc=+1
-
+set cc=81

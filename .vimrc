@@ -6,6 +6,8 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 
+let mapleader=" "
+
 " prevent split windows on opening a new buffer when the current buffer is
 " unsaved
 set hidden

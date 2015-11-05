@@ -33,7 +33,7 @@ let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled=1
 
 " https://github.com/ctrlpvim/ctrlp.vim
-let g:ctrlp_cmd = 'CtrlPMixed'
+let g:ctrlp_cmd = 'CtrlPBuffer'
 let g:ctrlp_custom_ignore = {
   \ 'dir': '\.git$\|bower_components$\|node_modules$\|_build$\|deps$'
   \ }

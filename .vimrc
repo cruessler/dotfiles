@@ -55,3 +55,8 @@ endif
 " http://vim.wikia.com/wiki/Keep_your_cursor_centered_vertically_on_the_screen
 " :help scrolloff
 set scrolloff=5
+
+" http://www.johnhawthorn.com/2012/09/vi-escape-delays/
+" :help ttimeoutlen
+" to make vim go out of insert mode without delay on pressing <Esc>
+set ttimeoutlen=0

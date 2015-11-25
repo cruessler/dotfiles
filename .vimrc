@@ -51,3 +51,7 @@ set cc=81
 if exists('$TMUX')
   set term=screen-256color
 endif
+
+" http://vim.wikia.com/wiki/Keep_your_cursor_centered_vertically_on_the_screen
+" :help scrolloff
+set scrolloff=5

@@ -60,3 +60,7 @@ set scrolloff=5
 " :help ttimeoutlen
 " to make vim go out of insert mode without delay on pressing <Esc>
 set ttimeoutlen=0
+
+" to make diff windows always appear side by side, even when space might be
+" limited
+set diffopt=filler,vertical

@@ -15,6 +15,9 @@ set hidden
 set list
 set listchars=tab:»\ ,trail:·
 
+" when using Konsole, it is necessary to set TERM=xterm-256color in the
+" environment to make colorschemes work properly
+" (the default is TERM=xterm which has only 8 colors)
 set background=dark
 " https://github.com/tomasr/molokai
 colorscheme molokai

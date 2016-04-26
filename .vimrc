@@ -64,3 +64,8 @@ set ttimeoutlen=0
 " to make diff windows always appear side by side, even when space might be
 " limited
 set diffopt=filler,vertical
+
+" http://vimcasts.org/episodes/soft-wrapping-text/
+" when soft wrapping long lines, show an indicator for wrapped lines
+" :help showbreak
+let &showbreak='… '

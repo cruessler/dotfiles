@@ -45,6 +45,8 @@ let g:ctrlp_cmd = 'CtrlPBuffer'
 let g:ctrlp_custom_ignore = {
   \ 'dir': '\.git$\|bower_components$\|node_modules$\|_build$\|deps$'
   \ }
+" open multiple files in hidden buffers and jump to first opened file
+let g:ctrlp_open_multiple_files = 'ij'
 
 " :help colorcolumn
 set cc=81

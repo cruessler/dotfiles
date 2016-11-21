@@ -74,3 +74,8 @@ set diffopt=filler,vertical
 " when soft wrapping long lines, show an indicator for wrapped lines
 " :help showbreak
 let &showbreak='… '
+
+" https://github.com/ElmCast/elm-vim
+" https://github.com/avh4/elm-format
+" format Elm code on save
+let g:elm_format_autosave = 1

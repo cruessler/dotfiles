@@ -45,3 +45,7 @@
 ; http://superuser.com/a/212669
 ; https://www.emacswiki.org/emacs/LineNumbers
 (global-linum-mode t)
+
+; http://orgmode.org/
+(use-package org
+  :ensure t)

@@ -49,3 +49,12 @@
 ; http://orgmode.org/
 (use-package org
   :ensure t)
+
+; https://github.com/bbatsov/projectile
+(use-package projectile
+  :ensure t)
+; https://github.com/bbatsov/helm-projectile
+(use-package helm-projectile
+  :ensure t)
+
+(projectile-mode)

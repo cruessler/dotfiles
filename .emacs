@@ -30,3 +30,7 @@
 (global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
 (helm-mode 1)
+
+; Hide scroll bar
+; https://www.emacswiki.org/emacs/ScrollBar
+(scroll-bar-mode -1)

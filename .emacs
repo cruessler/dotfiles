@@ -14,3 +14,10 @@
 
 (eval-when-compile
   (require 'use-package))
+
+; https://github.com/emacs-evil/evil
+(use-package evil
+  :ensure t)
+
+(require 'evil)
+(evil-mode 1)

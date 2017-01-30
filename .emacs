@@ -40,3 +40,8 @@
   :ensure t)
 
 (load-theme 'monokai t)
+
+; Show line numbers
+; http://superuser.com/a/212669
+; https://www.emacswiki.org/emacs/LineNumbers
+(global-linum-mode t)

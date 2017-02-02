@@ -88,3 +88,6 @@ command Bd bp\|bd \#
 " https://github.com/avh4/elm-format
 " format Elm code on save
 let g:elm_format_autosave = 1
+
+" https://github.com/tpope/vim-dispatch
+nmap <silent> <leader>d :Dispatch<CR>

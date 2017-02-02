@@ -75,6 +75,11 @@ set diffopt=filler,vertical
 " :help showbreak
 let &showbreak='… '
 
+" :help autoindent
+" :help smartindent
+set autoindent
+set smartindent
+
 " http://stackoverflow.com/questions/4465095/vim-delete-buffer-without-losing-the-split-window
 " use :Bd for closing buffers without closing splits
 command Bd bp\|bd \#

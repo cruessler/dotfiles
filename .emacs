@@ -61,3 +61,6 @@
   :ensure t)
 
 (projectile-mode)
+
+; https://www.emacswiki.org/emacs/SetFonts
+(set-face-attribute 'default t :font "Source Code Pro-10")

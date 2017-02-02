@@ -75,6 +75,10 @@ set diffopt=filler,vertical
 " :help showbreak
 let &showbreak='… '
 
+" http://stackoverflow.com/questions/4465095/vim-delete-buffer-without-losing-the-split-window
+" use :Bd for closing buffers without closing splits
+command Bd bp\|bd \#
+
 " https://github.com/ElmCast/elm-vim
 " https://github.com/avh4/elm-format
 " format Elm code on save

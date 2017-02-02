@@ -34,6 +34,9 @@
 ; Hide scroll bar
 ; https://www.emacswiki.org/emacs/ScrollBar
 (scroll-bar-mode -1)
+; Hide tool bar
+; https://www.emacswiki.org/emacs/ToolBar#toc1
+(tool-bar-mode -1)
 
 ; https://github.com/oneKelvinSmith/monokai-emacs
 (use-package monokai-theme

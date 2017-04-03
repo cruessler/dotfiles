@@ -47,6 +47,8 @@ let g:ctrlp_custom_ignore = {
   \ }
 " open multiple files in hidden buffers and jump to first opened file
 let g:ctrlp_open_multiple_files = 'ij'
+" open new files created when pressing <c-y> in the current window
+let g:ctrlp_open_new_file = 'r'
 
 " :help colorcolumn
 set cc=81

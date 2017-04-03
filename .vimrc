@@ -93,3 +93,12 @@ let g:elm_format_autosave = 1
 
 " https://github.com/tpope/vim-dispatch
 nmap <silent> <leader>d :Dispatch<CR>
+
+" https://github.com/janko-m/vim-test
+let test#strategy = "dispatch"
+
+nmap <silent> <leader>t :TestNearest<CR>
+nmap <silent> <leader>f :TestFile<CR>
+nmap <silent> <leader>a :TestSuite<CR>
+nmap <silent> <leader><leader> :TestLast<CR>
+nmap <silent> <leader>g :TestVisit<CR>

@@ -102,3 +102,9 @@ nmap <silent> <leader>f :TestFile<CR>
 nmap <silent> <leader>a :TestSuite<CR>
 nmap <silent> <leader><leader> :TestLast<CR>
 nmap <silent> <leader>g :TestVisit<CR>
+
+" :help surround
+let g:surround_187 = "»\r«"
+let g:surround_171 = "»\r«"
+let g:surround_8250 = "›\r‹"
+let g:surround_8249 = "›\r‹"

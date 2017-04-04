@@ -15,13 +15,6 @@
 (eval-when-compile
   (require 'use-package))
 
-; https://github.com/emacs-evil/evil
-(use-package evil
-  :ensure t)
-
-(require 'evil)
-(evil-mode 1)
-
 ; https://github.com/emacs-helm/helm
 (use-package helm
   :ensure t)
@@ -64,3 +57,13 @@
 
 ; https://www.emacswiki.org/emacs/SetFonts
 (set-face-attribute 'default t :font "Source Code Pro-10")
+
+; https://github.com/emacs-evil/evil
+; put Evil at the end to let it detect other packages it might have
+; keybindings for
+; see https://nathantypanski.com/blog/2014-08-03-a-vim-like-emacs-config.html
+(use-package evil
+  :ensure t)
+
+(require 'evil)
+(evil-mode 1)

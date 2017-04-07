@@ -1,0 +1,11 @@
+set folder=~/mail
+set header_cache=~/.cache/mutt
+set message_cachedir=~/.cache/mutt
+
+set sendmail="/usr/bin/msmtp"
+set envelope_from=yes
+set edit_hdrs
+
+set pager_index_lines=10
+
+source ~/.mutt/accounts

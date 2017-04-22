@@ -108,3 +108,11 @@ let g:surround_187 = "»\r«"
 let g:surround_171 = "»\r«"
 let g:surround_8250 = "›\r‹"
 let g:surround_8249 = "›\r‹"
+
+" http://www.wezm.net/technical/2016/09/ripgrep-with-vim/
+if executable("rg")
+  set grepprg=rg\ --vimgrep\ --no-heading
+  set grepformat=%f:%l:%c:%m,%f:%l:%m
+
+  let g:ackprg = 'rg --vimgrep --no-heading'
+endif

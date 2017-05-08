@@ -8,6 +8,9 @@ set edit_hdrs
 
 set pager_index_lines=10
 
+auto_view text/html
+alternative_order text/plain text/html
+
 set my_tmp_html_path="/tmp/mutt-mail.html"
 macro attach V "<pipe-entry>cat > $my_tmp_html_path && xdg-open $my_tmp_html_path<enter>"
 

@@ -8,6 +8,8 @@ set edit_hdrs
 
 set pager_index_lines=10
 
+bind index G last-entry
+
 auto_view text/html
 alternative_order text/plain text/html
 

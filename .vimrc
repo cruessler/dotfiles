@@ -22,9 +22,6 @@ set listchars=tab:»\ ,trail:·
 set background=dark
 " https://github.com/tomasr/molokai
 colorscheme molokai
-" https://github.com/chriskempson/base16-vim
-" seems like base16-shell (by the same author) needs to be installed
-" colorscheme base16-vim
 
 " http://vim.wikia.com/wiki/Display_line_numbers
 set number

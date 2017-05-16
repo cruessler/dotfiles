@@ -13,6 +13,11 @@ let mapleader=" "
 " unsaved
 set hidden
 
+" :help hlsearch
+" :help incsearch
+set hlsearch
+set incsearch
+
 set list
 set listchars=tab:»\ ,trail:·
 

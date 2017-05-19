@@ -27,6 +27,11 @@ bind index,pager \Co sidebar-open
 
 macro index,pager p<Tab> "<sidebar-prev-new><sidebar-open><next-new-then-unread>"
 macro index,pager n<Tab> "<sidebar-next-new><sidebar-open><next-new-then-unread>"
+
+macro index f<Tab> "<search>~F\r"
+macro pager f<Tab> "<exit><search>~F\r<display-message>"
+
+bind index gg first-entry
 bind index G last-entry
 
 auto_view text/html

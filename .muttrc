@@ -9,6 +9,24 @@ set include=yes
 
 set pager_index_lines=10
 
+# https://www.neomutt.org/feature/sidebar#muttrc
+set sidebar_visible=yes
+set sidebar_short_path=yes
+set sidebar_delim_chars='/.'
+set sidebar_folder_indent=yes
+set sidebar_indent_string='  '
+set sidebar_format="%B%?F? [%F]?%* %?N?%N/?%S"
+set sidebar_next_new_wrap=yes
+set sidebar_new_mail_only
+set mail_check_stats
+
+bind index,pager B sidebar-toggle-visible
+bind index,pager \Ck sidebar-prev
+bind index,pager \Cj sidebar-next
+bind index,pager \Co sidebar-open
+
+macro index,pager p<Tab> "<sidebar-prev-new><sidebar-open><next-new-then-unread>"
+macro index,pager n<Tab> "<sidebar-next-new><sidebar-open><next-new-then-unread>"
 bind index G last-entry
 
 auto_view text/html

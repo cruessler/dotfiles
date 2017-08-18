@@ -1,0 +1,11 @@
+color info yellow black
+color listnormal_unread red default
+color listfocus white black
+color listfocus_unread red black
+
+bind-key j next
+bind-key k prev
+bind-key J next-feed articlelist
+bind-key K prev-feed articlelist
+
+include "~/.config/newsbeuter/accounts"

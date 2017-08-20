@@ -46,6 +46,25 @@
 (use-package org
   :ensure t)
 
+; https://tex.stackexchange.com/questions/364914/using-koma-script-article-with-org-mode/364982
+(with-eval-after-load "ox-latex"
+  (add-to-list 'org-latex-classes
+               '("koma-article" "\\documentclass{scrartcl}"
+                 ("\\section{%s}" . "\\section*{%s}")
+                 ("\\subsection{%s}" . "\\subsection*{%s}")
+                 ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+                 ("\\paragraph{%s}" . "\\paragraph*{%s}")
+                 ("\\subparagraph{%s}" . "\\subparagraph*{%s}"))))
+
+; Let the default latex header (which contains several exports) be empty
+; http://orgmode.org/manual/Header-and-sectioning.html
+(with-eval-after-load "ox-latex"
+  (setq org-latex-default-packages-alist '()))
+
+; Use booktabs for tables
+(custom-set-variables
+  '(org-latex-tables-booktabs t))
+
 ; https://github.com/bbatsov/projectile
 (use-package projectile
   :ensure t)

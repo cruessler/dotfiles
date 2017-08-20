@@ -25,8 +25,8 @@ bind index,pager \Ck sidebar-prev
 bind index,pager \Cj sidebar-next
 bind index,pager \Co sidebar-open
 
-macro index,pager p<Tab> "<sidebar-prev-new><sidebar-open><next-new-then-unread>"
 macro index,pager n<Tab> "<sidebar-next-new><sidebar-open><next-new-then-unread>"
+macro index,pager p<Tab> "<sidebar-prev-new><sidebar-open><next-new-then-unread>"
 
 macro index f<Tab> "<search>~F\r"
 macro pager f<Tab> "<exit><search>~F\r<display-message>"

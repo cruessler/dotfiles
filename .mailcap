@@ -1,1 +1,5 @@
 text/html; elinks -dump; copiousoutput;
+
+# https://unix.stackexchange.com/a/109738
+# don’t block when opening attachments in mutt
+application/*; mkdir -p /tmp/mutt \; cp %s /tmp/mutt \; xdg-open /tmp/mutt/$(basename %s)

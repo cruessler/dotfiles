@@ -31,6 +31,16 @@ macro index,pager n<Tab> "<sidebar-next-new><sidebar-open><next-new-then-unread>
 macro index f<Tab> "<search>~F\r"
 macro pager f<Tab> "<exit><search>~F\r<display-message>"
 
+# rebind keys overwritten by macros
+#
+# > Due to a limitation of Mutt, creating key bindings, or macros, will
+# > overwrite existing mappings with similar, shorter, names.
+#
+# https://www.neomutt.org/guide/configuration#bind-warnings
+bind index,pager f forward-message
+bind index,pager n search-next
+bind index,pager p search-opposite
+
 bind index gg first-entry
 bind index G last-entry
 

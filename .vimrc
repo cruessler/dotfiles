@@ -130,4 +130,11 @@ if executable("rg")
   let g:ackprg = 'rg --vimgrep --no-heading'
 endif
 
+" https://github.com/amix/vimrc/blob/7fc202ec8895c564c10940a21af357d6c0665368/vimrcs/basic.vim#L227
+" shortcuts for faster navigation between splits
+nmap <c-h> <c-w>h
+nmap <c-j> <c-w>j
+nmap <c-k> <c-w>k
+nmap <c-l> <c-w>l
+
 nmap <leader>gs :Gstatus<CR>

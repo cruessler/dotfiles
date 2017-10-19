@@ -138,3 +138,6 @@ nmap <c-k> <c-w>k
 nmap <c-l> <c-w>l
 
 nmap <leader>gs :Gstatus<CR>
+
+" shortcut for rewrapping a paragraph
+nmap <leader>w gqap

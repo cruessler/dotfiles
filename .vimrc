@@ -94,6 +94,10 @@ command Bd bp\|bd \#
 " format Elm code on save
 let g:elm_format_autosave = 1
 
+" https://github.com/rust-lang/rust.vim/#formatting-with-rustfmt
+" format Rust code on save
+let g:rustfmt_autosave = 1
+
 " https://github.com/tpope/vim-dispatch
 nmap <silent> <leader>d :Dispatch<CR>
 

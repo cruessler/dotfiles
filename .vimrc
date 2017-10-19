@@ -85,6 +85,12 @@ let &showbreak='… '
 set autoindent
 set smartindent
 
+" :help NoMatchParen
+" :help DoMatchParen
+" do not show matching parentheses because the are quite confusing with my
+" current colorscheme
+let loaded_matchparen = 1
+
 " http://stackoverflow.com/questions/4465095/vim-delete-buffer-without-losing-the-split-window
 " use :Bd for closing buffers without closing splits
 command Bd bp\|bd \#

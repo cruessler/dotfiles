@@ -133,6 +133,9 @@ if executable("rg")
   set grepprg=rg\ --vimgrep\ --no-heading
   set grepformat=%f:%l:%c:%m,%f:%l:%m
 
+  " https://robots.thoughtbot.com/faster-grepping-in-vim
+  command -nargs=+ -complete=file -bar Grep silent! grep! <args>|cwindow|redraw!
+
   let g:ackprg = 'rg --vimgrep --no-heading'
 endif
 

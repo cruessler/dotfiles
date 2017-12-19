@@ -34,6 +34,12 @@ set number
 " https://github.com/bling/vim-airline
 set laststatus=2
 
+" force vim to detect *.md as Markdown instead of Modula-2
+" having this autocmd makes having vim-markdown unnecessary
+" https://github.com/tpope/vim-markdown
+autocmd BufNewFile,BufReadPost *.md setlocal filetype=markdown | setlocal foldcolumn=2
+let g:markdown_folding=1
+
 " https://github.com/bling/vim-airline
 let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled=1

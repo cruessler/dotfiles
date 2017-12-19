@@ -55,3 +55,5 @@ bind editor <Tab> complete-query
 bind editor ^T complete
 
 source ~/.mutt/accounts
+
+source ~/.mutt/colors-solarized-dark-256.muttrc

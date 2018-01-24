@@ -141,9 +141,15 @@ if executable("rg")
   set grepformat=%f:%l:%c:%m,%f:%l:%m
 
   " https://robots.thoughtbot.com/faster-grepping-in-vim
+  " define :Grep
   command -nargs=+ -complete=file -bar Grep silent! grep! <args>|cwindow|redraw!
 
   let g:ackprg = 'rg --vimgrep --no-heading'
+
+  " override CtrlP default behavior defined above
+  " https://elliotekj.com/2016/11/22/setup-ctrlp-to-use-ripgrep-in-vim/
+  let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
+  let g:ctrlp_use_caching = 0
 endif
 
 " https://github.com/amix/vimrc/blob/7fc202ec8895c564c10940a21af357d6c0665368/vimrcs/basic.vim#L227

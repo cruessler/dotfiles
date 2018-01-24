@@ -1,0 +1,1 @@
+source (locate tmuxinator.fish)

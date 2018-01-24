@@ -28,6 +28,13 @@ set background=dark
 " https://github.com/tomasr/molokai
 colorscheme molokai
 
+" hide tilde characters at the bottom of the screen
+" their color matches the background of the Normal highlight as set by the
+" molokai theme, thus letting them disappear
+" https://stackoverflow.com/a/40051222
+" https://github.com/neovim/neovim/issues/2067#issuecomment-76374860
+highlight EndOfBuffer ctermfg=bg ctermbg=bg
+
 " http://vim.wikia.com/wiki/Display_line_numbers
 set number
 

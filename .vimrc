@@ -152,6 +152,13 @@ if executable("rg")
   let g:ctrlp_use_caching = 0
 endif
 
+" https://github.com/mhinz/vim-mix-format
+" as of April 2018, support for .formatter.exs config files is not yet
+" provided by many of the Elixir libraries I depend on
+" it is thus more sensible to format .ex files manually for the time being
+let g:mix_format_on_save = 0
+let g:mix_format_silent_errors = 1
+
 " https://github.com/amix/vimrc/blob/7fc202ec8895c564c10940a21af357d6c0665368/vimrcs/basic.vim#L227
 " shortcuts for faster navigation between splits
 nmap <c-h> <c-w>h
@@ -160,6 +167,7 @@ nmap <c-k> <c-w>k
 nmap <c-l> <c-w>l
 
 nmap <leader>gs :Gstatus<CR>
+nmap <leader>mf :MixFormat<CR>
 
 " shortcut for rewrapping a paragraph
 nmap <leader>w gqap

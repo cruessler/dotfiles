@@ -29,6 +29,11 @@ bind index,pager \Co sidebar-open
 
 bind index,pager p search-opposite
 
+# this fix is suggested by mutt on startup
+# binding 'gg' would alias 'g' (which shouldn’t be a problem, apart from the
+# waring, since 'g' is not bound currently)
+bind index g noop
+
 bind index gg first-entry
 bind index G last-entry
 

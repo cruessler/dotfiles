@@ -1,2 +1,7 @@
+# vim files
+Session.vim
+*.swp
+*.swo
+
 # transient fish configuration
 .config/fish/fishd.*

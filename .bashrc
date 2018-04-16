@@ -60,3 +60,5 @@ fi
 . "$CHRUBY_ROOT/share/chruby/auto.sh"
 
 . "$HOME/bin/tmuxinator.bash"
+
+PS1='\w $ '

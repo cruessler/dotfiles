@@ -58,3 +58,5 @@ fi
 
 # https://github.com/postmodern/chruby/
 . "$CHRUBY_ROOT/share/chruby/auto.sh"
+
+. "$HOME/bin/tmuxinator.bash"

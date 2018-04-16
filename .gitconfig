@@ -9,3 +9,7 @@
 # These includes don’t contain personal information.
 [include]
   path = ~/.config/git/aliases
+
+# These includes may contain personal information.
+[include]
+  path = ~/.config/git/user

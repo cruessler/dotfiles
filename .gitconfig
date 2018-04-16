@@ -5,3 +5,7 @@
 
 [push]
   default = simple
+
+# These includes don’t contain personal information.
+[include]
+  path = ~/.config/git/aliases

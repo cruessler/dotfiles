@@ -1,0 +1,8 @@
+# See `man tigrc` for details.
+[tig "color"]
+  cursor = white black
+  status = yellow black
+  main-commit = red black
+  title-focus = red black
+  title-focus = blue black
+  title-blur = blue black

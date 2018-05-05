@@ -7,7 +7,7 @@ if [ -d "$HOME/bin" ] ; then
   PATH="$HOME/bin:$PATH"
 fi
 
-PATH="$PATH:$HOME/.texlive/2016/bin/x86_64-linux"
+PATH="$PATH:$HOME/.texlive/2018/bin/x86_64-linux"
 PATH="$PATH:$HOME/.npm/bin"
 
 # used by Python’s pip and Haskell’s stack

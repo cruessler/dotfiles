@@ -28,6 +28,14 @@ bind index,pager \Ck sidebar-prev
 bind index,pager \Cj sidebar-next
 bind index,pager \Co sidebar-open
 
+# starting with mutt 1.9.4 (after upgrade from 1.8.3), mutt recognizes \Cj as
+# <Return>, thus overwriting the default binding for <Return> (which is
+# display-message)
+#
+# the same bug has been reported for an earlier version,
+# see https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=547661
+bind index <Return> display-message
+
 bind index,pager p search-opposite
 
 # this fix is suggested by mutt on startup

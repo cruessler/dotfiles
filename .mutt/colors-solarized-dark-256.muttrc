@@ -103,6 +103,9 @@ mono  body          bold                            "^gpg: BAD signature from.*"
 
 # This simple regex is based on CommonMark’s specification of autolinks.
 # http://spec.commonmark.org/0.28/#absolute-uri
+#
+# See https://tools.ietf.org/html/rfc3986#appendix-A for a formal description
+# of a URI’s parts.
 color body          color160        color234        "[a-zA-Z][a-zA-Z0-9+\\.-]{1,31}:[^[:space:]<>]+"
 
 # This regex is taken from the HTML standard’s definition of email input

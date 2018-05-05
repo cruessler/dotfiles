@@ -20,6 +20,17 @@ color status        color241        color235
 color indicator     color234        color136
 color tree          color136        color234                      # arrow in threads
 
+# starting with mutt 1.9.4 (after upgrade from 1.8.3), mutt seems to have
+# changed some of its color defaults
+# the following settings reset some of the obvious changes
+color prompt        color244        color234
+
+# https://www.neomutt.org/feature/sidebar#6-%C2%A0colors
+# https://www.neomutt.org/guide/gettingstarted.html#2-4-4-%C2%A0colors
+color sidebar_divider   color136    color234
+color sidebar_flagged   color244    color234
+color sidebar_new       color244    color234
+
 # mutt 1.9 introduced colors for the Compose screen
 #
 # http://www.mutt.org/relnotes/1.9/

@@ -57,7 +57,7 @@ color index         color160        color234        "~F"          # flagged mess
 color index         color160        color234        "~F~p"        # flagged messages to me
 color index         color160        color234        "~N~F"        # new flagged messages
 color index         color160        color234        "~N~F~p"      # new flagged messages to me
-color index         color160        color234        "~U~F~p"      # new flagged messages to me
+color index         color159        color234        "~U~F~p"      # new flagged messages to me
 
 color index         color37         color234        "~p!~F"       # messages to me
 color index         color37         color234        "~N~p!~F"     # new messages to me

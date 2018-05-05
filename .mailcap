@@ -3,3 +3,8 @@ text/html; elinks -dump; copiousoutput;
 # https://unix.stackexchange.com/a/109738
 # don’t block when opening attachments in mutt
 application/*; mkdir -p /tmp/mutt \; cp %s /tmp/mutt \; xdg-open /tmp/mutt/$(basename %s)
+
+# after upgrading Ubuntu to 18.04, Firefox seems to have taken over the MIME
+# type image/* via /etc/mailcap
+# this overwrite makes xdg-open responsible for opening images
+image/*; mkdir -p /tmp/mutt \; cp %s /tmp/mutt \; xdg-open /tmp/mutt/$(basename %s)

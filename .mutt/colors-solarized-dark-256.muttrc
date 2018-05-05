@@ -101,9 +101,9 @@ color body          color241        color160        "^gpg: BAD signature from.*"
 mono  body          bold                            "^gpg: Good signature"
 mono  body          bold                            "^gpg: BAD signature from.*"
 
-# This simple regex is taken from CommonMark’s specification of autolinks.
+# This simple regex is based on CommonMark’s specification of autolinks.
 # http://spec.commonmark.org/0.28/#absolute-uri
-color body          color160        color234        "[a-zA-Z][a-zA-Z0-9+\\.-]{1,31}:[^[:space:]]+"
+color body          color160        color234        "[a-zA-Z][a-zA-Z0-9+\\.-]{1,31}:[^[:space:]<>]+"
 
 # This regex is taken from the HTML standard’s definition of email input
 # fields.

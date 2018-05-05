@@ -20,6 +20,13 @@ color status        color241        color235
 color indicator     color234        color136
 color tree          color136        color234                      # arrow in threads
 
+# mutt 1.9 introduced colors for the Compose screen
+#
+# http://www.mutt.org/relnotes/1.9/
+# https://gitlab.com/muttmua/mutt/commit/e6b1e88af6125aeb7c82b8cf3e604a6d966133d1
+color compose header                color244        color234
+color compose security_none         color244        color234
+
 mono  bold          bold
 mono  underline     underline
 mono  indicator     reverse

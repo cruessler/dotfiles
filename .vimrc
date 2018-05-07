@@ -159,6 +159,10 @@ endif
 let g:mix_format_on_save = 0
 let g:mix_format_silent_errors = 1
 
+" https://github.com/justinmk/vim-sneak
+let g:sneak#label = 1
+let g:sneak#s_next = 1
+
 " https://github.com/amix/vimrc/blob/7fc202ec8895c564c10940a21af357d6c0665368/vimrcs/basic.vim#L227
 " shortcuts for faster navigation between splits
 nmap <c-h> <c-w>h

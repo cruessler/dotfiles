@@ -86,3 +86,8 @@
 
 (require 'evil)
 (evil-mode 1)
+
+; turn on auto-fill-mode (automatically hard wrap text)
+; https://www.gnu.org/software/emacs/manual/html_node/emacs/Auto-Fill.html
+; https://www.gnu.org/software/emacs/manual/html_node/efaq/Turning-on-auto_002dfill-by-default.html
+(add-hook 'text-mode-hook 'turn-on-auto-fill)

@@ -164,6 +164,7 @@ nmap <c-l> <c-w>l
 nmap <leader>gs :Gstatus<CR>
 nmap <leader>mf :MixFormat<CR>
 
+nmap <leader>q :bd<CR>
 " shortcut for rewrapping a paragraph
 nmap <leader>w gqap
 

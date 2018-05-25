@@ -24,9 +24,11 @@ set sidebar_new_mail_only
 set mail_check_stats
 
 bind index,pager B sidebar-toggle-visible
-bind index,pager \Ck sidebar-prev
-bind index,pager \Cj sidebar-next
-bind index,pager \Co sidebar-open
+# by default, J and K are bound to next-entry and previous-entry
+bind index,pager J sidebar-next
+bind index,pager K sidebar-prev
+# by default, O is bound to sort-reverse
+bind index,pager O sidebar-open
 
 # starting with mutt 1.9.4 (after upgrade from 1.8.3), mutt recognizes \Cj as
 # <Return>, thus overwriting the default binding for <Return> (which is

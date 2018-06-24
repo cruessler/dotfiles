@@ -154,6 +154,8 @@ let g:mix_format_silent_errors = 1
 let g:sneak#label = 1
 let g:sneak#s_next = 1
 
+command Gcontext Gblame
+
 " https://github.com/amix/vimrc/blob/7fc202ec8895c564c10940a21af357d6c0665368/vimrcs/basic.vim#L227
 " shortcuts for faster navigation between splits
 nmap <c-h> <c-w>h

@@ -1,5 +1,7 @@
-# https://stackoverflow.com/questions/1838873/visualizing-branch-topology-in-git
-#
-# See `man git-log` for details.
 [alias]
+  # https://stackoverflow.com/questions/1838873/visualizing-branch-topology-in-git
+  #
+  # See `man git-log` for details.
   history = log --graph --decorate --oneline
+
+  context = blame

@@ -100,7 +100,7 @@ set smartindent
 
 " :help NoMatchParen
 " :help DoMatchParen
-" do not show matching parentheses because the are quite confusing with my
+" do not show matching parentheses because they are quite confusing with my
 " current colorscheme
 let loaded_matchparen = 1
 

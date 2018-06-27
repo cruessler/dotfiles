@@ -11,6 +11,8 @@ set include=yes
 set menu_scroll
 set pager_index_lines=10
 
+set strict_threads
+
 # https://www.neomutt.org/feature/sidebar#muttrc
 set sidebar_visible=yes
 set sidebar_short_path=yes

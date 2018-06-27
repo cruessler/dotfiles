@@ -171,3 +171,4 @@ nmap <leader>q :bd<CR>
 nmap <leader>w gqap
 
 nmap <leader><leader> <c-p>
+nmap <leader><CR> :w<CR>

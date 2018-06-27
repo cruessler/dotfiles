@@ -98,6 +98,11 @@ let &showbreak='… '
 set autoindent
 set smartindent
 
+" https://github.com/airblade/vim-gitgutter/tree/a986ab054788776dca269d6c289b470255d54e8c#getting-started
+" vim-gitgutter’s delay for updating its marks depends on this value
+" vim’s default is 4000
+set updatetime=100
+
 " :help NoMatchParen
 " :help DoMatchParen
 " do not show matching parentheses because they are quite confusing with my

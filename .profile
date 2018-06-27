@@ -7,20 +7,20 @@ if [ -d "$HOME/bin" ] ; then
   PATH="$HOME/bin:$PATH"
 fi
 
-PATH="$PATH:$HOME/.texlive/2018/bin/x86_64-linux"
-PATH="$PATH:$HOME/.npm/bin"
+PATH="$HOME/.texlive/2018/bin/x86_64-linux:$PATH"
+PATH="$HOME/.npm/bin:$PATH"
 
 # used by Python’s pip and Haskell’s stack
-PATH="$PATH:$HOME/.local/bin"
+PATH="$HOME/.local/bin:$PATH"
 
 # used by Rust’s cargo
-PATH="$PATH:$HOME/.cargo/bin"
+PATH="$HOME/.cargo/bin:$PATH"
 
 export GOPATH=$HOME/.go
-PATH="$PATH:$GOPATH/bin"
+PATH="$GOPATH/bin:$PATH"
 
 # https://github.com/sonnym/elmenv
-PATH="$PATH:$HOME/.elmenv/bin"
+PATH="$HOME/.elmenv/bin:$PATH"
 
 export PATH
 

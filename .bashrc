@@ -62,3 +62,6 @@ fi
 . "$HOME/bin/tmuxinator.bash"
 
 PS1='\w $ '
+
+# https://github.com/travis-ci/travis.rb
+[ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh

@@ -135,6 +135,26 @@ if executable("rg")
   " define :Grep
   command -nargs=+ -complete=file -bar Grep silent! grep! <args>|cwindow|redraw!
 
+  " In normal as well as in visual mode, K can be used to search for the word
+  " under the cursor. Which program or command gets called depends on the
+  " value of `keywordprg`. vim’s default for `keywordprg` is `man`.
+  "
+  " :help K
+  " :help keywordprg
+  "
+  " This changes the default to `:Grep`. Depending on the file type, this
+  " setting gets overwritten via autocommands (vim-rails e. g. does that to
+  " invoke `ri`).
+  set keywordprg=:Grep
+
+  " Define a separate shortcut for `:Grep`. This is useful if `keywordprg` has
+  " been changed by an autocommand.
+  nmap <leader>k :Grep <cword><CR>
+  " <c-u> clears the command line which is prefilled with '<,'>
+  " @* refers to the contents of the * register
+  " the * register contains the visual selection
+  vmap <leader>k :<c-u>execute "Grep " . shellescape(@*)<CR>
+
   let g:ackprg = 'rg --vimgrep --no-heading'
 
   " override CtrlP default behavior defined above

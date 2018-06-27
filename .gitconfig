@@ -14,3 +14,4 @@
 # These includes may contain personal information.
 [include]
   path = ~/.config/git/user
+  path = ~/.config/git/urls

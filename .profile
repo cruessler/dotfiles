@@ -16,7 +16,7 @@ PATH="$HOME/.local/bin:$PATH"
 # used by Rust’s cargo
 PATH="$HOME/.cargo/bin:$PATH"
 
-export GOPATH=$HOME/.go
+export GOPATH="$HOME/.go"
 PATH="$GOPATH/bin:$PATH"
 
 # https://github.com/sonnym/elmenv

@@ -5,3 +5,15 @@ Session.vim
 
 # transient fish configuration
 .config/fish/fishd.*
+
+# transient LaTeX files
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.out
+*.run.xml
+
+*.log

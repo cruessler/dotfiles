@@ -179,6 +179,15 @@ let g:mix_format_silent_errors = 1
 let g:sneak#label = 1
 let g:sneak#s_next = 1
 
+" https://prettier.io/docs/en/vim.html#ale
+" https://github.com/w0rp/ale
+let g:ale_linters_explicit = 1
+
+let g:ale_fixers = {}
+let g:ale_fixers['javascript'] = ['prettier']
+
+let g:ale_fix_on_save = 1
+
 command Gcontext Gblame
 
 " https://github.com/amix/vimrc/blob/7fc202ec8895c564c10940a21af357d6c0665368/vimrcs/basic.vim#L227

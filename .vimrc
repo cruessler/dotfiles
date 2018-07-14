@@ -38,6 +38,9 @@ highlight EndOfBuffer ctermfg=bg ctermbg=bg
 " http://vim.wikia.com/wiki/Display_line_numbers
 set number
 
+" used by fugitive’s :Gstatus window
+set previewheight=25
+
 " https://github.com/bling/vim-airline
 set laststatus=2
 

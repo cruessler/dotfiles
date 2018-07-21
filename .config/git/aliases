@@ -5,3 +5,4 @@
   history = log --graph --decorate --oneline
 
   context = blame
+  fixup = commit --fixup

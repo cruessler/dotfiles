@@ -38,6 +38,9 @@ highlight EndOfBuffer ctermfg=bg ctermbg=bg
 " http://vim.wikia.com/wiki/Display_line_numbers
 set number
 
+" reload files that have been changed outside of vim
+set autoread
+
 " used by fugitive’s :Gstatus window
 set previewheight=25
 

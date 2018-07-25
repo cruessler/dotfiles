@@ -6,3 +6,5 @@
 
   context = blame
   fixup = commit --fixup
+
+  wip = "!f() { git add . && git commit -m \"[WIP] $1\"; }; f"

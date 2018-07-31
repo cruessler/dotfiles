@@ -25,6 +25,11 @@ set sidebar_next_new_wrap=yes
 set sidebar_new_mail_only
 set mail_check_stats
 
+# some MUAs encode filenames of attachments according to RFC 2047
+# by default, mutt does not decode those filenames
+# http://www.mutt.org/doc/manual/#rfc2047-parameters
+set rfc2047_parameters
+
 bind index,pager B sidebar-toggle-visible
 # by default, J and K are bound to next-entry and previous-entry
 bind index,pager J sidebar-next

@@ -50,9 +50,13 @@ auto_view text/html
 alternative_order text/plain text/html
 
 set my_tmp_html_path="/tmp/mutt-mail.html"
-macro attach V "<pipe-entry>cat > $my_tmp_html_path && xdg-open $my_tmp_html_path<enter>"
+macro attach V \
+  "<pipe-entry>cat > $my_tmp_html_path && xdg-open $my_tmp_html_path<enter>" \
+  "view attachment as HTML in browser using xdg-open"
 
-macro attach E "<pipe-entry>khal import<return>"
+macro attach E \
+  "<pipe-entry>khal import<return>" \
+  "import attachment in khal"
 
 set query_command="khard email --parsable %s"
 bind editor <Tab> complete-query

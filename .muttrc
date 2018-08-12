@@ -52,6 +52,8 @@ alternative_order text/plain text/html
 set my_tmp_html_path="/tmp/mutt-mail.html"
 macro attach V "<pipe-entry>cat > $my_tmp_html_path && xdg-open $my_tmp_html_path<enter>"
 
+macro attach E "<pipe-entry>khal import<return>"
+
 set query_command="khard email --parsable %s"
 bind editor <Tab> complete-query
 bind editor ^T complete

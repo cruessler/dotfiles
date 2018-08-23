@@ -17,6 +17,7 @@ particular, it is assumed that:
 - `~/.elmenv/bin/` contains elmenv
 - `~/.vim/bundle/` contains Vim plugins, particularly vim-pathogen at
   `~/.vim/bundle/vim-pathogen/`
+- `~/.tmux/plugins/` contains tmux plugins
 
 These dotfiles don’t contain personal information and sensitive data; those are
 supplied via includes wherever supported. In particular, the following files

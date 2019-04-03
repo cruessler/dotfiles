@@ -20,3 +20,5 @@ function setenv
 end
 # https://github.com/sonnym/elmenv
 status --is-interactive; and . (elmenv init -|psub)
+
+source $HOME/.asdf/asdf.fish

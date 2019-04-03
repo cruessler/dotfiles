@@ -180,7 +180,7 @@ let g:sneak#s_next = 1
 
 " https://prettier.io/docs/en/vim.html#ale
 " https://github.com/w0rp/ale
-let g:ale_linters_explicit = 1
+let g:ale_lint_delay = 1000
 
 let g:ale_fixers = {}
 let g:ale_fixers['javascript'] = ['prettier']

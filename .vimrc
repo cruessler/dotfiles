@@ -187,6 +187,14 @@ let g:ale_fixers['javascript'] = ['prettier']
 
 let g:ale_fix_on_save = 1
 
+nmap <leader>ld :ALEDetail<CR>
+nmap <leader>lh :ALEHover<CR>
+nmap <leader>lg :ALEGoToDefinition<CR>
+nmap <leader>lr :ALEFindReferences<CR>
+
+nmap <leader>j :ALENextWrap<CR>
+nmap <leader>k :ALEPreviousWrap<CR>
+
 command Gcontext Gblame
 
 " https://github.com/amix/vimrc/blob/7fc202ec8895c564c10940a21af357d6c0665368/vimrcs/basic.vim#L227

@@ -122,7 +122,7 @@ command Bd bp\|bd \#
 " https://github.com/ElmCast/elm-vim
 " https://github.com/avh4/elm-format
 " format Elm code on save
-let g:elm_format_autosave = 1
+let g:elm_format_autosave = 0
 
 " https://github.com/rust-lang/rust.vim/#formatting-with-rustfmt
 " format Rust code on save
@@ -184,6 +184,7 @@ let g:ale_lint_delay = 1000
 
 let g:ale_fixers = {}
 let g:ale_fixers['javascript'] = ['prettier']
+let g:ale_fixers['elm'] = ['elm-format']
 
 let g:ale_fix_on_save = 1
 

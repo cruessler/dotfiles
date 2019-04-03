@@ -174,13 +174,6 @@ if executable("rg")
   let g:ctrlp_use_caching = 0
 endif
 
-" https://github.com/mhinz/vim-mix-format
-" as of April 2018, support for .formatter.exs config files is not yet
-" provided by many of the Elixir libraries I depend on
-" it is thus more sensible to format .ex files manually for the time being
-let g:mix_format_on_save = 0
-let g:mix_format_silent_errors = 1
-
 " https://github.com/justinmk/vim-sneak
 let g:sneak#label = 1
 let g:sneak#s_next = 1
@@ -204,7 +197,6 @@ nmap <c-k> <c-w>k
 nmap <c-l> <c-w>l
 
 nmap <leader>gs :Gstatus<CR>
-nmap <leader>mf :MixFormat<CR>
 
 nmap <leader>q :bd<CR>
 " shortcut for rewrapping a paragraph

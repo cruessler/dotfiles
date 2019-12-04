@@ -6,6 +6,9 @@
 [push]
   default = simple
 
+[merge]
+  conflictstyle = diff3
+
 # These includes don’t contain personal information.
 [include]
   path = ~/.config/git/aliases

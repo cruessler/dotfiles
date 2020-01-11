@@ -1,0 +1,17 @@
+#!/usr/bin/env ruby
+
+# This file is intended for use with tig.
+
+if ARGV.count == 3
+  remote, branch, ref = ARGV
+
+  is_remote_branch = "#{remote}/#{branch}" == ref
+
+  if is_remote_branch
+    `git push --delete #{remote} #{branch}`
+  else
+    `git branch -D #{branch}`
+  end
+else
+  puts "Usage: git-delete-branch <remote> <branch> <ref>"
+end

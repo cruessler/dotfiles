@@ -6,3 +6,6 @@
   title-focus = red black
   title-focus = blue black
   title-blur = blue black
+
+[tig "bind"]
+  refs = ! ?git-delete-branch %(remote) %(branch) %(ref)

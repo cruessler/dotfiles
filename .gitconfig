@@ -3,6 +3,8 @@
   precomposeunicode = false
   quotepath = false
 
+  hookspath = ~/.config/git/hooks
+
 [push]
   default = simple
 

@@ -22,3 +22,9 @@ end
 status --is-interactive; and . (elmenv init -|psub)
 
 source $HOME/.asdf/asdf.fish
+
+# https://github.com/Canop/broot
+# run `broot --install` to install the launcher
+if test -f $HOME/.config/broot/launcher/fish/br
+  source $HOME/.config/broot/launcher/fish/br
+end

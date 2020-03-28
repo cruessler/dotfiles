@@ -128,9 +128,6 @@ let g:elm_format_autosave = 0
 " format Rust code on save
 let g:rustfmt_autosave = 1
 
-" https://github.com/tpope/vim-dispatch
-nmap <silent> <leader>d :Dispatch<CR>
-
 " :help surround
 let g:surround_187 = "»\r«"
 let g:surround_171 = "»\r«"
@@ -178,24 +175,33 @@ endif
 let g:sneak#label = 1
 let g:sneak#s_next = 1
 
-" https://prettier.io/docs/en/vim.html#ale
-" https://github.com/w0rp/ale
-let g:ale_lint_delay = 1000
+" https://thoughtbot.com/blog/modern-typescript-and-react-development-in-vim
+" https://github.com/neoclide/coc.nvim
+let g:coc_global_extensions = [
+  \ 'coc-tsserver'
+  \ ]
 
-let g:ale_fixers = {}
-let g:ale_fixers['javascript'] = ['prettier']
-let g:ale_fixers['elm'] = ['elm-format']
-let g:ale_fixers['elixir'] = ['mix_format']
+if isdirectory('./node_modules') && isdirectory('./node_modules/prettier')
+  let g:coc_global_extensions += ['coc-prettier']
+endif
 
-let g:ale_fix_on_save = 1
+if isdirectory('./node_modules') && isdirectory('./node_modules/eslint')
+  let g:coc_global_extensions += ['coc-eslint']
+endif
 
-nmap <leader>ld :ALEDetail<CR>
-nmap <leader>lh :ALEHover<CR>
-nmap <leader>lg :ALEGoToDefinition<CR>
-nmap <leader>lr :ALEFindReferences<CR>
+nmap <silent> <leader>lh :call CocAction('doHover')<CR>
+nmap <silent> <leader>lg <Plug>(coc-definition)
+nmap <silent> <leader>lt <Plug>(coc-type-definition)
+nmap <silent> <leader>lr <Plug>(coc-references)
 
-nmap <leader>j :ALENextWrap<CR>
-nmap <leader>k :ALEPreviousWrap<CR>
+nmap <leader>j <Plug>(coc-diagnostic-next)
+nmap <leader>k <Plug>(coc-diagnostic-prev)
+
+nmap <silent> <leader>d :<C-u>CocList diagnostics<cr>
+nmap <silent> <leader>s :<C-u>CocList -I symbols<cr>
+
+nmap <leader>do <Plug>(coc-codeaction)
+nmap <leader>rn <Plug>(coc-rename)
 
 command Gcontext Gblame
 

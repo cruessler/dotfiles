@@ -77,7 +77,7 @@ set cc=81
 
 " make vim’s colorscheme behave correctly inside a tmux session
 " http://sunaku.github.io/vim-256color-bce.html
-if exists('$TMUX')
+if exists('$TMUX') && !has('nvim')
   set term=screen-256color
 endif
 

@@ -3,11 +3,23 @@
     "javascript",
     "javascriptreact",
     "typescript",
-    "typescriptreact"
+    "typescriptreact",
+    "elm"
   ],
   "coc.preferences.formatOnType": true,
+  "codeLens.enable": true,
   "eslint.autoFixOnSave": false,
   "eslint.filetypes": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
   "prettier.disableSuccessMessage": true,
-  "tsserver.formatOnType": true
+  "tsserver.formatOnType": true,
+  "languageserver": {
+    "elmLS": {
+      "command": "elm-language-server",
+      "filetypes": ["elm"],
+      "rootPatterns": ["elm.json"],
+      "initializationOptions": {
+        "elmAnalyseTrigger": "change"
+      }
+    }
+  }
 }

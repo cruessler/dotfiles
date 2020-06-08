@@ -24,5 +24,7 @@ PATH="$HOME/.elmenv/bin:$PATH"
 
 export PATH
 
+export CDPATH=".:$HOME/repos"
+
 export EDITOR=vi
 export BROWSER=firefox

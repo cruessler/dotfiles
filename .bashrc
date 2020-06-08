@@ -15,11 +15,6 @@
 # For Ubuntu’s default .bashrc, see
 # /etc/skel/.bashrc
 
-# https://github.com/postmodern/chruby/
-CHRUBY_ROOT=$HOME/.local
-. "$CHRUBY_ROOT/share/chruby/chruby.sh"
-RUBIES+=($HOME/.ruby/*)
-
 # Commands above this comment are run for every bash invocation, interactive
 # and non-interactive.
 
@@ -52,9 +47,6 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-
-# https://github.com/postmodern/chruby/
-. "$CHRUBY_ROOT/share/chruby/auto.sh"
 
 . "$HOME/bin/tmuxinator.bash"
 

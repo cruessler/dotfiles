@@ -10,7 +10,6 @@ There are some assumptions about the environment these dotfiles are used in. In
 particular, it is assumed that:
 
 - fish is available at `/usr/bin/fish` (used as default shell in `.tmux.conf`)
-- `~/.local/share/chruby/` contains chruby
 - `~/bin/tmuxinator.bash` and `~/bin/tmuxinator.fish` are available
 - `~/.texlive/2020/bin/x86_64-linux/` contains the binaries of a 2020 TeXLive
   installation

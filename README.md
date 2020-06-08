@@ -14,7 +14,6 @@ particular, it is assumed that:
 - `~/bin/tmuxinator.bash` and `~/bin/tmuxinator.fish` are available
 - `~/.texlive/2020/bin/x86_64-linux/` contains the binaries of a 2020 TeXLive
   installation
-- `~/.elmenv/bin/` contains elmenv
 - `~/.vim/bundle/` contains Vim plugins, particularly vim-pathogen at
   `~/.vim/bundle/vim-pathogen/`
 - `~/.tmux/plugins/` contains tmux plugins

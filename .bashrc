@@ -20,9 +20,6 @@ CHRUBY_ROOT=$HOME/.local
 . "$CHRUBY_ROOT/share/chruby/chruby.sh"
 RUBIES+=($HOME/.ruby/*)
 
-# https://github.com/sonnym/elmenv
-eval "$(elmenv init -)"
-
 # Commands above this comment are run for every bash invocation, interactive
 # and non-interactive.
 

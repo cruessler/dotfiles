@@ -19,9 +19,6 @@ PATH="$HOME/.cargo/bin:$PATH"
 export GOPATH="$HOME/.go"
 PATH="$GOPATH/bin:$PATH"
 
-# https://github.com/sonnym/elmenv
-PATH="$HOME/.elmenv/bin:$PATH"
-
 export PATH
 
 export CDPATH=".:$HOME/repos"

@@ -8,4 +8,8 @@
   title-blur = blue black
 
 [tig "bind"]
+  # @ runs the command in the background
+  # the examples in `man tigrc` use ", but that did not seem to work, so ' is
+  # used instead
+  generic = 9 @sh -c 'echo -n %(commit) | xclip -selection c'
   refs = ! ?git-delete-branch %(remote) %(branch) %(ref)

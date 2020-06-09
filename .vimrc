@@ -189,6 +189,8 @@ if isdirectory('./node_modules') && isdirectory('./node_modules/eslint')
   let g:coc_global_extensions += ['coc-eslint']
 endif
 
+let g:coc_disable_startup_warning = 1
+
 nmap <silent> <leader>lh :call CocAction('doHover')<CR>
 nmap <silent> <leader>lg <Plug>(coc-definition)
 nmap <silent> <leader>lt <Plug>(coc-type-definition)

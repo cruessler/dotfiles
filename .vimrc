@@ -229,3 +229,5 @@ nmap <leader>fm :GitFiles?<CR>
 nmap <leader>L :Lines<CR>
 
 nmap <leader><CR> :w<CR>
+
+nnoremap _ -

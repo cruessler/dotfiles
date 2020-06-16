@@ -72,6 +72,9 @@ let g:ctrlp_open_multiple_files = 'ij'
 " open new files created when pressing <c-y> in the current window
 let g:ctrlp_open_new_file = 'r'
 
+" https://github.com/junegunn/fzf.vim#preview-window
+let g:fzf_preview_window = 'right:60%'
+
 " :help colorcolumn
 set cc=81
 

@@ -195,6 +195,7 @@ nmap <silent> <leader>lh :call CocAction('doHover')<CR>
 nmap <silent> <leader>lg <Plug>(coc-definition)
 nmap <silent> <leader>lt <Plug>(coc-type-definition)
 nmap <silent> <leader>lr <Plug>(coc-references)
+nmap <leader>ln <Plug>(coc-rename)
 
 nmap <leader>j <Plug>(coc-diagnostic-next)
 nmap <leader>k <Plug>(coc-diagnostic-prev)
@@ -202,8 +203,8 @@ nmap <leader>k <Plug>(coc-diagnostic-prev)
 nmap <silent> <leader>d :<C-u>CocList diagnostics<cr>
 nmap <silent> <leader>s :<C-u>CocList -I symbols<cr>
 
-nmap <leader>do <Plug>(coc-codeaction)
-nmap <leader>rn <Plug>(coc-rename)
+nmap <leader>X <Plug>(coc-codeaction)
+nmap <leader>x :CocFix<CR>
 
 command Gcontext Gblame
 

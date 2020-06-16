@@ -221,5 +221,11 @@ nmap <leader>q :bd<CR>
 " shortcut for rewrapping a paragraph
 nmap <leader>w gqap
 
-nmap <leader><leader> <c-p>
+nmap <leader><leader> :Buffers<CR>
+nmap <leader>fc :Commits<CR>
+" https://github.com/junegunn/fzf.vim/issues/121#issuecomment-575922206
+nmap <leader>ff :GitFiles --cached --others --exclude-standard<CR>
+nmap <leader>fm :GitFiles?<CR>
+nmap <leader>L :Lines<CR>
+
 nmap <leader><CR> :w<CR>

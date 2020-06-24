@@ -20,3 +20,8 @@ if not functions -q fisher
     curl https://git.io/fisher --create-dirs -sLo $XDG_CONFIG_HOME/fish/functions/fisher.fish
     fish -c fisher
 end
+
+# https://github.com/starship/starship
+if type -q starship
+  starship init fish | source
+end

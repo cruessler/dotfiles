@@ -12,4 +12,5 @@
   # the examples in `man tigrc` use ", but that did not seem to work, so ' is
   # used instead
   generic = 9 @sh -c 'echo -n %(commit) | xclip -selection c'
+  generic = 0 @sh -c 'git show -s --format=%B %(commit) | xclip -selection c'
   refs = ! ?git-delete-branch %(remote) %(branch) %(ref)

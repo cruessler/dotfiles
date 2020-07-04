@@ -1,6 +1,13 @@
 # http://fishshell.com/docs/current/commands.html#fish_vi_mode
 fish_vi_key_bindings
 
+# http://fishshell.com/docs/current/cmds/abbr.html
+if status --is-interactive
+  abbr --add --global g git
+  abbr --add --global o xdg-open
+  abbr --add --global x exit
+end
+
 source $HOME/.asdf/asdf.fish
 
 # https://github.com/Canop/broot

@@ -194,11 +194,11 @@ endif
 
 let g:coc_disable_startup_warning = 1
 
-nmap <silent> <leader>lh :call CocAction('doHover')<CR>
-nmap <silent> <leader>lg <Plug>(coc-definition)
-nmap <silent> <leader>lt <Plug>(coc-type-definition)
-nmap <silent> <leader>lr <Plug>(coc-references)
-nmap <leader>ln <Plug>(coc-rename)
+nmap <silent> gh :call CocAction('doHover')<CR>
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gt <Plug>(coc-type-definition)
+nmap <silent> gr <Plug>(coc-references)
+nmap <leader>n <Plug>(coc-rename)
 
 nmap <leader>j <Plug>(coc-diagnostic-next)
 nmap <leader>k <Plug>(coc-diagnostic-prev)

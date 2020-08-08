@@ -4,7 +4,9 @@
     "javascriptreact",
     "typescript",
     "typescriptreact",
-    "elm"
+    "elixir",
+    "elm",
+    "rust"
   ],
   "coc.preferences.formatOnType": true,
   "codeLens.enable": true,

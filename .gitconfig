@@ -5,6 +5,9 @@
 
   hookspath = ~/.config/git/hooks
 
+[pull]
+  rebase = true
+
 [push]
   default = simple
 

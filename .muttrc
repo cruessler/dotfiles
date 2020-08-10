@@ -7,6 +7,12 @@ set envelope_from=yes
 set edit_hdrs
 set include=yes
 
+# https://github.com/webgefrickel/dotfiles/blob/09276154dd9a5248f36a428a3dd6a43785165f87/office/mutt/muttrc
+# http://www.mutt.org/doc/manual/#index-format
+# http://www.mutt.org/doc/manual/#formatstrings-conditionals
+set date_format = "%d.%m.%Y"
+set index_format = "[%Z] %?X?A&-? %D %-20.20F  %s"
+
 # https://superuser.com/a/407797
 set menu_scroll
 set pager_index_lines=10

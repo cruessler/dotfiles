@@ -6,6 +6,7 @@ if status --is-interactive
   abbr --add --global g git
   abbr --add --global o xdg-open
   abbr --add --global r git_root
+  abbr --add --global s git status
   abbr --add --global wt git_change_worktree
   abbr --add --global x exit
 end

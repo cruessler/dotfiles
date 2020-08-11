@@ -37,3 +37,7 @@ modified = "✚"
 modified_count.enabled = true
 deleted_count.enabled = true
 show_sync_count = true
+
+[[battery.display]]
+threshold = 30
+style = "bold yellow"

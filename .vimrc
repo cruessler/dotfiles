@@ -38,6 +38,10 @@ highlight EndOfBuffer ctermfg=bg ctermbg=bg
 " http://vim.wikia.com/wiki/Display_line_numbers
 set number
 
+" :help signcolumn
+" this prevents layout shift
+set signcolumn=yes
+
 " reload files that have been changed outside of vim
 set autoread
 

@@ -143,6 +143,8 @@ if executable("rg")
   set grepformat=%f:%l:%c:%m,%f:%l:%m
 
   " https://robots.thoughtbot.com/faster-grepping-in-vim
+  " define :Rg
+  command -nargs=+ -complete=file -bar Rg silent! grep! <args>|cwindow|redraw!
   " define :Grep
   command -nargs=+ -complete=file -bar Grep silent! grep! <args>|cwindow|redraw!
 

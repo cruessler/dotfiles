@@ -9,6 +9,7 @@
     "rust"
   ],
   "coc.preferences.formatOnType": true,
+  "suggest.autoTrigger": "none",
   "codeLens.enable": true,
   "eslint.autoFixOnSave": false,
   "eslint.filetypes": ["javascript", "javascriptreact", "typescript", "typescriptreact"],

@@ -160,11 +160,11 @@ if executable("rg")
 
   " Define a separate shortcut for `:Grep`. This is useful if `keywordprg` has
   " been changed by an autocommand.
-  nmap <leader>k :Grep <cword><CR>
+  nmap <leader>K :Grep <cword><CR>
   " <c-u> clears the command line which is prefilled with '<,'>
   " @* refers to the contents of the * register
   " the * register contains the visual selection
-  vmap <leader>k :<c-u>execute "Grep " . shellescape(@*)<CR>
+  vmap <leader>K :<c-u>execute "Grep " . shellescape(@*)<CR>
 
   let g:ackprg = 'rg --vimgrep --no-heading'
 

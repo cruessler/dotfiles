@@ -234,3 +234,5 @@ nmap <leader>L :Lines<CR>
 nmap <leader><CR> :w<CR>
 
 nnoremap _ -
+nnoremap j gj
+nnoremap k gk

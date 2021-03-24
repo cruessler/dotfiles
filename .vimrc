@@ -224,6 +224,9 @@ nmap <c-j> <c-w>j
 nmap <c-k> <c-w>k
 nmap <c-l> <c-w>l
 
+nmap <c-n> <Plug>(GitGutterNextHunk)
+nmap <c-p> <Plug>(GitGutterPrevHunk)
+
 nmap <leader>gs :Gstatus<CR>
 
 nmap <leader>q :bd<CR>

@@ -2,8 +2,13 @@
   "coc.preferences.formatOnSaveFiletypes": [
     "javascript",
     "javascriptreact",
+    "json",
     "typescript",
     "typescriptreact",
+    "css",
+    "svelte",
+    "vue",
+    "reason",
     "elixir",
     "elm",
     "rust"
@@ -12,7 +17,12 @@
   "suggest.autoTrigger": "none",
   "codeLens.enable": true,
   "eslint.autoFixOnSave": false,
-  "eslint.filetypes": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
+  "eslint.filetypes": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
   "prettier.disableSuccessMessage": true,
   "tsserver.formatOnType": true,
   "languageserver": {

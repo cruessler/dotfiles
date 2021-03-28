@@ -28,10 +28,10 @@ end
 # [completions]: .config/fish/completions/fisher.fish
 # [installation]: https://github.com/jorgebucaran/fisher#bootstrap-installation
 if not functions -q fisher
-    set -q XDG_CONFIG_HOME; or set XDG_CONFIG_HOME ~/.config
-    curl https://git.io/fisher --create-dirs -sLo $XDG_CONFIG_HOME/fish/functions/fisher.fish
-    source $XDG_CONFIG_HOME/fish/functions/fisher.fish
-    fisher
+  set -q XDG_CONFIG_HOME; or set XDG_CONFIG_HOME ~/.config
+  curl https://git.io/fisher --create-dirs -sLo $XDG_CONFIG_HOME/fish/functions/fisher.fish
+  source $XDG_CONFIG_HOME/fish/functions/fisher.fish
+  fisher
 end
 
 # https://github.com/starship/starship

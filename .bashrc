@@ -48,7 +48,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
-. "$HOME/bin/tmuxinator.bash"
+[ -f $HOME/bin/tmuxinator.bash ] && source $HOME/bin/tmuxinator.bash
 
 PS1='\w $ '
 

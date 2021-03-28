@@ -37,7 +37,7 @@ refute_markers = [ "WIP", "\\[WIP\\]", "squash!", "fixup!" ]
 ARGF.readlines.each do |line|
   local_ref, local_sha, remote_ref, remote_sha = line.chomp.split(" ")
 
-  next if remote_ref != "refs/heads/master"
+  next if ["refs/heads/master", "refs/heads/main"].none?(remote_ref)
 
   if local_sha == z40 then
     # Handle delete

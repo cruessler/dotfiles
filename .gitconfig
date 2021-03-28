@@ -15,6 +15,9 @@
   conflictstyle = diff3
   tool = vimdiff
 
+[init]
+  defaultBranch = main
+
 # These includes don’t contain personal information.
 [include]
   path = ~/.config/git/aliases

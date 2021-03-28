@@ -126,15 +126,6 @@ let loaded_matchparen = 1
 " use :Bd for closing buffers without closing splits
 command Bd bp\|bd \#
 
-" https://github.com/ElmCast/elm-vim
-" https://github.com/avh4/elm-format
-" format Elm code on save
-let g:elm_format_autosave = 0
-
-" https://github.com/rust-lang/rust.vim/#formatting-with-rustfmt
-" format Rust code on save
-let g:rustfmt_autosave = 1
-
 " :help surround
 let g:surround_187 = "»\r«"
 let g:surround_171 = "»\r«"

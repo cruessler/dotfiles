@@ -57,7 +57,7 @@ alternative_order text/plain text/html
 
 set my_tmp_html_path="/tmp/mutt-mail.html"
 macro attach V \
-  "<pipe-entry>cat > $my_tmp_html_path && xdg-open $my_tmp_html_path<enter>" \
+  "<pipe-entry>cat > $my_tmp_html_path && xdg-open $my_tmp_html_path<return>" \
   "view attachment as HTML in browser using xdg-open"
 
 macro attach E \

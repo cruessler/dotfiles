@@ -11,7 +11,9 @@ if status --is-interactive
   abbr --add --global x exit
 end
 
-source $HOME/.asdf/asdf.fish
+if test -f $HOME/.asdf/asdf.fish
+  source $HOME/.asdf/asdf.fish
+end
 
 # https://github.com/Canop/broot
 # run `broot --install` to install the launcher

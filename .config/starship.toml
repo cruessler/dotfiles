@@ -2,41 +2,29 @@
 # delay in showing the prompt on my machine for Elixir-based projects
 # `elixir -v` takes about 280 ms of which around 90 ms seem attributable to
 # asdf (tested with Elixir 1.10 and hyperfine)
-prompt_order = [
-    "username",
-    "hostname",
-    "directory",
-    "git_branch",
-    "git_commit",
-    "git_state",
-    "git_status",
-    "package",
-    "elm",
-    "nodejs",
-    "ruby",
-    "rust",
-    "memory_usage",
-    "env_var",
-    "cmd_duration",
-    "custom",
-    "line_break",
-    "jobs",
-    "battery",
-    "time",
-    "character",
-]
-
-[git_status]
-conflicted = "✖"
-conflicted_count.enabled = true
-ahead = "↑"
-behind = "↓"
-untracked = "…"
-untracked_count.enabled = true
-modified = "✚"
-modified_count.enabled = true
-deleted_count.enabled = true
-show_sync_count = true
+format = """\
+  $username\
+  $hostname\
+  $directory\
+  $git_branch\
+  $git_commit\
+  $git_state\
+  $git_status\
+  $package\
+  $elm\
+  $nodejs\
+  $ruby\
+  $rust\
+  $memory_usage\
+  $env_var\
+  $cmd_duration\
+  $custom\
+  $line_break\
+  $jobs\
+  $battery\
+  $time\
+  $character\
+  """
 
 [[battery.display]]
 threshold = 30

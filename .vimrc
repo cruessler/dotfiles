@@ -217,6 +217,7 @@ nmap <c-l> <c-w>l
 
 nmap <c-n> <Plug>(GitGutterNextHunk)
 nmap <c-p> <Plug>(GitGutterPrevHunk)
+nmap <bs> <c-^>
 
 nmap <leader>gs :Gstatus<CR>
 

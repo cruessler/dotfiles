@@ -1,3 +1,7 @@
+" use % in languages without curly braces
+" https://vi.stackexchange.com/questions/126/using-in-languages-without-curly-braces
+runtime macros/matchit.vim
+
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 syntax on

@@ -221,6 +221,7 @@ nmap <bs> <c-^>
 
 nmap <leader>gs :Gstatus<CR>
 
+nmap <c-q> :bd<CR>
 nmap <leader>q :bd<CR>
 " shortcut for rewrapping a paragraph
 nmap <leader>w gqap

@@ -142,8 +142,6 @@ if executable("rg")
   set grepformat=%f:%l:%c:%m,%f:%l:%m
 
   " https://robots.thoughtbot.com/faster-grepping-in-vim
-  " define :Rg
-  command -nargs=+ -complete=file -bar Rg silent! grep! <args>|cwindow|redraw!
   " define :Grep
   command -nargs=+ -complete=file -bar Grep silent! grep! <args>|cwindow|redraw!
 
@@ -166,8 +164,6 @@ if executable("rg")
   " @* refers to the contents of the * register
   " the * register contains the visual selection
   vmap <leader>K :<c-u>execute "Grep " . shellescape(@*)<CR>
-
-  let g:ackprg = 'rg --vimgrep --no-heading'
 
   " override CtrlP default behavior defined above
   " https://elliotekj.com/2016/11/22/setup-ctrlp-to-use-ripgrep-in-vim/

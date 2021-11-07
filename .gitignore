@@ -3,3 +3,5 @@
 
 .config/fish/functions/nvm.fish
 .config/fish/completions/nvm.fish
+
+.config/nvim/plugin/packer_compiled.lua

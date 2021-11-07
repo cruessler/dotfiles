@@ -2,8 +2,12 @@
 " https://vi.stackexchange.com/questions/126/using-in-languages-without-curly-braces
 runtime macros/matchit.vim
 
-runtime bundle/vim-pathogen/autoload/pathogen.vim
-execute pathogen#infect()
+" nvim uses packer to load plugins
+if !has('nvim')
+  runtime bundle/vim-pathogen/autoload/pathogen.vim
+  execute pathogen#infect()
+endif
+
 syntax on
 filetype plugin indent on
 

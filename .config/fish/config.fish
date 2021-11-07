@@ -38,3 +38,8 @@ end
 if type -q starship
   starship init fish | source
 end
+
+# https://github.com/ajeetdsouza/zoxide
+if type -q zoxide
+  zoxide init fish | source
+end

@@ -212,6 +212,9 @@ nmap <leader>x :CocFix<CR>
 
 command Gcontext Gblame
 
+" same shortcut as reset hunk which is provided by nvim + gitsigns
+nmap <leader>hr <Plug>(GitGutterUndoHunk)
+
 " https://github.com/amix/vimrc/blob/7fc202ec8895c564c10940a21af357d6c0665368/vimrcs/basic.vim#L227
 " shortcuts for faster navigation between splits
 nmap <c-h> <c-w>h

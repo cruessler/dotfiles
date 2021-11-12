@@ -51,6 +51,9 @@ require('packer').startup(function()
   use 'vim-ruby/vim-ruby'
   use 'wincent/terminus'
 
+  use { 'junegunn/fzf', run = './install --all' }
+  use { 'junegunn/fzf.vim' }
+
   use { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' } }
 
   use { 'nvim-telescope/telescope.nvim', requires = { { 'nvim-lua/popup.nvim' }, { 'nvim-lua/plenary.nvim' } } }

@@ -53,7 +53,7 @@ set signcolumn=yes
 " reload files that have been changed outside of vim
 set autoread
 
-" used by fugitive’s :Gstatus window
+" used by fugitive’s :Git window
 set previewheight=25
 
 " https://github.com/bling/vim-airline
@@ -223,7 +223,7 @@ nmap <c-n> <Plug>(GitGutterNextHunk)
 nmap <c-p> <Plug>(GitGutterPrevHunk)
 nmap <bs> <c-^>
 
-nmap <leader>gs :Gstatus<CR>
+nmap <leader>gs :Git<CR>
 
 nmap <c-q> :bd<CR>
 nmap <leader>q :bd<CR>

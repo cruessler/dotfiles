@@ -140,3 +140,7 @@ lspconfig.solargraph.setup({
   cmd = { 'bundle', 'exec', 'solargraph', 'stdio' },
   on_attach = on_attach
 })
+
+lspconfig.tsserver.setup({
+  on_attach = on_attach
+})

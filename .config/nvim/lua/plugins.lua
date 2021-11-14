@@ -11,6 +11,8 @@ vim.api.nvim_exec(
     autocmd!
     autocmd BufWritePost plugins.lua PackerCompile
   augroup end
+
+  autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()
 ]],
   false
 )

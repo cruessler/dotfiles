@@ -92,6 +92,14 @@ require('packer').startup(function()
     end
   }
 
+  use {
+    "folke/trouble.nvim",
+    requires = "kyazdani42/nvim-web-devicons",
+    config = function()
+      require("trouble").setup({})
+    end
+  }
+
   use { 'neovim/nvim-lspconfig' }
   use { 'nvim-telescope/telescope.nvim', requires = { { 'nvim-lua/popup.nvim' }, { 'nvim-lua/plenary.nvim' } } }
 end)
@@ -113,6 +121,13 @@ vim.api.nvim_set_keymap('n', '<leader>fc', [[<cmd>lua require('telescope.builtin
 vim.api.nvim_set_keymap('n', '<leader>ff', [[<cmd>lua require('telescope.builtin').git_files()<CR>]], { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>fm', [[<cmd>lua require('telescope.builtin').git_status()<CR>]], { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>L', [[<cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<CR>]], { noremap = true, silent = true })
+
+vim.api.nvim_set_keymap('n', '<leader>tx', '<cmd>Trouble<CR>', { silent = true, noremap = true })
+vim.api.nvim_set_keymap('n', '<leader>tw', '<cmd>Trouble lsp_workspace_diagnostics<CR>', { silent = true, noremap = true })
+vim.api.nvim_set_keymap('n', '<leader>td', '<cmd>Trouble lsp_document_diagnostics<CR>', { silent = true, noremap = true })
+vim.api.nvim_set_keymap('n', '<leader>tl', '<cmd>Trouble loclist<CR>', { silent = true, noremap = true })
+vim.api.nvim_set_keymap('n', '<leader>tq', '<cmd>Trouble quickfix<CR>', { silent = true, noremap = true })
+vim.api.nvim_set_keymap('n', 'gR', '<cmd>Trouble lsp_references<CR>', { silent = true, noremap = true })
 
 -- https://github.com/neovim/nvim-lspconfig#keybindings-and-completion
 local on_attach = function(client, bufnr)

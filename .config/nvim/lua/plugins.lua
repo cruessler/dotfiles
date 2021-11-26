@@ -53,6 +53,9 @@ require('packer').startup(function()
   use 'vim-ruby/vim-ruby'
   use 'wincent/terminus'
 
+  use 'hrsh7th/nvim-cmp'
+  use 'hrsh7th/cmp-nvim-lsp'
+
   use { 'junegunn/fzf', run = './install --all' }
   use { 'junegunn/fzf.vim' }
 
@@ -137,17 +140,60 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', '<leader>S', [[<cmd>lua require('telescope.builtin').lsp_workspace_symbols()<CR>]], opts)
 end
 
+-- https://github.com/neovim/nvim-lspconfig/wiki/Autocompletion
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+
+vim.o.completeopt = 'menuone,noselect'
+
 local lspconfig = require('lspconfig')
 
 lspconfig.solargraph.setup({
   cmd = { 'bundle', 'exec', 'solargraph', 'stdio' },
-  on_attach = on_attach
+  on_attach = on_attach,
+  capabilities = capabilities
 })
 
 lspconfig.tsserver.setup({
-  on_attach = on_attach
+  on_attach = on_attach,
+  capabilities = capabilities
 })
 
 lspconfig.tailwindcss.setup({
-  on_attach = on_attach
+  on_attach = on_attach,
+  capabilities = capabilities
+})
+
+local cmp = require('cmp')
+
+cmp.setup({
+  mapping = {
+    ['<C-p>'] = cmp.mapping.select_prev_item(),
+    ['<C-n>'] = cmp.mapping.select_next_item(),
+    ['<C-d>'] = cmp.mapping.scroll_docs(-4),
+    ['<C-f>'] = cmp.mapping.scroll_docs(4),
+    ['<C-Space>'] = cmp.mapping.complete(),
+    ['<C-e>'] = cmp.mapping.close(),
+    ['<CR>'] = cmp.mapping.confirm {
+      behavior = cmp.ConfirmBehavior.Replace,
+      select = true,
+    },
+    ['<Tab>'] = function(fallback)
+      if cmp.visible() then
+        cmp.select_next_item()
+      else
+        fallback()
+      end
+    end,
+    ['<S-Tab>'] = function(fallback)
+      if cmp.visible() then
+        cmp.select_prev_item()
+      else
+        fallback()
+      end
+    end,
+  },
+  sources = {
+    { name = 'nvim_lsp' },
+  },
 })

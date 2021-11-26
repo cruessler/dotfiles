@@ -147,3 +147,7 @@ lspconfig.solargraph.setup({
 lspconfig.tsserver.setup({
   on_attach = on_attach
 })
+
+lspconfig.tailwindcss.setup({
+  on_attach = on_attach
+})

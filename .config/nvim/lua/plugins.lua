@@ -11,8 +11,6 @@ vim.api.nvim_exec(
     autocmd!
     autocmd BufWritePost plugins.lua PackerCompile
   augroup end
-
-  autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()
 ]],
   false
 )
@@ -153,6 +151,10 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', '<leader>d', [[<cmd>lua require('telescope.builtin').lsp_workspace_diagnostics()<CR>]], opts)
   buf_set_keymap('n', '<leader>s', [[<cmd>lua require('telescope.builtin').lsp_document_symbols()<CR>]], opts)
   buf_set_keymap('n', '<leader>S', [[<cmd>lua require('telescope.builtin').lsp_workspace_symbols()<CR>]], opts)
+
+  if client.resolved_capabilities.document_formatting then
+    vim.cmd('autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()')
+  end
 end
 
 -- https://github.com/neovim/nvim-lspconfig/wiki/Autocompletion

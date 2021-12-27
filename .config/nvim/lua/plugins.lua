@@ -19,7 +19,6 @@ local use = require('packer').use
 require('packer').startup(function()
   use 'wbthomason/packer.nvim'
 
-  use 'cespare/vim-toml'
   use 'christoomey/vim-tmux-navigator'
   use 'dag/vim-fish'
   use 'edkolev/tmuxline.vim'

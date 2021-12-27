@@ -100,6 +100,9 @@ require('packer').startup(function()
 
   use { 'neovim/nvim-lspconfig' }
   use { 'nvim-telescope/telescope.nvim', requires = { { 'nvim-lua/popup.nvim' }, { 'nvim-lua/plenary.nvim' } } }
+
+  use { 'jose-elias-alvarez/null-ls.nvim', requires = { 'nvim-lua/plenary.nvim' } }
+  use 'jose-elias-alvarez/nvim-lsp-ts-utils'
 end)
 
 -- my colorscheme does not define the following highlight groups
@@ -171,8 +174,28 @@ lspconfig.solargraph.setup({
   capabilities = capabilities
 })
 
+-- https://github.com/jose-elias-alvarez/nvim-lsp-ts-utils
 lspconfig.tsserver.setup({
-  on_attach = on_attach,
+  init_options = require('nvim-lsp-ts-utils').init_options,
+  on_attach = function(client, bufnr)
+    client.resolved_capabilities.document_formatting = false
+    client.resolved_capabilities.document_range_formatting = false
+
+    -- the following `autocmd` is needed here
+    -- the `autocmd` in `on_attach` is only set when `document_formatting ==
+    -- true`, and `document_formatting` is set to `false` above
+    vim.cmd('autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()')
+
+    local ts_utils = require('nvim-lsp-ts-utils')
+    ts_utils.setup({
+      enable_formatting = true,
+      formatter = 'prettier',
+      formatter_config_fallback = nil,
+    })
+    ts_utils.setup_client(client)
+
+    on_attach(client, bufnr)
+  end,
   capabilities = capabilities
 })
 

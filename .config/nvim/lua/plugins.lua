@@ -30,6 +30,7 @@ require('packer').startup(function()
   use 'mattn/emmet-vim'
   use 'mxw/vim-jsx'
   use 'pangloss/vim-javascript'
+  use 'prettier/vim-prettier'
   use 'rust-lang/rust.vim'
   use 'scrooloose/nerdtree'
   use 'tmux-plugins/vim-tmux-focus-events'

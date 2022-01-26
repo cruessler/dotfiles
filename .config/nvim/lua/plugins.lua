@@ -116,6 +116,10 @@ vim.api.nvim_exec(
 ]],
   false)
 
+-- https://github.com/prettier/vim-prettier#configuration
+vim.g['prettier#autoformat_require_pragma'] = 0
+vim.g['prettier#autoformat_config_present'] = 1
+
 vim.api.nvim_set_keymap('n', '<leader><leader>', [[<cmd>lua require('telescope.builtin').buffers()<CR>]], { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>fb', [[<cmd>lua require('telescope.builtin').file_browser()<CR>]], { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>fc', [[<cmd>lua require('telescope.builtin').git_commits()<CR>]], { noremap = true, silent = true })

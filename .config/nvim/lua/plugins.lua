@@ -128,8 +128,8 @@ vim.api.nvim_set_keymap('n', '<leader>fm', [[<cmd>lua require('telescope.builtin
 vim.api.nvim_set_keymap('n', '<leader>L', [[<cmd>lua require('telescope.builtin').live_grep()<CR>]], { noremap = true, silent = true })
 
 vim.api.nvim_set_keymap('n', '<leader>tx', '<cmd>Trouble<CR>', { silent = true, noremap = true })
-vim.api.nvim_set_keymap('n', '<leader>tw', '<cmd>Trouble lsp_workspace_diagnostics<CR>', { silent = true, noremap = true })
-vim.api.nvim_set_keymap('n', '<leader>td', '<cmd>Trouble lsp_document_diagnostics<CR>', { silent = true, noremap = true })
+vim.api.nvim_set_keymap('n', '<leader>tw', '<cmd>Trouble workspace_diagnostics<CR>', { silent = true, noremap = true })
+vim.api.nvim_set_keymap('n', '<leader>td', '<cmd>Trouble document_diagnostics<CR>', { silent = true, noremap = true })
 vim.api.nvim_set_keymap('n', '<leader>tl', '<cmd>Trouble loclist<CR>', { silent = true, noremap = true })
 vim.api.nvim_set_keymap('n', '<leader>tq', '<cmd>Trouble quickfix<CR>', { silent = true, noremap = true })
 vim.api.nvim_set_keymap('n', 'gR', '<cmd>Trouble lsp_references<CR>', { silent = true, noremap = true })

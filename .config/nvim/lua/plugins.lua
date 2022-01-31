@@ -100,6 +100,7 @@ require('packer').startup(function()
 
   use { 'neovim/nvim-lspconfig' }
   use { 'nvim-telescope/telescope.nvim', requires = { { 'nvim-lua/popup.nvim' }, { 'nvim-lua/plenary.nvim' } } }
+  use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
   use { 'jose-elias-alvarez/null-ls.nvim', requires = { 'nvim-lua/plenary.nvim' } }
   use 'jose-elias-alvarez/nvim-lsp-ts-utils'
@@ -119,6 +120,8 @@ vim.api.nvim_exec(
 -- https://github.com/prettier/vim-prettier#configuration
 vim.g['prettier#autoformat_require_pragma'] = 0
 vim.g['prettier#autoformat_config_present'] = 1
+
+require('telescope').load_extension('fzf')
 
 vim.api.nvim_set_keymap('n', '<leader><leader>', [[<cmd>lua require('telescope.builtin').buffers()<CR>]], { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>fb', [[<cmd>lua require('telescope.builtin').file_browser()<CR>]], { noremap = true, silent = true })

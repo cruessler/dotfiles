@@ -94,7 +94,12 @@ require('packer').startup(function()
     'folke/trouble.nvim',
     requires = 'kyazdani42/nvim-web-devicons',
     config = function()
-      require("trouble").setup({})
+      require('trouble').setup({
+        sources = {
+          require('null-ls').builtins.completion.spell,
+          require('null-ls').builtins.diagnostics.eslint,
+        }
+      })
     end
   }
 

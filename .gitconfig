@@ -10,7 +10,7 @@
   rebase = true
 
 [push]
-  default = simple
+  default = current
 
 [merge]
   conflictstyle = diff3

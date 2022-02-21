@@ -17,7 +17,7 @@
   "suggest.autoTrigger": "none",
   "codeLens.enable": true,
   "eslint.autoFixOnSave": false,
-  "eslint.filetypes": [
+  "eslint.validate": [
     "javascript",
     "javascriptreact",
     "typescript",

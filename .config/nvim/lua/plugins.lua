@@ -173,6 +173,20 @@ local on_attach = function(client, bufnr)
   end
 end
 
+local null_ls = require('null-ls')
+
+local sources = {
+  null_ls.builtins.formatting.prettier.with({
+    extra_filetypes = { 'eruby' },
+  }),
+  null_ls.builtins.code_actions.gitsigns,
+}
+
+null_ls.setup({
+  sources = sources,
+  on_attach = on_attach
+})
+
 -- https://github.com/neovim/nvim-lspconfig/wiki/Autocompletion
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)

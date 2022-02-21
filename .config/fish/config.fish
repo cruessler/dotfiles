@@ -3,6 +3,7 @@ fish_vi_key_bindings
 
 # http://fishshell.com/docs/current/cmds/abbr.html
 if status --is-interactive
+  abbr --add --global d git diff
   abbr --add --global g git
   abbr --add --global o xdg-open
   abbr --add --global r 'cd (git root)'

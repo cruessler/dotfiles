@@ -195,6 +195,11 @@ vim.o.completeopt = 'menuone,noselect'
 
 local lspconfig = require('lspconfig')
 
+lspconfig.rls.setup({
+  on_attach = on_attach,
+  capabilities = capabilities
+})
+
 lspconfig.solargraph.setup({
   cmd = { 'bundle', 'exec', 'solargraph', 'stdio' },
   on_attach = on_attach,

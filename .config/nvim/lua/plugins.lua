@@ -15,8 +15,13 @@ vim.api.nvim_exec(
   false
 )
 
-local use = require('packer').use
-require('packer').startup(function()
+-- https://www.chrisatmachine.com/Neovim-2/03-plugins/
+local status_ok, packer = pcall(require, 'packer')
+if not status_ok then
+  return
+end
+
+packer.startup(function(use)
   use 'wbthomason/packer.nvim'
 
   use 'christoomey/vim-tmux-navigator'

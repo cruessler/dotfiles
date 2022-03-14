@@ -207,6 +207,16 @@ vim.o.completeopt = 'menuone,noselect'
 
 local lspconfig = require('lspconfig')
 
+lspconfig.elmls.setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+  init_options = {
+    elmFormatPath = './node_modules/elm-format',
+    elmPath = './node_modules/elm',
+    elmTestPath = './node_modules/elm-test'
+  }
+})
+
 lspconfig.rls.setup({
   on_attach = on_attach,
   capabilities = capabilities

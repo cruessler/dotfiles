@@ -59,6 +59,13 @@ packer.startup(function(use)
   use 'hrsh7th/nvim-cmp'
   use 'hrsh7th/cmp-nvim-lsp'
 
+  -- using a snippet engine seems to be necessary for some features to work
+  -- with some LSP servers
+  -- I encountered errors when using LSP with Rust
+  -- https://github.com/hrsh7th/nvim-cmp/issues/373
+  use 'L3MON4D3/LuaSnip'
+  use 'saadparwaiz1/cmp_luasnip'
+
   use { 'junegunn/fzf', run = './install --all' }
   use { 'junegunn/fzf.vim' }
 
@@ -244,6 +251,11 @@ lspconfig.tailwindcss.setup({
 local cmp = require('cmp')
 
 cmp.setup({
+  snippet = {
+    expand = function(args)
+      require('luasnip').lsp_expand(args.body)
+    end,
+  },
   mapping = {
     ['<C-p>'] = cmp.mapping.select_prev_item(),
     ['<C-n>'] = cmp.mapping.select_next_item(),
@@ -272,5 +284,6 @@ cmp.setup({
   },
   sources = {
     { name = 'nvim_lsp' },
+    { name = 'luasnip' },
   },
 })

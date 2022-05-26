@@ -156,6 +156,10 @@ vim.api.nvim_set_keymap('n', '<leader>tl', '<cmd>Trouble loclist<CR>', { silent 
 vim.api.nvim_set_keymap('n', '<leader>tq', '<cmd>Trouble quickfix<CR>', { silent = true, noremap = true })
 vim.api.nvim_set_keymap('n', 'gR', '<cmd>Trouble lsp_references<CR>', { silent = true, noremap = true })
 
+-- since Neovim 0.8
+-- https://github.com/jose-elias-alvarez/null-ls.nvim/wiki/Formatting-on-save
+local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+
 -- https://github.com/neovim/nvim-lspconfig#keybindings-and-completion
 local on_attach = function(client, bufnr)
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
@@ -180,8 +184,17 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', '<leader>s', [[<cmd>lua require('telescope.builtin').lsp_document_symbols()<CR>]], opts)
   buf_set_keymap('n', '<leader>S', [[<cmd>lua require('telescope.builtin').lsp_workspace_symbols()<CR>]], opts)
 
-  if client.resolved_capabilities.document_formatting then
-    vim.cmd('autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()')
+  -- since Neovim 0.8
+  -- https://github.com/jose-elias-alvarez/null-ls.nvim/wiki/Formatting-on-save
+  if client.supports_method("textDocument/formatting") then
+    vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+    vim.api.nvim_create_autocmd("BufWritePre", {
+      group = augroup,
+      buffer = bufnr,
+      callback = function()
+        vim.lsp.buf.format({ bufnr = bufnr })
+      end,
+    })
   end
 end
 
@@ -232,14 +245,6 @@ lspconfig.solargraph.setup({
 lspconfig.tsserver.setup({
   init_options = require('nvim-lsp-ts-utils').init_options,
   on_attach = function(client, bufnr)
-    client.resolved_capabilities.document_formatting = false
-    client.resolved_capabilities.document_range_formatting = false
-
-    -- the following `autocmd` is needed here
-    -- the `autocmd` in `on_attach` is only set when `document_formatting ==
-    -- true`, and `document_formatting` is set to `false` above
-    vim.cmd('autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()')
-
     local ts_utils = require('nvim-lsp-ts-utils')
     ts_utils.setup({
       enable_formatting = true,

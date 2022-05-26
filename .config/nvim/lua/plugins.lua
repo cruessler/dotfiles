@@ -220,14 +220,12 @@ vim.o.completeopt = 'menuone,noselect'
 
 local lspconfig = require('lspconfig')
 
+-- `elm-language-server` will look for binaries that are installed locally in
+-- `node_modules` or globally
+-- https://github.com/elm-tooling/elm-language-server#server-settings
 lspconfig.elmls.setup({
   on_attach = on_attach,
   capabilities = capabilities,
-  init_options = {
-    elmFormatPath = './node_modules/elm-format',
-    elmPath = './node_modules/elm',
-    elmTestPath = './node_modules/elm-test'
-  }
 })
 
 lspconfig.rls.setup({

@@ -4,4 +4,6 @@
 .config/fish/functions/nvm.fish
 .config/fish/completions/nvm.fish
 
+.config/fish/functions/fzf_key_bindings.fish
+
 .config/nvim/plugin/packer_compiled.lua

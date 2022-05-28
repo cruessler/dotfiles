@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# https://github.com/neomutt/neomutt/issues/1515
+
+source mutt-choose-mail-folder
+
+if [ $? -eq 0 ]; then
+  echo "push '<save-message>$folder<return>'"
+fi

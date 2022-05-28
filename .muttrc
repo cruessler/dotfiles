@@ -47,6 +47,17 @@ bind index,pager p search-opposite
 
 bind index G last-entry
 
+macro index,pager c \
+  ":source $HOME/bin/mutt-change-folder|<return>" \
+  "change folder"
+
+# http://www.mutt.org/doc/manual/#auto-tag
+set auto_tag=yes
+# https://unix.stackexchange.com/questions/105733/mutt-macro-for-saving-messages-to-a-folder
+macro index,pager S \
+  ":source $HOME/bin/mutt-save-to-folder|<return>" \
+  "save message"
+
 # https://github.com/scheibler/khard/issues/16#issuecomment-112171204
 macro index,pager A \
   "<pipe-message>khard add-email<return>" \

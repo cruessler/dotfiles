@@ -55,6 +55,13 @@ packer.startup(function(use)
   use("vim-airline/vim-airline")
   use("vim-airline/vim-airline-themes")
   use("vim-ruby/vim-ruby")
+  use({
+    "vuki656/package-info.nvim",
+    requires = "MunifTanjim/nui.nvim",
+    config = function()
+      require("package-info").setup()
+    end,
+  })
   use("wincent/terminus")
 
   use("hrsh7th/nvim-cmp")
@@ -207,6 +214,13 @@ vim.api.nvim_set_keymap("n", "<leader>td", "<cmd>Trouble document_diagnostics<CR
 vim.api.nvim_set_keymap("n", "<leader>tl", "<cmd>Trouble loclist<CR>", { silent = true, noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>tq", "<cmd>Trouble quickfix<CR>", { silent = true, noremap = true })
 vim.api.nvim_set_keymap("n", "gR", "<cmd>Trouble lsp_references<CR>", { silent = true, noremap = true })
+
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>ns",
+  [[<cmd>lua require('package-info').show()<cr>]],
+  { silent = true, noremap = true }
+)
 
 -- since Neovim 0.8
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/wiki/Formatting-on-save

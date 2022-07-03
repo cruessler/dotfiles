@@ -139,10 +139,12 @@ packer.startup(function(use)
       { "nvim-lua/plenary.nvim" },
       { "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
       { "nvim-telescope/telescope-file-browser.nvim" },
+      { "nvim-telescope/telescope-node-modules.nvim" },
     },
     config = function()
       require("telescope").load_extension("fzf")
       require("telescope").load_extension("file_browser")
+      require("telescope").load_extension("node_modules")
     end,
   })
 
@@ -228,6 +230,7 @@ vim.api.nvim_set_keymap(
   [[<cmd>lua require('package-info').show()<cr>]],
   { silent = true, noremap = true }
 )
+vim.api.nvim_set_keymap("n", "<leader>nl", "<cmd>:Telescope node_modules list<cr>", { silent = true, noremap = true })
 
 -- since Neovim 0.8
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/wiki/Formatting-on-save

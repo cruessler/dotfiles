@@ -37,6 +37,17 @@ packer.startup(function(use)
   use("mxw/vim-jsx")
   use("pangloss/vim-javascript")
   use("prettier/vim-prettier")
+  use({
+    "pwntester/octo.nvim",
+    requires = {
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim",
+      "kyazdani42/nvim-web-devicons",
+    },
+    config = function()
+      require("octo").setup()
+    end,
+  })
   use("rust-lang/rust.vim")
   use("scrooloose/nerdtree")
   use("tmux-plugins/vim-tmux-focus-events")

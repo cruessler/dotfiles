@@ -39,6 +39,7 @@ respectively. If they are installed, `ls` and `cat` are set up as an alias to
 
 - `bat`
 - `broot`
+- `delta`
 - `exa`
 - `starship`
 - `zoxide`

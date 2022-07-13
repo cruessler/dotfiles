@@ -4,6 +4,11 @@ These dotfiles can be easily installed via `stow -t ~ .`. Stow can most likely
 be installed through your favorite package manager, e. g. `sudo apt-get install
 stow`.
 
+As of July 2022, the vim/nvim [colorscheme] I use has to be installed
+separately.
+
+[colorscheme]: https://github.com/tomasr/molokai
+
 # Assumptions
 
 There are some assumptions about the environment these dotfiles are used in. In

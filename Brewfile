@@ -7,6 +7,8 @@ cask_args appdir: "~/Applications"
 
 cask "alacritty", args: { no_quarantine: true }
 
+brew "asdf"
+
 brew "gh"
 brew "neovim"
 brew "pass"

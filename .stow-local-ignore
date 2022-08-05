@@ -1,0 +1,16 @@
+# See `info stow` section “4 Ignore Lists” for information on this file’s
+# syntax.
+
+\.git
+\.gitignore
+
+.*\.sw.
+Session.vim
+
+Makefile
+
+Brewfile.*
+
+README\.md
+
+stylua\.toml

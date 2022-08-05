@@ -3,9 +3,13 @@ brew "stow"
 brew "fish"
 brew "tmux"
 
+tap "homebrew/cask-fonts"
+
 cask_args appdir: "~/Applications"
 
 cask "alacritty", args: { no_quarantine: true }
+cask "firefox"
+cask "font-fira-code-nerd-font"
 
 brew "asdf"
 
@@ -14,8 +18,6 @@ brew "neovim"
 brew "pass"
 brew "tig"
 
-cask "firefox"
-
 brew "bat"
 brew "broot"
 brew "exa"
@@ -23,6 +25,3 @@ brew "git-delta"
 brew "ripgrep"
 brew "starship"
 brew "zoxide"
-
-tap "homebrew/cask-fonts"
-cask "font-fira-code-nerd-font"

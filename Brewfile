@@ -2,6 +2,8 @@ brew "stow"
 
 brew "fish"
 brew "tmux"
+# required by tmux-plugin/tmux-urlview
+brew "urlview"
 
 tap "homebrew/cask-fonts"
 

@@ -362,11 +362,6 @@ lspconfig.tsserver.setup({
   capabilities = capabilities,
 })
 
-lspconfig.tailwindcss.setup({
-  on_attach = on_attach,
-  capabilities = capabilities,
-})
-
 local cmp = require("cmp")
 
 cmp.setup({

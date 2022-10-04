@@ -13,8 +13,10 @@ PATH="$HOME/.npm/bin:$PATH"
 # used by Python’s pip and Haskell’s stack
 PATH="$HOME/.local/bin:$PATH"
 
-# used by Rust’s cargo
-PATH="$HOME/.cargo/bin:$PATH"
+# let cargo, if present, change $PATH
+if [ -f "$HOME/.cargo/env" ] ; then
+  source "$HOME/.cargo/env"
+fi
 
 export GOPATH="$HOME/.go"
 PATH="$GOPATH/bin:$PATH"

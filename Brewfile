@@ -16,7 +16,16 @@ cask "font-fira-code-nerd-font"
 brew "asdf"
 
 brew "gh"
-brew "neovim"
+# 2022-08-12
+# switched to `--HEAD` because `plugins.lua` contains configuration that only
+# works with neovim >= 0.8, and the current stable version installed by brew is
+# 0.7.2
+# the development version of neovim can be installed with `brew install --HEAD
+# neovim`
+# `brew bundle` does not seem to automatically update neovim if it is already
+# installed without `--HEAD`
+# https://github.com/neovim/neovim/wiki/Installing-Neovim#homebrew-on-macos-or-linux
+brew "neovim", args: ["HEAD"]
 brew "pass"
 brew "tig"
 

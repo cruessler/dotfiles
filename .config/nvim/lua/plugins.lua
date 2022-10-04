@@ -255,6 +255,12 @@ vim.api.nvim_set_keymap(
   [[<cmd>lua require('package-info').show()<cr>]],
   { silent = true, noremap = true }
 )
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>nu",
+  [[<cmd>lua require('package-info').update()<cr>]],
+  { silent = true, noremap = true }
+)
 vim.api.nvim_set_keymap("n", "<leader>nl", "<cmd>:Telescope node_modules list<cr>", { silent = true, noremap = true })
 
 -- since Neovim 0.8

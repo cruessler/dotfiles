@@ -36,7 +36,6 @@ packer.startup(function(use)
   use("mattn/emmet-vim")
   use("mxw/vim-jsx")
   use("pangloss/vim-javascript")
-  use("prettier/vim-prettier")
   use({
     "pwntester/octo.nvim",
     requires = {
@@ -188,10 +187,6 @@ vim.api.nvim_exec(
 ]],
   false
 )
-
--- https://github.com/prettier/vim-prettier#configuration
-vim.g["prettier#autoformat_require_pragma"] = 0
-vim.g["prettier#autoformat_config_present"] = 1
 
 vim.api.nvim_set_keymap(
   "n",

@@ -150,11 +150,13 @@ packer.startup(function(use)
       { "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
       { "nvim-telescope/telescope-file-browser.nvim" },
       { "nvim-telescope/telescope-node-modules.nvim" },
+      { "nvim-telescope/telescope-ui-select.nvim" },
     },
     config = function()
       require("telescope").load_extension("fzf")
       require("telescope").load_extension("file_browser")
       require("telescope").load_extension("node_modules")
+      require("telescope").load_extension("ui-select")
 
       -- https://github.com/nvim-telescope/telescope.nvim/pull/828#issuecomment-895470109
       local actions = require("telescope.actions")

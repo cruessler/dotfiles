@@ -141,6 +141,17 @@ packer.startup(function(use)
     end,
   })
 
+  use({
+    "williamboman/mason-lspconfig.nvim",
+    requires = {
+      { "williamboman/mason.nvim" },
+    },
+    config = function()
+      require("mason").setup()
+      require("mason-lspconfig").setup()
+    end,
+  })
+
   use({ "neovim/nvim-lspconfig" })
   use({
     "nvim-telescope/telescope.nvim",

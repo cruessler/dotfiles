@@ -25,5 +25,5 @@ export PATH
 
 export CDPATH=".:$HOME/repos"
 
-export EDITOR=vi
+export EDITOR=nvim
 export BROWSER=firefox

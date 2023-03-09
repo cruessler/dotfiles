@@ -12,3 +12,6 @@
   # https://thoughtbot.com/blog/powerful-git-macros-for-automating-everyday-workflows
   mru = for-each-ref --sort=-committerdate --count=10 refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) – %(color:red)%(objectname:short)%(color:reset) – %(contents:subject) – %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'
   root = rev-parse --show-toplevel
+
+  # https://stackoverflow.com/a/52976498
+  retry-commit = commit --edit --file=.git/COMMIT_EDITMSG

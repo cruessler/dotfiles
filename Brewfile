@@ -38,3 +38,5 @@ brew "ripgrep"
 brew "starship"
 brew "stylua"
 brew "zoxide"
+
+brew "exercism"

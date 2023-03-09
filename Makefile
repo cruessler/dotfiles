@@ -2,6 +2,10 @@ stow:
 	# this will respect `.stow-local-ignore`
 	stow -t $(HOME) .
 
+bootstrap_brew:
+	git clone https://github.com/Homebrew/brew $(HOME)/homebrew
+	cd $(HOME)/dotfiles && $(HOME)/homebrew/bin/brew bundle
+
 bootstrap_rust:
 	# https://rustup.rs/
 	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh

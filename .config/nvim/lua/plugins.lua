@@ -305,7 +305,15 @@ local on_attach = function(client, bufnr)
   buf_set_keymap("n", "<leader>x", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
 
   buf_set_keymap("n", "<leader>s", [[<cmd>lua require('telescope.builtin').lsp_document_symbols()<CR>]], opts)
-  buf_set_keymap("n", "<leader>S", [[<cmd>lua require('telescope.builtin').lsp_workspace_symbols()<CR>]], opts)
+  -- 2023-04-08
+  --
+  -- changed `lsp_workspace_symbols` to `lsp_dynamic_workspace_symbols` because
+  -- the former doesn’t work for this use case
+  -- there is an issue with language servers that return an empty result for an
+  -- empty search string
+  --
+  -- https://github.com/nvim-telescope/telescope.nvim/issues/964
+  buf_set_keymap("n", "<leader>S", [[<cmd>lua require('telescope.builtin').lsp_dynamic_workspace_symbols()<CR>]], opts)
 
   -- since Neovim 0.8
   -- https://github.com/jose-elias-alvarez/null-ls.nvim/wiki/Formatting-on-save

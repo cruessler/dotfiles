@@ -145,10 +145,6 @@ packer.startup(function(use)
     requires = {
       { "williamboman/mason.nvim" },
     },
-    config = function()
-      require("mason").setup()
-      require("mason-lspconfig").setup()
-    end,
   })
 
   use({ "neovim/nvim-lspconfig" })
@@ -275,6 +271,9 @@ vim.api.nvim_set_keymap(
   { silent = true, noremap = true }
 )
 vim.api.nvim_set_keymap("n", "<leader>nl", "<cmd>:Telescope node_modules list<cr>", { silent = true, noremap = true })
+
+require("mason").setup()
+require("mason-lspconfig").setup()
 
 -- since Neovim 0.8
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/wiki/Formatting-on-save

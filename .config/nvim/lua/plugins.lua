@@ -89,42 +89,7 @@ packer.startup(function(use)
   use({
     "lewis6991/gitsigns.nvim",
     requires = { "nvim-lua/plenary.nvim" },
-    config = function()
-      require("gitsigns").setup({
-        signs = {
-          add = { hl = "GitGutterAdd", text = "+" },
-          change = { hl = "GitGutterChange", text = "~" },
-          delete = { hl = "GitGutterDelete", text = "_" },
-          topdelete = { hl = "GitGutterDelete", text = "‾" },
-          changedelete = { hl = "GitGutterChange", text = "~" },
-        },
-        keymaps = {
-          ["n <c-n>"] = {
-            expr = true,
-            [[&diff ? ']c' : '<cmd>lua require"gitsigns.actions".next_hunk()<CR>']],
-          },
-          ["n <c-p>"] = {
-            expr = true,
-            [[&diff ? '[c' : '<cmd>lua require"gitsigns.actions".prev_hunk()<CR>']],
-          },
-          ["n <leader>hs"] = '<cmd>lua require"gitsigns".stage_hunk()<CR>',
-          ["v <leader>hs"] = '<cmd>lua require"gitsigns".stage_hunk({vim.fn.line("."), vim.fn.line("v")})<CR>',
-          ["n <leader>hu"] = '<cmd>lua require"gitsigns".undo_stage_hunk()<CR>',
-          ["n <leader>hr"] = '<cmd>lua require"gitsigns".reset_hunk()<CR>',
-          ["v <leader>hr"] = '<cmd>lua require"gitsigns".reset_hunk({vim.fn.line("."), vim.fn.line("v")})<CR>',
-          ["n <leader>hR"] = '<cmd>lua require"gitsigns".reset_buffer()<CR>',
-          ["n <leader>hp"] = '<cmd>lua require"gitsigns".preview_hunk()<CR>',
-          ["n <leader>hb"] = '<cmd>lua require"gitsigns".blame_line({full=true})<CR>',
-          -- `c` stands for context
-          ["n <leader>hc"] = '<cmd>lua require"gitsigns".blame_line({full=true})<CR>',
-          ["n <leader>hS"] = '<cmd>lua require"gitsigns".stage_buffer()<CR>',
-          ["n <leader>hU"] = '<cmd>lua require"gitsigns".reset_buffer_index()<CR>',
-
-          ["o ih"] = ':<C-U>lua require"gitsigns.actions".select_hunk()<CR>',
-          ["x ih"] = ':<C-U>lua require"gitsigns.actions".select_hunk()<CR>',
-        },
-      })
-    end,
+    config = function() end,
   })
 
   use({
@@ -271,6 +236,72 @@ vim.api.nvim_set_keymap(
   { silent = true, noremap = true }
 )
 vim.api.nvim_set_keymap("n", "<leader>nl", "<cmd>:Telescope node_modules list<cr>", { silent = true, noremap = true })
+
+require("gitsigns").setup({
+  signs = {
+    add = { hl = "GitGutterAdd", text = "+" },
+    change = { hl = "GitGutterChange", text = "~" },
+    delete = { hl = "GitGutterDelete", text = "_" },
+    topdelete = { hl = "GitGutterDelete", text = "‾" },
+    changedelete = { hl = "GitGutterChange", text = "~" },
+  },
+  on_attach = function(bufnr)
+    local gitsigns = package.loaded.gitsigns
+
+    local function map(mode, l, r, opts)
+      opts = opts or {}
+      opts.buffer = bufnr
+      vim.keymap.set(mode, l, r, opts)
+    end
+
+    map("n", "<c-n>", function()
+      if vim.wo.diff then
+        return "]c"
+      end
+      vim.schedule(function()
+        gitsigns.next_hunk()
+      end)
+      return "<Ignore>"
+    end, { expr = true })
+
+    map("n", "<c-p>", function()
+      if vim.wo.diff then
+        return "[c"
+      end
+      vim.schedule(function()
+        gitsigns.prev_hunk()
+      end)
+      return "<Ignore>"
+    end, { expr = true })
+
+    map("n", "<leader>hs", gitsigns.stage_hunk)
+    map("v", "<leader>hs", function()
+      gitsigns.stage_hunk({ vim.fn.line("."), vim.fn.line("v") })
+    end)
+    map("n", "<leader>hu", gitsigns.undo_stage_hunk)
+    map("n", "<leader>hr", gitsigns.reset_hunk)
+    map("v", "<leader>hr", function()
+      gitsigns.reset_hunk({ vim.fn.line("."), vim.fn.line("v") })
+    end)
+    map("n", "<leader>hR", gitsigns.reset_buffer)
+    map("n", "<leader>hp", gitsigns.preview_hunk)
+    map("n", "<leader>hb", function()
+      gitsigns.blame_line({ full = true })
+    end)
+    map("n", "<leader>tb", gitsigns.toggle_current_line_blame)
+    -- `c` stands for context
+    map("n", "<leader>tc", gitsigns.toggle_current_line_blame)
+    map("n", "<leader>hS", gitsigns.stage_buffer)
+    map("n", "<leader>hU", gitsigns.reset_buffer_index)
+    map("n", "<leader>hd", gitsigns.diffthis)
+    map("n", "<leader>hD", function()
+      gitsigns.diffthis("~")
+    end)
+    map("n", "<leader>td", gitsigns.toggle_deleted)
+
+    map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>")
+  end,
+})
 
 require("mason").setup()
 require("mason-lspconfig").setup()

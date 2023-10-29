@@ -17,14 +17,6 @@ if test -f $HOME/.asdf/asdf.fish
   source $HOME/.asdf/asdf.fish
 end
 
-if type -q brew
-  source (brew --prefix asdf)/libexec/asdf.fish
-end
-
-if type -q jenv
-  jenv init - | source
-end
-
 # https://github.com/Canop/broot
 # run `broot --install` to install the launcher
 if test -f $HOME/.config/broot/launcher/fish/br
@@ -52,12 +44,4 @@ end
 # https://github.com/ajeetdsouza/zoxide
 if type -q zoxide
   zoxide init fish | source
-end
-
-if test (uname -s) = Darwin
-  # 2022-08-09
-  # `GPG_TTY` needs to be set in order to fix the error message “inappropriate
-  # ioctl for device” I got when trying to sign a commit
-  # https://stackoverflow.com/a/41054093
-  export GPG_TTY=(tty)
 end

@@ -383,6 +383,11 @@ vim.o.completeopt = "menuone,noselect"
 
 local lspconfig = require("lspconfig")
 
+lspconfig.elixirls.setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+})
+
 -- `elm-language-server` will look for binaries that are installed locally in
 -- `node_modules` or globally
 -- https://github.com/elm-tooling/elm-language-server#server-settings

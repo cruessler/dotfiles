@@ -407,6 +407,11 @@ lspconfig.solargraph.setup({
   capabilities = capabilities,
 })
 
+lspconfig.tailwindcss.setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+})
+
 -- https://github.com/jose-elias-alvarez/nvim-lsp-ts-utils
 lspconfig.tsserver.setup({
   init_options = require("nvim-lsp-ts-utils").init_options,

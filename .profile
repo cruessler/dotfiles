@@ -18,6 +18,11 @@ if [ -f "$HOME/.cargo/env" ] ; then
   source "$HOME/.cargo/env"
 fi
 
+# let ghcup, if present, change $PATH
+if [ -f "$HOME/.ghcup/env" ] ; then
+  source "$HOME/.ghcup/env"
+fi
+
 export GOPATH="$HOME/.go"
 PATH="$GOPATH/bin:$PATH"
 

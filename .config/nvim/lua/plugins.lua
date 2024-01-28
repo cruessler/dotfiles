@@ -48,6 +48,21 @@ packer.startup(function(use)
   })
   use("rust-lang/rust.vim")
   use("scrooloose/nerdtree")
+  use({
+    "stevearc/conform.nvim",
+    config = function()
+      require("conform").setup({
+        formatters_by_ft = {
+          javascript = { "prettier" },
+          lua = { "stylua" },
+        },
+        format_on_save = {
+          timeout_ms = 500,
+          lsp_fallback = true,
+        },
+      })
+    end,
+  })
   use("tmux-plugins/vim-tmux-focus-events")
   use("tomasr/molokai")
   use("tpope/vim-characterize")
@@ -96,12 +111,7 @@ packer.startup(function(use)
     "folke/trouble.nvim",
     requires = "kyazdani42/nvim-web-devicons",
     config = function()
-      require("trouble").setup({
-        sources = {
-          require("null-ls").builtins.completion.spell,
-          require("null-ls").builtins.diagnostics.eslint,
-        },
-      })
+      require("trouble").setup()
     end,
   })
 
@@ -145,7 +155,6 @@ packer.startup(function(use)
     end,
   })
 
-  use({ "jose-elias-alvarez/null-ls.nvim", requires = { "nvim-lua/plenary.nvim" } })
   use("jose-elias-alvarez/nvim-lsp-ts-utils")
 end)
 
@@ -306,10 +315,6 @@ require("gitsigns").setup({
 require("mason").setup()
 require("mason-lspconfig").setup()
 
--- since Neovim 0.8
--- https://github.com/jose-elias-alvarez/null-ls.nvim/wiki/Formatting-on-save
-local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
-
 -- https://github.com/neovim/nvim-lspconfig#keybindings-and-completion
 local on_attach = function(client, bufnr)
   local function buf_set_keymap(...)
@@ -345,35 +350,7 @@ local on_attach = function(client, bufnr)
   --
   -- https://github.com/nvim-telescope/telescope.nvim/issues/964
   buf_set_keymap("n", "<leader>S", [[<cmd>lua require('telescope.builtin').lsp_dynamic_workspace_symbols()<CR>]], opts)
-
-  -- since Neovim 0.8
-  -- https://github.com/jose-elias-alvarez/null-ls.nvim/wiki/Formatting-on-save
-  if client.supports_method("textDocument/formatting") then
-    vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
-    vim.api.nvim_create_autocmd("BufWritePre", {
-      group = augroup,
-      buffer = bufnr,
-      callback = function()
-        vim.lsp.buf.format({ bufnr = bufnr })
-      end,
-    })
-  end
 end
-
-local null_ls = require("null-ls")
-
-local sources = {
-  null_ls.builtins.formatting.prettier.with({
-    extra_filetypes = { "eruby" },
-  }),
-  null_ls.builtins.formatting.stylua,
-  null_ls.builtins.code_actions.gitsigns,
-}
-
-null_ls.setup({
-  sources = sources,
-  on_attach = on_attach,
-})
 
 -- https://github.com/neovim/nvim-lspconfig/wiki/Autocompletion
 local capabilities = vim.lsp.protocol.make_client_capabilities()

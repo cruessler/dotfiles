@@ -1,43 +1,31 @@
--- https://github.com/nvim-lua/kickstart.nvim/blob/73d4b205be5711b681ef2df9d171b1c55040803b/init.lua
-local install_path = vim.fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
-
-if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
-  vim.fn.execute("!git clone https://github.com/wbthomason/packer.nvim " .. install_path)
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable",
+    lazypath,
+  })
 end
+vim.opt.rtp:prepend(lazypath)
 
-vim.api.nvim_exec(
-  [[
-  augroup Packer
-    autocmd!
-    autocmd BufWritePost plugins.lua PackerCompile
-  augroup end
-]],
-  false
-)
-
--- https://www.chrisatmachine.com/Neovim-2/03-plugins/
-local status_ok, packer = pcall(require, "packer")
-if not status_ok then
-  return
-end
-
-packer.startup(function(use)
-  use("wbthomason/packer.nvim")
-
-  use("christoomey/vim-tmux-navigator")
-  use("ckipp01/stylua-nvim")
-  use("dag/vim-fish")
-  use("edkolev/tmuxline.vim")
-  use("elixir-lang/vim-elixir")
-  use("HerringtonDarkholme/yats.vim")
-  use("justinmk/vim-sneak")
-  use("kshenoy/vim-signature")
-  use("mattn/emmet-vim")
-  use("mxw/vim-jsx")
-  use("pangloss/vim-javascript")
-  use({
+require("lazy").setup({
+  "christoomey/vim-tmux-navigator",
+  "ckipp01/stylua-nvim",
+  "dag/vim-fish",
+  "edkolev/tmuxline.vim",
+  "elixir-lang/vim-elixir",
+  "HerringtonDarkholme/yats.vim",
+  "justinmk/vim-sneak",
+  "kshenoy/vim-signature",
+  "mattn/emmet-vim",
+  "mxw/vim-jsx",
+  "pangloss/vim-javascript",
+  {
     "pwntester/octo.nvim",
-    requires = {
+    dependencies = {
       "nvim-lua/plenary.nvim",
       "nvim-telescope/telescope.nvim",
       "kyazdani42/nvim-web-devicons",
@@ -45,10 +33,10 @@ packer.startup(function(use)
     config = function()
       require("octo").setup()
     end,
-  })
-  use("rust-lang/rust.vim")
-  use("scrooloose/nerdtree")
-  use({
+  },
+  "rust-lang/rust.vim",
+  "scrooloose/nerdtree",
+  {
     "stevearc/conform.nvim",
     config = function()
       require("conform").setup({
@@ -62,73 +50,70 @@ packer.startup(function(use)
         },
       })
     end,
-  })
-  use("tmux-plugins/vim-tmux-focus-events")
-  use("tomasr/molokai")
-  use("tpope/vim-characterize")
-  use("tpope/vim-commentary")
-  use("tpope/vim-eunuch")
-  use("tpope/vim-fugitive")
-  use("tpope/vim-obsession")
-  use("tpope/vim-rails")
-  use("tpope/vim-repeat")
-  use("tpope/vim-rhubarb")
-  use("tpope/vim-surround")
-  use("tpope/vim-vinegar")
-  use("tpope/vim-unimpaired")
-  use("vim-airline/vim-airline")
-  use("vim-airline/vim-airline-themes")
-  use("vim-ruby/vim-ruby")
-  use({
+  },
+  "tmux-plugins/vim-tmux-focus-events",
+  "tomasr/molokai",
+  "tpope/vim-characterize",
+  "tpope/vim-commentary",
+  "tpope/vim-eunuch",
+  "tpope/vim-fugitive",
+  "tpope/vim-obsession",
+  "tpope/vim-rails",
+  "tpope/vim-repeat",
+  "tpope/vim-rhubarb",
+  "tpope/vim-surround",
+  "tpope/vim-vinegar",
+  "tpope/vim-unimpaired",
+  "vim-airline/vim-airline",
+  "vim-airline/vim-airline-themes",
+  "vim-ruby/vim-ruby",
+  {
     "vuki656/package-info.nvim",
-    requires = "MunifTanjim/nui.nvim",
+    dependencies = "MunifTanjim/nui.nvim",
     config = function()
       require("package-info").setup()
     end,
-  })
-  use("wincent/terminus")
+  },
+  "wincent/terminus",
 
-  use("hrsh7th/nvim-cmp")
-  use("hrsh7th/cmp-nvim-lsp")
+  "hrsh7th/nvim-cmp",
+  "hrsh7th/cmp-nvim-lsp",
 
   -- using a snippet engine seems to be necessary for some features to work
   -- with some LSP servers
   -- I encountered errors when using LSP with Rust
   -- https://github.com/hrsh7th/nvim-cmp/issues/373
-  use("L3MON4D3/LuaSnip")
-  use("saadparwaiz1/cmp_luasnip")
+  "L3MON4D3/LuaSnip",
+  "saadparwaiz1/cmp_luasnip",
 
-  use({ "junegunn/fzf", run = "./install --all" })
-  use({ "junegunn/fzf.vim" })
+  { "junegunn/fzf", build = "./install --all" },
+  { "junegunn/fzf.vim" },
 
-  use({
+  {
     "lewis6991/gitsigns.nvim",
-    requires = { "nvim-lua/plenary.nvim" },
-    config = function() end,
-  })
+    dependencies = "nvim-lua/plenary.nvim",
+  },
 
-  use({
+  {
     "folke/trouble.nvim",
-    requires = "kyazdani42/nvim-web-devicons",
+    dependencies = "kyazdani42/nvim-web-devicons",
     config = function()
       require("trouble").setup()
     end,
-  })
+  },
 
-  use({
+  {
     "williamboman/mason-lspconfig.nvim",
-    requires = {
-      { "williamboman/mason.nvim" },
-    },
-  })
+    dependencies = "williamboman/mason.nvim",
+  },
 
-  use({ "neovim/nvim-lspconfig" })
-  use({
+  { "neovim/nvim-lspconfig" },
+  {
     "nvim-telescope/telescope.nvim",
-    requires = {
+    dependencies = {
       { "nvim-lua/popup.nvim" },
       { "nvim-lua/plenary.nvim" },
-      { "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
+      { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
       { "nvim-telescope/telescope-file-browser.nvim" },
       { "nvim-telescope/telescope-node-modules.nvim" },
       { "nvim-telescope/telescope-ui-select.nvim" },
@@ -153,10 +138,10 @@ packer.startup(function(use)
         },
       })
     end,
-  })
+  },
 
-  use("jose-elias-alvarez/nvim-lsp-ts-utils")
-end)
+  "jose-elias-alvarez/nvim-lsp-ts-utils",
+})
 
 -- my colorscheme does not define the following highlight groups
 -- for that reason, they are explicitly defined here

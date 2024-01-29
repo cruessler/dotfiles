@@ -164,7 +164,7 @@ vim.api.nvim_set_keymap(
 vim.api.nvim_set_keymap(
   "n",
   "<leader>fa",
-  [[<cmd>lua require('telescope.builtin').lsp_code_actions()<CR>]],
+  [[<cmd>lua vim.lsp.buf.code_action()<CR>]],
   { noremap = true, silent = true }
 )
 vim.api.nvim_set_keymap(

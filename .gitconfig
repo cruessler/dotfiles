@@ -6,6 +6,9 @@
 
   hookspath = ~/.config/git/hooks
 
+[commit]
+  verbose = true
+
 [pull]
   rebase = true
 

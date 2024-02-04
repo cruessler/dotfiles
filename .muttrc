@@ -71,6 +71,7 @@ macro attach V \
   "<pipe-entry>cat > $my_tmp_html_path && xdg-open $my_tmp_html_path<return>" \
   "view attachment as HTML in browser using xdg-open"
 
+# this does not seem work if a calendar has to be selected
 macro attach E \
   "<pipe-entry>khal import<return>" \
   "import attachment in khal"

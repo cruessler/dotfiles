@@ -380,6 +380,9 @@ lspconfig.tailwindcss.setup({
 -- https://github.com/pmizio/typescript-tools.nvim?tab=readme-ov-file#-installation
 require("typescript-tools").setup({
   on_attach = on_attach,
+  settings = {
+    expose_as_code_action = "all",
+  },
 })
 
 local cmp = require("cmp")

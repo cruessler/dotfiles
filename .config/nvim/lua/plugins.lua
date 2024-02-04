@@ -34,6 +34,10 @@ require("lazy").setup({
       require("octo").setup()
     end,
   },
+  {
+    "pmizio/typescript-tools.nvim",
+    dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+  },
   "rust-lang/rust.vim",
   "scrooloose/nerdtree",
   {
@@ -139,8 +143,6 @@ require("lazy").setup({
       })
     end,
   },
-
-  "jose-elias-alvarez/nvim-lsp-ts-utils",
 })
 
 -- my colorscheme does not define the following highlight groups
@@ -374,21 +376,10 @@ lspconfig.tailwindcss.setup({
   capabilities = capabilities,
 })
 
--- https://github.com/jose-elias-alvarez/nvim-lsp-ts-utils
-lspconfig.tsserver.setup({
-  init_options = require("nvim-lsp-ts-utils").init_options,
-  on_attach = function(client, bufnr)
-    local ts_utils = require("nvim-lsp-ts-utils")
-    ts_utils.setup({
-      enable_formatting = true,
-      formatter = "prettier",
-      formatter_config_fallback = nil,
-    })
-    ts_utils.setup_client(client)
-
-    on_attach(client, bufnr)
-  end,
-  capabilities = capabilities,
+-- no lspconfig setup for tsserver as recommended by
+-- https://github.com/pmizio/typescript-tools.nvim?tab=readme-ov-file#-installation
+require("typescript-tools").setup({
+  on_attach = on_attach,
 })
 
 local cmp = require("cmp")

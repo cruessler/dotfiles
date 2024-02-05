@@ -74,16 +74,6 @@ let g:airline#extensions#tabline#enabled=1
 " the theme is set manually by loading ~/.tmuxline.conf instead
 let g:airline#extensions#tmuxline#enabled=0
 
-" https://github.com/ctrlpvim/ctrlp.vim
-let g:ctrlp_cmd = 'CtrlPBuffer'
-let g:ctrlp_custom_ignore = {
-  \ 'dir': '\.git$\|bower_components$\|node_modules$\|_build$\|deps$'
-  \ }
-" open multiple files in hidden buffers and jump to first opened file
-let g:ctrlp_open_multiple_files = 'ij'
-" open new files created when pressing <c-y> in the current window
-let g:ctrlp_open_new_file = 'r'
-
 " https://github.com/junegunn/fzf.vim#preview-window
 let g:fzf_preview_window = 'right:60%'
 
@@ -168,11 +158,6 @@ if executable("rg")
   " @* refers to the contents of the * register
   " the * register contains the visual selection
   vmap <leader>K :<c-u>execute "Grep " . shellescape(@*)<CR>
-
-  " override CtrlP default behavior defined above
-  " https://elliotekj.com/2016/11/22/setup-ctrlp-to-use-ripgrep-in-vim/
-  let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
-  let g:ctrlp_use_caching = 0
 endif
 
 " https://github.com/justinmk/vim-sneak

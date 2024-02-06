@@ -164,37 +164,6 @@ endif
 let g:sneak#label = 1
 let g:sneak#s_next = 1
 
-" https://thoughtbot.com/blog/modern-typescript-and-react-development-in-vim
-" https://github.com/neoclide/coc.nvim
-let g:coc_global_extensions = [
-  \ 'coc-tsserver'
-  \ ]
-
-if isdirectory('./node_modules') && isdirectory('./node_modules/prettier')
-  let g:coc_global_extensions += ['coc-prettier']
-endif
-
-if isdirectory('./node_modules') && isdirectory('./node_modules/eslint')
-  let g:coc_global_extensions += ['coc-eslint']
-endif
-
-let g:coc_disable_startup_warning = 1
-
-nmap <silent> gh :call CocAction('doHover')<CR>
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gt <Plug>(coc-type-definition)
-nmap <silent> gr <Plug>(coc-references)
-nmap <leader>n <Plug>(coc-rename)
-
-nmap <leader>j <Plug>(coc-diagnostic-next)
-nmap <leader>k <Plug>(coc-diagnostic-prev)
-
-nmap <silent> <leader>d :<C-u>CocList diagnostics<cr>
-nmap <silent> <leader>s :<C-u>CocList -I symbols<cr>
-
-nmap <leader>X <Plug>(coc-codeaction)
-nmap <leader>x :CocFix<CR>
-
 command Gcontext Gblame
 
 " same shortcut as reset hunk which is provided by nvim + gitsigns

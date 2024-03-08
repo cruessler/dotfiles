@@ -195,6 +195,12 @@ vim.api.nvim_set_keymap(
 )
 vim.api.nvim_set_keymap(
   "n",
+  "<leader>fh",
+  [[<cmd>lua require('telescope.builtin').help_tags()<CR>]],
+  { noremap = true, silent = true }
+)
+vim.api.nvim_set_keymap(
+  "n",
   "<leader>fm",
   [[<cmd>lua require('telescope.builtin').git_status()<CR>]],
   { noremap = true, silent = true }

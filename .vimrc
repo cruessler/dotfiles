@@ -33,8 +33,13 @@ set listchars=tab:»\ ,trail:·
 " TERM=screen-256color in the environment to make colorschemes work properly
 " (the default is TERM=xterm which has only 8 colors)
 set background=dark
+
 " https://github.com/tomasr/molokai
-colorscheme molokai
+" https://stackoverflow.com/a/40082974
+" use `make bootstrap_nvim` to copy the colorscheme into the right place
+" should it ever become unavailable, https://github.com/tanvirtin/monokai.nvim
+" might be an alternative
+source ~/.vim/colors/molokai.vim
 
 " hide tilde characters at the bottom of the screen
 " their color matches the background of the Normal highlight as set by the

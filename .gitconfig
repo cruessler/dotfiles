@@ -19,6 +19,11 @@
   conflictstyle = diff3
   tool = vimdiff
 
+[diff]
+  # This option handles moved code better.
+  # https://jvns.ca/blog/2024/02/16/popular-git-config-options/#diff-algorithm-histogram
+  algorithm = histogram
+
 [init]
   defaultBranch = main
 

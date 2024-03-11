@@ -40,6 +40,7 @@ require("lazy").setup({
   },
   "rust-lang/rust.vim",
   "scrooloose/nerdtree",
+  "sindrets/diffview.nvim",
   {
     "stevearc/conform.nvim",
     config = function()
@@ -230,6 +231,10 @@ vim.api.nvim_set_keymap("n", "<leader>td", "<cmd>Trouble document_diagnostics<CR
 vim.api.nvim_set_keymap("n", "<leader>tl", "<cmd>Trouble loclist<CR>", { silent = true, noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>tq", "<cmd>Trouble quickfix<CR>", { silent = true, noremap = true })
 vim.api.nvim_set_keymap("n", "gR", "<cmd>Trouble lsp_references<CR>", { silent = true, noremap = true })
+
+vim.api.nvim_set_keymap("n", "<leader>do", "<cmd>DiffviewOpen<CR>", { silent = true, noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>dc", "<cmd>DiffviewClose<CR>", { silent = true, noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>dh", "<cmd>DiffviewFileHistory %<CR>", { silent = true, noremap = true })
 
 vim.api.nvim_set_keymap(
   "n",

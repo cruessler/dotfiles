@@ -100,9 +100,11 @@ set scrolloff=5
 " to make vim go out of insert mode without delay on pressing <Esc>
 set ttimeoutlen=0
 
-" to make diff windows always appear side by side, even when space might be
-" limited
-set diffopt=filler,vertical
+" `vertical` to make diff windows always appear side by side, even when space
+" might be limited
+" :help diffopt
+" https://git-scm.com/docs/diff-options#Documentation/diff-options.txt-codehistogramcode
+set diffopt=filler,vertical,algorithm:histogram
 
 " http://vimcasts.org/episodes/soft-wrapping-text/
 " when soft wrapping long lines, show an indicator for wrapped lines

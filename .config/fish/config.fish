@@ -8,6 +8,7 @@ if status --is-interactive
   abbr --add --global o xdg-open
   abbr --add --global r 'cd (git root)'
   abbr --add --global s git status
+  abbr --add --global dt git difftool
   abbr --add --global wt git_change_worktree
   abbr --add --global x exit
 end

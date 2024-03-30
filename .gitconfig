@@ -19,7 +19,7 @@
   default = current
 
 [merge]
-  conflictstyle = diff3
+  conflictstyle = zdiff3
   tool = vimdiff
 
 [diff]

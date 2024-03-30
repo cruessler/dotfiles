@@ -6,6 +6,9 @@
 
   hookspath = ~/.config/git/hooks
 
+[pager]
+  difftool = true
+
 [commit]
   verbose = true
 
@@ -23,6 +26,15 @@
   # This option handles moved code better.
   # https://jvns.ca/blog/2024/02/16/popular-git-config-options/#diff-algorithm-histogram
   algorithm = histogram
+  tool = difftastic
+
+# https://git-scm.com/docs/git-difftool
+[difftool]
+  prompt = false
+
+# https://difftastic.wilfred.me.uk/git.html
+[difftool "difftastic"]
+  cmd = difft "$LOCAL" "$REMOTE"
 
 [init]
   defaultBranch = main

@@ -12,6 +12,9 @@
 [commit]
   verbose = true
 
+[branch]
+  sort = -committerdate
+
 [pull]
   rebase = true
 

@@ -42,6 +42,10 @@
 [init]
   defaultBranch = main
 
+# https://git-scm.com/book/en/v2/Git-Tools-Rerere
+[rerere]
+  enabled = true
+
 # These includes don’t contain personal information.
 [include]
   path = ~/.config/git/aliases

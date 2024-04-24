@@ -146,6 +146,24 @@ require("lazy").setup({
       })
     end,
   },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
+    opts = {
+      ensure_installed = { "bash", "c", "html", "lua", "luadoc", "markdown", "vim", "vimdoc" },
+      auto_install = true,
+      highlight = {
+        enable = true,
+        -- Ruby seems to depend on Vim’s syntax highlighting for indent rules.
+        -- https://github.com/nvim-lua/kickstart.nvim/blob/e2bfa0c66f474f7d8863a8bc05e3d5bdf704f7bf/init.lua#L810
+        additional_vim_regex_highlighting = { "ruby" },
+      },
+      indent = { enable = true, disable = { "ruby" } },
+    },
+    config = function(_, opts)
+      require("nvim-treesitter.configs").setup(opts)
+    end,
+  },
 })
 
 -- my colorscheme does not define the following highlight groups

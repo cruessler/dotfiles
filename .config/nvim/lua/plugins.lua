@@ -30,9 +30,11 @@ require("lazy").setup({
       "nvim-telescope/telescope.nvim",
       "kyazdani42/nvim-web-devicons",
     },
-    config = function()
-      require("octo").setup()
-    end,
+    opts = {
+      suppress_missing_scope = {
+        projects_v2 = true,
+      },
+    },
   },
   {
     "pmizio/typescript-tools.nvim",

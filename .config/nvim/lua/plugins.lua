@@ -264,6 +264,7 @@ vim.api.nvim_set_keymap("n", "gR", "<cmd>Trouble lsp_references<CR>", { silent =
 vim.api.nvim_set_keymap("n", "<leader>do", "<cmd>DiffviewOpen<CR>", { silent = true, noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>dc", "<cmd>DiffviewClose<CR>", { silent = true, noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>dh", "<cmd>DiffviewFileHistory %<CR>", { silent = true, noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>dH", "<cmd>DiffviewFileHistory<CR>", { silent = true, noremap = true })
 
 vim.api.nvim_set_keymap(
   "n",

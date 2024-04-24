@@ -156,6 +156,7 @@ require("lazy").setup({
       auto_install = true,
       highlight = {
         enable = true,
+        disable = { "gitcommit" },
         -- Ruby seems to depend on Vim’s syntax highlighting for indent rules.
         -- https://github.com/nvim-lua/kickstart.nvim/blob/e2bfa0c66f474f7d8863a8bc05e3d5bdf704f7bf/init.lua#L810
         additional_vim_regex_highlighting = { "ruby" },

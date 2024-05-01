@@ -18,6 +18,10 @@ require("lazy").setup({
   "edkolev/tmuxline.vim",
   "elixir-lang/vim-elixir",
   "HerringtonDarkholme/yats.vim",
+  {
+    "j-hui/fidget.nvim",
+    opts = {},
+  },
   "justinmk/vim-sneak",
   "kshenoy/vim-signature",
   "mattn/emmet-vim",

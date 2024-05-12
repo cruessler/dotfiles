@@ -143,8 +143,8 @@ if executable("rg")
   set grepformat=%f:%l:%c:%m,%f:%l:%m
 
   " https://robots.thoughtbot.com/faster-grepping-in-vim
-  " define :Grep
-  command -nargs=+ -complete=file -bar Grep silent! grep! <args>|cwindow|redraw!
+  " define :G
+  command -nargs=+ -complete=file -bar G silent! grep! <args>|cwindow|redraw!
 
   " In normal as well as in visual mode, K can be used to search for the word
   " under the cursor. Which program or command gets called depends on the
@@ -153,18 +153,18 @@ if executable("rg")
   " :help K
   " :help keywordprg
   "
-  " This changes the default to `:Grep`. Depending on the file type, this
-  " setting gets overwritten via autocommands (vim-rails e. g. does that to
-  " invoke `ri`).
-  set keywordprg=:Grep
+  " This changes the default to `:G`. Depending on the file type, this setting
+  " gets overwritten via autocommands (vim-rails e. g. does that to invoke
+  " `ri`).
+  set keywordprg=:G
 
-  " Define a separate shortcut for `:Grep`. This is useful if `keywordprg` has
+  " Define a separate shortcut for `:G`. This is useful if `keywordprg` has
   " been changed by an autocommand.
-  nmap <leader>K :Grep <cword><CR>
+  nmap <leader>K :G <cword><CR>
   " <c-u> clears the command line which is prefilled with '<,'>
   " @* refers to the contents of the * register
   " the * register contains the visual selection
-  vmap <leader>K :<c-u>execute "Grep " . shellescape(@*)<CR>
+  vmap <leader>K :<c-u>execute "G " . shellescape(@*)<CR>
 endif
 
 " https://github.com/justinmk/vim-sneak

@@ -24,7 +24,6 @@ require("lazy").setup({
   },
   "justinmk/vim-sneak",
   "kshenoy/vim-signature",
-  "mattn/emmet-vim",
   "mxw/vim-jsx",
   "pangloss/vim-javascript",
   {

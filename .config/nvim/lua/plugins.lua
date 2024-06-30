@@ -285,11 +285,8 @@ vim.api.nvim_set_keymap("n", "<leader>nl", "<cmd>:Telescope node_modules list<cr
 
 require("gitsigns").setup({
   signs = {
-    add = { hl = "GitGutterAdd", text = "+" },
-    change = { hl = "GitGutterChange", text = "~" },
-    delete = { hl = "GitGutterDelete", text = "_" },
-    topdelete = { hl = "GitGutterDelete", text = "‾" },
-    changedelete = { hl = "GitGutterChange", text = "~" },
+    add = { text = "+" },
+    change = { text = "~" },
   },
   on_attach = function(bufnr)
     local gitsigns = package.loaded.gitsigns

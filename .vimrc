@@ -34,19 +34,21 @@ set listchars=tab:»\ ,trail:·
 " (the default is TERM=xterm which has only 8 colors)
 set background=dark
 
-" https://github.com/tomasr/molokai
-" https://stackoverflow.com/a/40082974
-" use `make bootstrap_nvim` to copy the colorscheme into the right place
-" should it ever become unavailable, https://github.com/tanvirtin/monokai.nvim
-" might be an alternative
-source ~/.vim/colors/molokai.vim
+if !has('nvim')
+  " https://github.com/tomasr/molokai
+  " https://stackoverflow.com/a/40082974
+  " use `make bootstrap_nvim` to copy the colorscheme into the right place
+  " should it ever become unavailable, https://github.com/tanvirtin/monokai.nvim
+  " might be an alternative
+  source ~/.vim/colors/molokai.vim
 
-" hide tilde characters at the bottom of the screen
-" their color matches the background of the Normal highlight as set by the
-" molokai theme, thus letting them disappear
-" https://stackoverflow.com/a/40051222
-" https://github.com/neovim/neovim/issues/2067#issuecomment-76374860
-highlight EndOfBuffer ctermfg=bg ctermbg=bg
+  " hide tilde characters at the bottom of the screen
+  " their color matches the background of the Normal highlight as set by the
+  " molokai theme, thus letting them disappear
+  " https://stackoverflow.com/a/40051222
+  " https://github.com/neovim/neovim/issues/2067#issuecomment-76374860
+  highlight EndOfBuffer ctermfg=bg ctermbg=bg
+endif
 
 " http://vim.wikia.com/wiki/Display_line_numbers
 set number

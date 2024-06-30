@@ -62,7 +62,18 @@ require("lazy").setup({
     end,
   },
   "tmux-plugins/vim-tmux-focus-events",
-  "tomasr/molokai",
+  {
+    -- https://lazy.folke.io/spec/lazy_loading#-colorschemes
+    "tomasr/molokai",
+    lazy = false,
+    priority = 1000,
+
+    config = function(_, opts)
+      vim.o.termguicolors = true
+
+      vim.cmd([[colorscheme molokai]])
+    end,
+  },
   "tpope/vim-characterize",
   "tpope/vim-commentary",
   "tpope/vim-eunuch",
@@ -174,15 +185,17 @@ require("lazy").setup({
 
 -- my colorscheme does not define the following highlight groups
 -- for that reason, they are explicitly defined here
--- the values were obtained in a vim session that had loaded gitgutter
-vim.api.nvim_exec(
-  [[
-  highlight GitGutterAdd ctermbg=235 guibg=#232526
-  highlight GitGutterChange ctermfg=181 ctermbg=235 guifg=#89807D guibg=#232526
-  highlight GitGutterDelete ctermfg=162 ctermbg=235 guifg=#960050 guibg=#232526
-]],
-  false
-)
+--
+-- the values for `fg` are the values for `Green`, `Orange` and `Magenta` in
+-- the following palette:
+-- https://github.com/polirritmico/monokai-nightasty.nvim/blob/58e2e28ebc9fff1fab9156f8b49efa14ffadc347/README.md?plain=1#L341-L348
+vim.api.nvim_set_hl(0, "GitGutterAdd", { fg = "#a4e400", bg = "#232526" })
+vim.api.nvim_set_hl(0, "GitGutterChange", { fg = "#ff9700", bg = "#232526" })
+vim.api.nvim_set_hl(0, "GitGutterDelete", { fg = "#fc1a70", bg = "#232526" })
+
+-- hide tilde characters at the bottom of the screen
+-- https://github.com/neovim/neovim/issues/2067#issuecomment-1288199193
+vim.o.fillchars = "eob: "
 
 vim.api.nvim_set_keymap(
   "n",
@@ -284,10 +297,6 @@ vim.api.nvim_set_keymap(
 vim.api.nvim_set_keymap("n", "<leader>nl", "<cmd>:Telescope node_modules list<cr>", { silent = true, noremap = true })
 
 require("gitsigns").setup({
-  signs = {
-    add = { text = "+" },
-    change = { text = "~" },
-  },
   on_attach = function(bufnr)
     local gitsigns = package.loaded.gitsigns
 

@@ -13,7 +13,6 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
   "christoomey/vim-tmux-navigator",
-  "ckipp01/stylua-nvim",
   "dag/vim-fish",
   "edkolev/tmuxline.vim",
   "elixir-lang/vim-elixir",

@@ -43,7 +43,6 @@ require("lazy").setup({
     dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
   },
   "rust-lang/rust.vim",
-  "scrooloose/nerdtree",
   "sindrets/diffview.nvim",
   {
     "stevearc/conform.nvim",

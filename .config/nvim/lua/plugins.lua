@@ -23,7 +23,6 @@ require("lazy").setup({
   },
   "justinmk/vim-sneak",
   "kshenoy/vim-signature",
-  "mxw/vim-jsx",
   "pangloss/vim-javascript",
   {
     "pwntester/octo.nvim",

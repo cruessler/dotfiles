@@ -15,7 +15,6 @@ require("lazy").setup({
   "christoomey/vim-tmux-navigator",
   "dag/vim-fish",
   "edkolev/tmuxline.vim",
-  "elixir-lang/vim-elixir",
   "HerringtonDarkholme/yats.vim",
   {
     "j-hui/fidget.nvim",

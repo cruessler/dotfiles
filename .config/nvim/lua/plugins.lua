@@ -47,8 +47,11 @@ require("lazy").setup({
     config = function()
       require("conform").setup({
         formatters_by_ft = {
+          bash = { "shellcheck" },
           javascript = { "prettier" },
           lua = { "stylua" },
+          sh = { "shellcheck" },
+          zsh = { "shellcheck" },
         },
         format_on_save = {
           timeout_ms = 500,

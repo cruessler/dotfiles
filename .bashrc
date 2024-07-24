@@ -48,12 +48,12 @@ if ! shopt -oq posix; then
   fi
 fi
 
-[ -f $HOME/bin/tmuxinator.bash ] && source $HOME/bin/tmuxinator.bash
+[ -f ~/bin/tmuxinator.bash ] && source ~/bin/tmuxinator.bash
 
 PS1='\w $ '
 
 # https://github.com/Canop/broot
 # run `broot --install` to install the launcher
-[ -f $HOME/.config/broot/launcher/bash/br ] && source $HOME/.config/broot/launcher/bash/br
+[ -f ~/.config/broot/launcher/bash/br ] && source ~/.config/broot/launcher/bash/br
 
-[ -f $HOME/.fzf.bash ] && source $HOME/.fzf.bash
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

@@ -60,6 +60,26 @@ require("lazy").setup({
       })
     end,
   },
+  {
+    "stevearc/oil.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    config = function()
+      require("oil").setup({
+        columns = { "icon" },
+        keymaps = {
+          ["<C-h>"] = false,
+          ["u"] = "actions.parent",
+          ["-"] = "actions.open_cwd",
+        },
+        view_options = {
+          show_hidden = true,
+        },
+      })
+
+      vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+      vim.keymap.set("n", "<space>-", require("oil").toggle_float, { desc = "Open parent directory in float" })
+    end,
+  },
   "tmux-plugins/vim-tmux-focus-events",
   {
     -- https://lazy.folke.io/spec/lazy_loading#-colorschemes
@@ -76,13 +96,24 @@ require("lazy").setup({
   "tpope/vim-characterize",
   "tpope/vim-commentary",
   "tpope/vim-eunuch",
-  "tpope/vim-fugitive",
+  {
+    "tpope/vim-fugitive",
+    config = function()
+      -- the following error message started to appear after I had removed
+      -- `vim-vinegar`: `Netrw not found. Define your own :Browse to use
+      -- :GBrowse`
+      -- this defines a command `:Browse`
+      -- https://vi.stackexchange.com/a/43348
+      vim.api.nvim_create_user_command("Browse", function(opts)
+        vim.fn.system({ "xdg-open", opts.fargs[1] })
+      end, { nargs = 1 })
+    end,
+  },
   "tpope/vim-obsession",
   "tpope/vim-rails",
   "tpope/vim-repeat",
   "tpope/vim-rhubarb",
   "tpope/vim-surround",
-  "tpope/vim-vinegar",
   "tpope/vim-unimpaired",
   "vim-airline/vim-airline",
   "vim-airline/vim-airline-themes",

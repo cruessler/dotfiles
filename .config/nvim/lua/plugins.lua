@@ -94,19 +94,7 @@ require("lazy").setup({
   "tpope/vim-characterize",
   "tpope/vim-commentary",
   "tpope/vim-eunuch",
-  {
-    "tpope/vim-fugitive",
-    config = function()
-      -- the following error message started to appear after I had removed
-      -- `vim-vinegar`: `Netrw not found. Define your own :Browse to use
-      -- :GBrowse`
-      -- this defines a command `:Browse`
-      -- https://vi.stackexchange.com/a/43348
-      vim.api.nvim_create_user_command("Browse", function(opts)
-        vim.fn.system({ "xdg-open", opts.fargs[1] })
-      end, { nargs = 1 })
-    end,
-  },
+  "tpope/vim-fugitive",
   "tpope/vim-obsession",
   "tpope/vim-rails",
   "tpope/vim-repeat",

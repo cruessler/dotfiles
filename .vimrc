@@ -141,8 +141,11 @@ let g:surround_8249 = "›\r‹"
 
 " http://www.wezm.net/technical/2016/09/ripgrep-with-vim/
 if executable("rg")
-  set grepprg=rg\ --vimgrep\ --no-heading
-  set grepformat=%f:%l:%c:%m,%f:%l:%m
+  if !has('nvim')
+    " Neovim >= 0.10 defaults to `rg`.
+    set grepprg=rg\ --vimgrep\ --no-heading
+    set grepformat=%f:%l:%c:%m,%f:%l:%m
+  endif
 
   " https://robots.thoughtbot.com/faster-grepping-in-vim
   " define :G

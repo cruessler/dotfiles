@@ -32,3 +32,5 @@ export CDPATH=".:$HOME/repos"
 
 export EDITOR=nvim
 export BROWSER=firefox
+
+export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"

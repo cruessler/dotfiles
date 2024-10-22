@@ -3,5 +3,11 @@
 # https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-branches-in-your-repository/renaming-a-branch#updating-a-local-clone-after-a-branch-name-changes
 git branch -m master main
 git fetch origin
+
+# This will fail when `origin` does not yet have a `main` branch.
+#
+# If that is the case, you have to run `git push -u` on your local `main`
+# branch.
 git branch -u origin/main main
+
 git remote set-head origin -a

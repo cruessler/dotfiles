@@ -31,7 +31,7 @@ brew "tig"
 
 brew "bat"
 brew "broot"
-brew "exa"
+brew "eza"
 brew "fd"
 brew "git-delta"
 brew "ripgrep"

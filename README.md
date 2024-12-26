@@ -36,15 +36,15 @@ are included:
 These dotfiles use the following programs, e. g. by loading config files or
 setting up aliases, but they check for their presence before doing that.
 
-`exa` and `bat` can be used as drop-in replacements for `ls` and `cat`,
+`eza` and `bat` can be used as drop-in replacements for `ls` and `cat`,
 respectively. If they are installed, `ls` and `cat` are set up as an alias to
-`exa` and `bat`, [as descibed here][alias].
+`eza` and `bat`, [as descibed here][alias].
 
 [alias]: https://towardsdatascience.com/rust-powered-command-line-utilities-to-increase-your-productivity-eea03a4cf83a#69a8
 
 - `bat`
 - `broot`
 - `delta`
-- `exa`
+- `eza`
 - `starship`
 - `zoxide`

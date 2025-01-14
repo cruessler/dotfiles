@@ -286,6 +286,12 @@ vim.api.nvim_set_keymap(
 )
 vim.api.nvim_set_keymap(
   "n",
+  "<leader>fj",
+  [[<cmd>lua require('telescope.builtin').jumplist()<CR>]],
+  { noremap = true, silent = true }
+)
+vim.api.nvim_set_keymap(
+  "n",
   "<leader>fk",
   [[<cmd>lua require('telescope.builtin').keymaps()<CR>]],
   { noremap = true, silent = true }

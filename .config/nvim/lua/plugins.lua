@@ -168,6 +168,21 @@ require("lazy").setup({
       },
     },
   },
+  {
+    "folke/snacks.nvim",
+    priority = 1000,
+    lazy = false,
+    opts = {},
+    keys = {
+      {
+        "<c-q>",
+        function()
+          Snacks.bufdelete()
+        end,
+        desc = "Delete Buffer",
+      },
+    },
+  },
 
   {
     "williamboman/mason-lspconfig.nvim",

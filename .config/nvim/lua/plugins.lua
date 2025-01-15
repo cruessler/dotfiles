@@ -254,6 +254,10 @@ vim.api.nvim_set_hl(0, "GitGutterAdd", { fg = "#a4e400", bg = "#232526" })
 vim.api.nvim_set_hl(0, "GitGutterChange", { fg = "#ff9700", bg = "#232526" })
 vim.api.nvim_set_hl(0, "GitGutterDelete", { fg = "#fc1a70", bg = "#232526" })
 
+vim.api.nvim_set_hl(0, "TroubleNormal", { bg = "#232526" })
+vim.api.nvim_set_hl(0, "TroubleNormalNC", { bg = "#232526" })
+vim.api.nvim_set_hl(0, "TroubleIndent", { bg = "#232526" })
+
 -- hide tilde characters at the bottom of the screen
 -- https://github.com/neovim/neovim/issues/2067#issuecomment-1288199193
 vim.o.fillchars = "eob: "

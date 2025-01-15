@@ -46,6 +46,7 @@ require("lazy").setup({
       require("conform").setup({
         formatters_by_ft = {
           bash = { "shellcheck" },
+          elixir = { "mix format" },
           javascript = { "prettier" },
           lua = { "stylua" },
           sh = { "shellcheck" },

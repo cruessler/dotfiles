@@ -356,6 +356,14 @@ vim.api.nvim_set_keymap(
 )
 vim.api.nvim_set_keymap("n", "<leader>nl", "<cmd>:Telescope node_modules list<cr>", { silent = true, noremap = true })
 
+-- https://gpanders.com/blog/whats-new-in-neovim-0.10/#lsp-inlay-hints
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>gh",
+  [[<cmd>lua vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())<cr>]],
+  { noremap = true, silent = true }
+)
+
 require("gitsigns").setup({
   on_attach = function(bufnr)
     local gitsigns = package.loaded.gitsigns

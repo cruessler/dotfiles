@@ -15,7 +15,7 @@ set index_format = "[%Z] %?X?A&-? %D %-20.20F  %s"
 
 # https://superuser.com/a/407797
 set menu_scroll
-set pager_index_lines=10
+set pager_index_lines=20
 
 set strict_threads
 

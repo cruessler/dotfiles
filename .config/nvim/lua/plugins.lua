@@ -34,10 +34,6 @@ require("lazy").setup({
       },
     },
   },
-  {
-    "pmizio/typescript-tools.nvim",
-    dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
-  },
   "rust-lang/rust.vim",
   "sindrets/diffview.nvim",
   {
@@ -501,12 +497,25 @@ lspconfig.tailwindcss.setup({
   capabilities = capabilities,
 })
 
--- no lspconfig setup for tsserver as recommended by
--- https://github.com/pmizio/typescript-tools.nvim?tab=readme-ov-file#-installation
-require("typescript-tools").setup({
+lspconfig.ts_ls.setup({
   on_attach = on_attach,
+  capabilities = capabilities,
   settings = {
-    expose_as_code_action = "all",
+    typescript = {
+      tsserver = {
+        useSyntaxServer = false,
+      },
+      inlayHints = {
+        includeInlayParameterNameHints = "all",
+        includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+        includeInlayFunctionParameterTypeHints = true,
+        includeInlayVariableTypeHints = true,
+        includeInlayVariableTypeHintsWhenTypeMatchesName = true,
+        includeInlayPropertyDeclarationTypeHints = true,
+        includeInlayFunctionLikeReturnTypeHints = true,
+        includeInlayEnumMemberValueHints = true,
+      },
+    },
   },
 })
 

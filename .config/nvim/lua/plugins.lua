@@ -87,6 +87,10 @@ require("lazy").setup({
       vim.cmd([[colorscheme molokai]])
     end,
   },
+  {
+    "folke/tokyonight.nvim",
+    opts = {},
+  },
   "tpope/vim-characterize",
   "tpope/vim-commentary",
   "tpope/vim-eunuch",

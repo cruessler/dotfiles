@@ -31,6 +31,7 @@
   "telescope.nvim": { "branch": "master", "commit": "2eca9ba22002184ac05eddbe47a7fe2d5a384dfc" },
   "terminus": { "branch": "main", "commit": "47247474350e3c2cae12220ef06bed975b7be2dc" },
   "tmuxline.vim": { "branch": "master", "commit": "4119c553923212cc67f4e135e6f946dc3ec0a4d6" },
+  "tokyonight.nvim": { "branch": "main", "commit": "775f82f08a3d1fb55a37fc6d3a4ab10cd7ed8a10" },
   "trouble.nvim": { "branch": "main", "commit": "46cf952fc115f4c2b98d4e208ed1e2dce08c9bf6" },
   "vim-airline": { "branch": "master", "commit": "7a552f415c48aed33bf7eaa3c50e78504d417913" },
   "vim-airline-themes": { "branch": "master", "commit": "cda3b5ea087f7e301a3d4e61727108f66ba6dd20" },

@@ -474,6 +474,11 @@ vim.o.completeopt = "menuone,noselect"
 
 local lspconfig = require("lspconfig")
 
+lspconfig.clangd.setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+})
+
 lspconfig.elixirls.setup({
   on_attach = on_attach,
   capabilities = capabilities,

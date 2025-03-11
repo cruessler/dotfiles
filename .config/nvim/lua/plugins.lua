@@ -369,8 +369,9 @@ vim.api.nvim_set_keymap(
 )
 
 require("gitsigns").setup({
+  -- https://github.com/lewis6991/gitsigns.nvim/?tab=readme-ov-file#-keymaps
   on_attach = function(bufnr)
-    local gitsigns = package.loaded.gitsigns
+    local gitsigns = require("gitsigns")
 
     local function map(mode, l, r, opts)
       opts = opts or {}
@@ -380,50 +381,58 @@ require("gitsigns").setup({
 
     map("n", "<c-n>", function()
       if vim.wo.diff then
-        return "]c"
+        vim.cmd.normal({ "]c", bang = true })
+      else
+        gitsigns.nav_hunk("next")
       end
-      vim.schedule(function()
-        gitsigns.next_hunk()
-      end)
-      return "<Ignore>"
-    end, { expr = true })
+    end)
 
     map("n", "<c-p>", function()
       if vim.wo.diff then
-        return "[c"
+        vim.cmd.normal({ "[c", bang = true })
+      else
+        gitsigns.nav_hunk("prev")
       end
-      vim.schedule(function()
-        gitsigns.prev_hunk()
-      end)
-      return "<Ignore>"
-    end, { expr = true })
+    end)
 
     map("n", "<leader>hs", gitsigns.stage_hunk)
+    map("n", "<leader>hr", gitsigns.reset_hunk)
+
     map("v", "<leader>hs", function()
       gitsigns.stage_hunk({ vim.fn.line("."), vim.fn.line("v") })
     end)
-    map("n", "<leader>hu", gitsigns.undo_stage_hunk)
-    map("n", "<leader>hr", gitsigns.reset_hunk)
+
     map("v", "<leader>hr", function()
       gitsigns.reset_hunk({ vim.fn.line("."), vim.fn.line("v") })
     end)
+
+    map("n", "<leader>hS", gitsigns.stage_buffer)
     map("n", "<leader>hR", gitsigns.reset_buffer)
     map("n", "<leader>hp", gitsigns.preview_hunk)
+    map("n", "<leader>hi", gitsigns.preview_hunk_inline)
+
     map("n", "<leader>hb", function()
       gitsigns.blame_line({ full = true })
     end)
-    map("n", "<leader>tb", gitsigns.toggle_current_line_blame)
-    -- `c` stands for context
-    map("n", "<leader>tc", gitsigns.toggle_current_line_blame)
-    map("n", "<leader>hS", gitsigns.stage_buffer)
-    map("n", "<leader>hU", gitsigns.reset_buffer_index)
+
     map("n", "<leader>hd", gitsigns.diffthis)
+
     map("n", "<leader>hD", function()
       gitsigns.diffthis("~")
     end)
-    map("n", "<leader>td", gitsigns.toggle_deleted)
 
-    map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>")
+    map("n", "<leader>hQ", function()
+      gitsigns.setqflist("all")
+    end)
+    map("n", "<leader>hq", gitsigns.setqflist)
+
+    map("n", "<leader>tb", gitsigns.toggle_current_line_blame)
+    -- `c` stands for context
+    map("n", "<leader>tc", gitsigns.toggle_current_line_blame)
+    map("n", "<leader>td", gitsigns.toggle_deleted)
+    map("n", "<leader>tw", gitsigns.toggle_word_diff)
+
+    map({ "o", "x" }, "ih", gitsigns.select_hunk)
   end,
 })
 

@@ -43,6 +43,7 @@ require("lazy").setup({
           bash = { "shellcheck" },
           elixir = { "mix format" },
           javascript = { "prettier" },
+          typescript = { "prettier" },
           lua = { "stylua" },
           sh = { "shellcheck" },
           zsh = { "shellcheck" },

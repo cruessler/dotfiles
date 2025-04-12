@@ -11,6 +11,9 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+-- :help 'winborder'
+vim.o.winborder = "rounded"
+
 require("lazy").setup({
   "christoomey/vim-tmux-navigator",
   "edkolev/tmuxline.vim",

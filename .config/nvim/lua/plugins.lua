@@ -197,12 +197,14 @@ require("lazy").setup({
       { "nvim-lua/plenary.nvim" },
       { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
       { "nvim-telescope/telescope-file-browser.nvim" },
+      { "nvim-telescope/telescope-live-grep-args.nvim" },
       { "nvim-telescope/telescope-node-modules.nvim" },
       { "nvim-telescope/telescope-ui-select.nvim" },
     },
     config = function()
       require("telescope").load_extension("fzf")
       require("telescope").load_extension("file_browser")
+      require("telescope").load_extension("live_grep_args")
       require("telescope").load_extension("node_modules")
       require("telescope").load_extension("ui-select")
 
@@ -332,6 +334,12 @@ vim.api.nvim_set_keymap(
   "n",
   "<leader>d",
   [[<cmd>lua require('telescope.builtin').diagnostics()<CR>]],
+  { noremap = true, silent = true }
+)
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>l",
+  [[<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>]],
   { noremap = true, silent = true }
 )
 vim.api.nvim_set_keymap(

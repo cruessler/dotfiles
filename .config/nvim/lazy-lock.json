@@ -8,6 +8,7 @@
   "fzf": { "branch": "master", "commit": "4298c0b1eb31b7563eb608e3fbf4069488ada08d" },
   "fzf.vim": { "branch": "master", "commit": "245eaf8e50fe440729056ce8d4e7e2bb5b1ff9c9" },
   "gitsigns.nvim": { "branch": "main", "commit": "17ab794b6fce6fce768430ebc925347e349e1d60" },
+  "hbac.nvim": { "branch": "main", "commit": "2c85485ea28e5e3754650829e0bca612960e1b73" },
   "lazy.nvim": { "branch": "main", "commit": "6c3bda4aca61a13a9c63f1c1d1b16b9d3be90d7a" },
   "mason-lspconfig.nvim": { "branch": "main", "commit": "2daa8921b7afdcfa47419a21ea343c3df6d74fa0" },
   "mason.nvim": { "branch": "main", "commit": "e2f7f9044ec30067bc11800a9e266664b88cda22" },

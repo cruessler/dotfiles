@@ -12,6 +12,10 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+  {
+    "axkirillov/hbac.nvim",
+    config = true,
+  },
   "christoomey/vim-tmux-navigator",
   "edkolev/tmuxline.vim",
   {

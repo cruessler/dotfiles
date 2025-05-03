@@ -269,6 +269,9 @@ vim.api.nvim_set_hl(0, "TroubleIndent", { bg = "#232526" })
 -- https://github.com/neovim/neovim/issues/2067#issuecomment-1288199193
 vim.o.fillchars = "eob: "
 
+vim.api.nvim_set_keymap("n", "<C-d>", "6j", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<C-u>", "6k", { noremap = true, silent = true })
+
 vim.api.nvim_set_keymap(
   "n",
   "<leader><leader>",

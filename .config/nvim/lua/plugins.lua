@@ -97,6 +97,7 @@ require("lazy").setup({
     "folke/tokyonight.nvim",
     opts = {},
   },
+  "tpope/vim-abolish",
   "tpope/vim-characterize",
   "tpope/vim-commentary",
   "tpope/vim-eunuch",

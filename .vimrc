@@ -106,7 +106,7 @@ set ttimeoutlen=0
 " might be limited
 " :help diffopt
 " https://git-scm.com/docs/diff-options#Documentation/diff-options.txt-codehistogramcode
-set diffopt=filler,vertical,algorithm:histogram
+set diffopt=filler,vertical,internal,algorithm:histogram
 
 " http://vimcasts.org/episodes/soft-wrapping-text/
 " when soft wrapping long lines, show an indicator for wrapped lines

@@ -2,7 +2,7 @@
 " https://vi.stackexchange.com/questions/126/using-in-languages-without-curly-braces
 runtime macros/matchit.vim
 
-" nvim uses packer to load plugins
+" nvim uses lazy to load plugins
 if !has('nvim')
   runtime bundle/vim-pathogen/autoload/pathogen.vim
   execute pathogen#infect()

@@ -455,10 +455,19 @@ require("gitsigns").setup({
 })
 
 require("mason").setup()
-require("mason-lspconfig").setup()
+require("mason-lspconfig").setup({
+  -- 2025-06-09
+  -- the tailwind LSP server, on one of my machines, uses quite a lot of CPU,
+  -- so I disabled it for the time being
+  automatic_enable = { exclude = { "tailwindcss" } },
+})
 
--- https://github.com/neovim/nvim-lspconfig#keybindings-and-completion
-local on_attach = function(client, bufnr)
+-- see `:help LspAttach` and `:help lsp-attach`
+-- https://github.com/neovim/nvim-lspconfig?tab=readme-ov-file#configuration
+local callback = function(event)
+  local client = vim.lsp.get_client_by_id(event.data.client_id)
+  local bufnr = event.buf
+
   local function buf_set_keymap(...)
     vim.api.nvim_buf_set_keymap(bufnr, ...)
   end
@@ -494,61 +503,13 @@ local on_attach = function(client, bufnr)
   buf_set_keymap("n", "<leader>S", [[<cmd>lua require('telescope.builtin').lsp_dynamic_workspace_symbols()<CR>]], opts)
 end
 
--- https://github.com/neovim/nvim-lspconfig/wiki/Autocompletion
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
-
 vim.o.completeopt = "menuone,noselect"
 
-local lspconfig = require("lspconfig")
-
-lspconfig.clangd.setup({
-  on_attach = on_attach,
-  capabilities = capabilities,
+vim.api.nvim_create_autocmd("LspAttach", {
+  callback = callback,
 })
 
-lspconfig.elixirls.setup({
-  on_attach = on_attach,
-  capabilities = capabilities,
-})
-
--- `elm-language-server` will look for binaries that are installed locally in
--- `node_modules` or globally
--- https://github.com/elm-tooling/elm-language-server#server-settings
-lspconfig.elmls.setup({
-  on_attach = on_attach,
-  capabilities = capabilities,
-})
-
-lspconfig.marksman.setup({
-  on_attach = on_attach,
-  capabilities = capabilities,
-})
-
-lspconfig.rust_analyzer.setup({
-  on_attach = on_attach,
-  capabilities = capabilities,
-})
-
-lspconfig.solargraph.setup({
-  cmd = { "bundle", "exec", "solargraph", "stdio" },
-  on_attach = on_attach,
-  capabilities = capabilities,
-})
-
-lspconfig.svelte.setup({
-  on_attach = on_attach,
-  capabilities = capabilities,
-})
-
-lspconfig.tailwindcss.setup({
-  on_attach = on_attach,
-  capabilities = capabilities,
-})
-
-lspconfig.ts_ls.setup({
-  on_attach = on_attach,
-  capabilities = capabilities,
+vim.lsp.config("ts_ls", {
   settings = {
     typescript = {
       tsserver = {

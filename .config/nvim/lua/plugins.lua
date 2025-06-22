@@ -140,6 +140,11 @@ require("lazy").setup({
   },
 
   {
+    "folke/todo-comments.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    opts = {},
+  },
+  {
     "folke/trouble.nvim",
     opts = {},
     keys = {
@@ -342,6 +347,7 @@ vim.api.nvim_set_keymap(
   [[<cmd>lua require('telescope.builtin').vim_options()<CR>]],
   { noremap = true, silent = true }
 )
+vim.api.nvim_set_keymap("n", "<leader>ft", [[<cmd>TodoTelescope<CR>]], { noremap = true, silent = true })
 vim.api.nvim_set_keymap(
   "n",
   "<leader>d",

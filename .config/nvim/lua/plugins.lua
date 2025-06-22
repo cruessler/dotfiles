@@ -26,6 +26,34 @@ require("lazy").setup({
   "kshenoy/vim-signature",
   "mfussenegger/nvim-lint",
   {
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v3.x",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons",
+      "MunifTanjim/nui.nvim",
+    },
+    lazy = false, -- `neo-tree` will lazily load itself
+    opts = {
+      filesystem = {
+        follow_current_file = { enabled = true },
+      },
+      buffers = { show_unloaded = true },
+    },
+  },
+  {
+    {
+      "antosha417/nvim-lsp-file-operations",
+      dependencies = {
+        "nvim-lua/plenary.nvim",
+        "nvim-neo-tree/neo-tree.nvim",
+      },
+      config = function()
+        require("lsp-file-operations").setup()
+      end,
+    },
+  },
+  {
     "pwntester/octo.nvim",
     dependencies = {
       "nvim-lua/plenary.nvim",
@@ -392,6 +420,25 @@ vim.api.nvim_set_keymap(
   "n",
   "<leader>gh",
   [[<cmd>lua vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())<cr>]],
+  { noremap = true, silent = true }
+)
+
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>nb",
+  [[<cmd>Neotree buffers position=float reveal<cr>]],
+  { noremap = true, silent = true }
+)
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>nf",
+  [[<cmd>Neotree position=float reveal<cr>]],
+  { noremap = true, silent = true }
+)
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>ns",
+  [[<cmd>Neotree git_status position=float reveal<cr>]],
   { noremap = true, silent = true }
 )
 

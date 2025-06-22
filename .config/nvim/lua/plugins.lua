@@ -24,6 +24,7 @@ require("lazy").setup({
   },
   "justinmk/vim-sneak",
   "kshenoy/vim-signature",
+  "mfussenegger/nvim-lint",
   {
     "pwntester/octo.nvim",
     dependencies = {
@@ -535,6 +536,20 @@ vim.lsp.config("ts_ls", {
       },
     },
   },
+})
+
+require("lint").linters_by_ft = {
+  rust = { "clippy" },
+  javescript = { "eslint" },
+  typescript = { "eslint" },
+  javescriptreact = { "eslint" },
+  typescriptreact = { "eslint" },
+}
+
+vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+  callback = function()
+    require("lint").try_lint()
+  end,
 })
 
 local cmp = require("cmp")

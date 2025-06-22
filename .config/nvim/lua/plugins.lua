@@ -117,7 +117,7 @@ require("lazy").setup({
     lazy = false,
     priority = 1000,
 
-    config = function(_, opts)
+    config = function()
       vim.o.termguicolors = true
 
       vim.cmd([[colorscheme molokai]])
@@ -521,14 +521,8 @@ require("mason-lspconfig").setup({
 -- see `:help LspAttach` and `:help lsp-attach`
 -- https://github.com/neovim/nvim-lspconfig?tab=readme-ov-file#configuration
 local callback = function(event)
-  local client = vim.lsp.get_client_by_id(event.data.client_id)
-  local bufnr = event.buf
-
   local function buf_set_keymap(...)
-    vim.api.nvim_buf_set_keymap(bufnr, ...)
-  end
-  local function buf_set_option(...)
-    vim.api.nvim_buf_set_option(bufnr, ...)
+    vim.api.nvim_buf_set_keymap(event.buf, ...)
   end
 
   local opts = { noremap = true, silent = true }

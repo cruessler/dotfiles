@@ -274,6 +274,8 @@ vim.o.fillchars = "eob: "
 vim.api.nvim_set_keymap("n", "<C-d>", "8j", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<C-u>", "8k", { noremap = true, silent = true })
 
+vim.api.nvim_set_keymap("n", "ZA", "<cmd>qa<CR>", { noremap = true, silent = true })
+
 vim.api.nvim_set_keymap(
   "n",
   "<leader><leader>",

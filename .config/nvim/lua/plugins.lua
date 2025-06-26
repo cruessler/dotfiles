@@ -581,9 +581,9 @@ vim.lsp.config("ts_ls", {
 
 require("lint").linters_by_ft = {
   rust = { "clippy" },
-  javescript = { "eslint" },
+  javascript = { "eslint" },
   typescript = { "eslint" },
-  javescriptreact = { "eslint" },
+  javascriptreact = { "eslint" },
   typescriptreact = { "eslint" },
 }
 

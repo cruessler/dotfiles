@@ -75,7 +75,7 @@ require("lazy").setup({
         formatters_by_ft = {
           bash = { "shellcheck" },
           css = { "prettier" },
-          elixir = { "mix format" },
+          elixir = { "mix" },
           javascript = { "prettier" },
           typescript = { "prettier" },
           svelte = { "prettier" },

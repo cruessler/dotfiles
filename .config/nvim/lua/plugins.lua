@@ -129,7 +129,6 @@ require("lazy").setup({
   },
   "tpope/vim-abolish",
   "tpope/vim-characterize",
-  "tpope/vim-commentary",
   "tpope/vim-eunuch",
   "tpope/vim-fugitive",
   "tpope/vim-obsession",

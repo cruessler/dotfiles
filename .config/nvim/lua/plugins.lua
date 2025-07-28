@@ -33,7 +33,7 @@ require("lazy").setup({
       "nvim-tree/nvim-web-devicons",
       "MunifTanjim/nui.nvim",
     },
-    lazy = false, -- `neo-tree` will lazily load itself
+    lazy = false,
     opts = {
       filesystem = {
         follow_current_file = { enabled = true },

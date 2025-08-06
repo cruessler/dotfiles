@@ -147,15 +147,12 @@ require("lazy").setup({
   },
   "wincent/terminus",
 
-  "hrsh7th/nvim-cmp",
-  "hrsh7th/cmp-nvim-lsp",
 
   -- using a snippet engine seems to be necessary for some features to work
   -- with some LSP servers
   -- I encountered errors when using LSP with Rust
   -- https://github.com/hrsh7th/nvim-cmp/issues/373
   "L3MON4D3/LuaSnip",
-  "saadparwaiz1/cmp_luasnip",
 
   { "junegunn/fzf", build = "./install --all" },
   { "junegunn/fzf.vim" },
@@ -588,44 +585,4 @@ vim.api.nvim_create_autocmd({ "BufWritePost" }, {
   callback = function()
     require("lint").try_lint()
   end,
-})
-
-local cmp = require("cmp")
-
-cmp.setup({
-  snippet = {
-    expand = function(args)
-      require("luasnip").lsp_expand(args.body)
-    end,
-  },
-  mapping = {
-    ["<C-p>"] = cmp.mapping.select_prev_item(),
-    ["<C-n>"] = cmp.mapping.select_next_item(),
-    ["<C-d>"] = cmp.mapping.scroll_docs(-4),
-    ["<C-f>"] = cmp.mapping.scroll_docs(4),
-    ["<C-Space>"] = cmp.mapping.complete(),
-    ["<C-e>"] = cmp.mapping.close(),
-    ["<CR>"] = cmp.mapping.confirm({
-      behavior = cmp.ConfirmBehavior.Replace,
-      select = true,
-    }),
-    ["<Tab>"] = function(fallback)
-      if cmp.visible() then
-        cmp.select_next_item()
-      else
-        fallback()
-      end
-    end,
-    ["<S-Tab>"] = function(fallback)
-      if cmp.visible() then
-        cmp.select_prev_item()
-      else
-        fallback()
-      end
-    end,
-  },
-  sources = {
-    { name = "nvim_lsp" },
-    { name = "luasnip" },
-  },
 })

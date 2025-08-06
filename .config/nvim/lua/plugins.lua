@@ -147,6 +147,30 @@ require("lazy").setup({
   },
   "wincent/terminus",
 
+  {
+    "saghen/blink.cmp",
+    version = "1.*",
+    opts = {
+      keymap = { preset = "enter" },
+      appearance = {
+        nerd_font_variant = "mono",
+      },
+      completion = { documentation = { auto_show = false } },
+      sources = {
+        -- > By default, the buffer source will only show when the LSP source
+        -- > is disabled or returns no items.
+        --
+        -- https://cmp.saghen.dev/configuration/sources.html#show-buffer-completions-with-lsp
+        --
+        -- there’s also a source for things on Github:
+        --
+        -- https://github.com/Kaiser-Yang/blink-cmp-git
+        default = { "lsp", "path", "snippets", "buffer" },
+      },
+      fuzzy = { implementation = "prefer_rust_with_warning" },
+    },
+    opts_extend = { "sources.default" },
+  },
 
   -- using a snippet engine seems to be necessary for some features to work
   -- with some LSP servers

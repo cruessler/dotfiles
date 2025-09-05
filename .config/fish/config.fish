@@ -13,11 +13,6 @@ if status --is-interactive
   abbr --add --global x exit
 end
 
-# https://asdf-vm.com/guide/getting-started.html#_3-install-asdf
-if test -f $HOME/.asdf/asdf.fish
-  source $HOME/.asdf/asdf.fish
-end
-
 # https://github.com/Canop/broot
 # run `broot --install` to install the launcher
 if test -f $HOME/.config/broot/launcher/fish/br

@@ -617,6 +617,11 @@ require("lint").linters_by_ft = {
   typescript = { "eslint" },
   javascriptreact = { "eslint" },
   typescriptreact = { "eslint" },
+  -- 2025-09-05
+  -- `eslint` can be used to lint `*.svelte` files if `eslint-plugin-svelte` is
+  -- available
+  -- https://svelte.dev/docs/cli/eslint
+  svelte = { "eslint" },
 }
 
 vim.api.nvim_create_autocmd({ "BufWritePost" }, {

@@ -63,7 +63,7 @@ set autoread
 " used by fugitive’s :Git window
 set previewheight=25
 
-" https://github.com/bling/vim-airline
+" :help laststatus
 set laststatus=2
 
 " force vim to detect *.md as Markdown instead of Modula-2
@@ -71,15 +71,6 @@ set laststatus=2
 " https://github.com/tpope/vim-markdown
 autocmd BufNewFile,BufReadPost *.md setlocal filetype=markdown | setlocal foldcolumn=2
 let g:markdown_folding=1
-
-" https://github.com/bling/vim-airline
-let g:airline_powerline_fonts=1
-let g:airline#extensions#tabline#enabled=1
-
-" https://github.com/edkolev/tmuxline.vim#use-vim-airline-colors
-" prevent tmuxline from overwriting tmux theme on vim start
-" the theme is set manually by loading ~/.tmuxline.conf instead
-let g:airline#extensions#tmuxline#enabled=0
 
 " https://github.com/junegunn/fzf.vim#preview-window
 let g:fzf_preview_window = 'right:60%'

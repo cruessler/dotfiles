@@ -17,3 +17,9 @@ Session.vim
 *.run.xml
 
 *.log
+
+# Elixir language server
+.elixir_ls
+
+# transient Elm files
+elm-stuff

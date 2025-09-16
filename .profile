@@ -31,6 +31,7 @@ export PATH
 export CDPATH=".:$HOME/repos"
 
 export EDITOR=nvim
+export GH_EDITOR="nvim -c 'lua vim.g.enable_git_completion=true'"
 export BROWSER=firefox
 
 export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"

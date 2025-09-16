@@ -163,6 +163,7 @@ require("lazy").setup({
 
   {
     "saghen/blink.cmp",
+    dependencies = "Kaiser-Yang/blink-cmp-git",
     version = "1.*",
     opts = {
       keymap = { preset = "enter" },
@@ -175,11 +176,17 @@ require("lazy").setup({
         -- > is disabled or returns no items.
         --
         -- https://cmp.saghen.dev/configuration/sources.html#show-buffer-completions-with-lsp
-        --
-        -- there’s also a source for things on Github:
-        --
-        -- https://github.com/Kaiser-Yang/blink-cmp-git
-        default = { "lsp", "path", "snippets", "buffer" },
+        default = { "git", "lsp", "path", "snippets", "buffer" },
+        providers = {
+          git = {
+            module = "blink-cmp-git",
+            name = "Git",
+            enabled = function()
+              return vim.tbl_contains({ "octo", "gitcommit" }, vim.bo.filetype) or vim.g.enable_git_completion == true
+            end,
+            opts = {},
+          },
+        },
       },
       fuzzy = { implementation = "prefer_rust_with_warning" },
     },

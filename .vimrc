@@ -190,6 +190,8 @@ nmap <leader>q :bd<CR>
 " shortcut for rewrapping a paragraph
 nmap <leader>w gqap
 
+" these commands work with `fzf.vim`
+" they are overwritten in `plugins.lua` by commands that use telescope
 nmap <leader><leader> :Buffers<CR>
 nmap <leader>fc :Commits<CR>
 " https://github.com/junegunn/fzf.vim/issues/121#issuecomment-575922206

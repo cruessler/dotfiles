@@ -199,9 +199,6 @@ require("lazy").setup({
   -- https://github.com/hrsh7th/nvim-cmp/issues/373
   "L3MON4D3/LuaSnip",
 
-  { "junegunn/fzf", build = "./install --all" },
-  { "junegunn/fzf.vim" },
-
   {
     "lewis6991/gitsigns.nvim",
     dependencies = "nvim-lua/plenary.nvim",

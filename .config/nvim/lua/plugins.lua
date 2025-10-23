@@ -193,12 +193,6 @@ require("lazy").setup({
     opts_extend = { "sources.default" },
   },
 
-  -- using a snippet engine seems to be necessary for some features to work
-  -- with some LSP servers
-  -- I encountered errors when using LSP with Rust
-  -- https://github.com/hrsh7th/nvim-cmp/issues/373
-  "L3MON4D3/LuaSnip",
-
   {
     "lewis6991/gitsigns.nvim",
     dependencies = "nvim-lua/plenary.nvim",

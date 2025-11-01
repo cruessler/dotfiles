@@ -201,6 +201,8 @@ nmap <leader>L :Lines<CR>
 
 nmap <leader><CR> :w<CR>
 
+nmap <leader>to :read !date "+\%F"<CR>
+
 nnoremap _ -
 nnoremap j gj
 nnoremap k gk

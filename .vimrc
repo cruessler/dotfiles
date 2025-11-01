@@ -16,6 +16,9 @@ set shiftwidth=2
 set expandtab
 
 let mapleader=" "
+" 2025-10-27 `octo.nvim` uses bindings that contain `<localleader>`
+" these bindings don’t seem to work if `maplocalleader` is not set
+let maplocalleader=" "
 
 " prevent split windows on opening a new buffer when the current buffer is
 " unsaved

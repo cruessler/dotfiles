@@ -167,7 +167,7 @@ endif
 let g:sneak#label = 1
 let g:sneak#s_next = 1
 
-command Gcontext Gblame
+command Gcontext Git blame
 
 " same shortcut as reset hunk which is provided by nvim + gitsigns
 nmap <leader>hr <Plug>(GitGutterUndoHunk)

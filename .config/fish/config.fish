@@ -48,6 +48,11 @@ if type -q mise
   mise activate fish | source
 end
 
+# https://junegunn.github.io/fzf/shell-integration/
+if type -q fzf
+  fzf --fish | source
+end
+
 # https://github.com/starship/starship
 if type -q starship
   starship init fish | source

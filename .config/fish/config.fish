@@ -13,6 +13,14 @@ if status --is-interactive
   abbr --add --global x exit
 end
 
+if type -q brew
+  source (brew --prefix asdf)/libexec/asdf.fish
+end
+
+if type -q jenv
+  jenv init - | source
+end
+
 # https://github.com/Canop/broot
 # run `broot --install` to install the launcher
 if test -f $HOME/.config/broot/launcher/fish/br

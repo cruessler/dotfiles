@@ -2,6 +2,13 @@ stow:
 	# this will respect `.stow-local-ignore`
 	stow -t $(HOME) .
 
+bootstrap_mac:
+	mkdir -p $(HOME)/.config/fish
+	mkdir -p $(HOME)/.config/git
+	mkdir $(HOME)/.local
+	mkdir $(HOME)/.vim
+	mkdir $(HOME)/bin
+
 bootstrap_brew:
 	git clone https://github.com/Homebrew/brew $(HOME)/homebrew
 	cd $(HOME)/dotfiles && $(HOME)/homebrew/bin/brew bundle

@@ -12,6 +12,8 @@ if status --is-interactive
   abbr --add --global wt git_change_worktree
   abbr --add --global tcp "tmux capture-pane -p -S - | $EDITOR -"
   abbr --add --global x exit
+
+  abbr --add --global poe poetry run poe
 end
 
 if type -q brew

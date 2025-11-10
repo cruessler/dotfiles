@@ -11,6 +11,8 @@ if status --is-interactive
   abbr --add --global dt git difftool
   abbr --add --global wt git_change_worktree
   abbr --add --global x exit
+
+  abbr --add --global poe poetry run poe
 end
 
 if type -q brew

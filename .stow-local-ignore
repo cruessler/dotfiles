@@ -12,5 +12,6 @@ Makefile
 Brewfile.*
 
 README\.md
+MACOS\.md
 
 stylua\.toml

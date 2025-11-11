@@ -34,6 +34,6 @@ export EDITOR=nvim
 
 # see `.config/nvim/lua/plugins.lua` for what `enable_git_completion` does
 export GH_EDITOR="nvim -c 'lua vim.g.enable_git_completion=true'"
-export BROWSER=firefox
+export BROWSER="open -a firefox"
 
 export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"

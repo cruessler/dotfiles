@@ -261,6 +261,20 @@ require("lazy").setup({
         end,
         desc = "Delete Buffer",
       },
+      {
+        "<leader>..",
+        function()
+          Snacks.scratch()
+        end,
+        desc = "Toggle Scratch Buffer",
+      },
+      {
+        "<leader>.s",
+        function()
+          Snacks.scratch.select()
+        end,
+        desc = "Select Scratch Buffer",
+      },
     },
   },
 

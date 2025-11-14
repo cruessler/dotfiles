@@ -16,6 +16,7 @@ particular, it is assumed that:
 
 - fish is available at `/usr/bin/fish` (used as default shell in `.tmux.conf`)
 - `~/bin/tmuxinator.bash` and `~/bin/tmuxinator.fish` are available
+  https://github.com/tmuxinator/tmuxinator?tab=readme-ov-file#completion
 - `~/.texlive/2020/bin/x86_64-linux/` contains the binaries of a 2020 TeXLive
   installation
 - `~/.vim/bundle/` contains Vim plugins, particularly vim-pathogen at

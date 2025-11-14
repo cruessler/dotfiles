@@ -117,6 +117,15 @@ require("lazy").setup({
           ["u"] = "actions.parent",
           ["-"] = "actions.open_cwd",
         },
+        -- `lsp_file_methods` makes `oil.nvim` tell a running LSP server when
+        -- files are moved, created, deleted so the server can react
+        -- appropriately
+        -- `lsp_file_methods` is supported, for example, by `ts_ls`
+        lsp_file_methods = {
+          enabled = true,
+          timeout_ms = 10000,
+          autosave_changes = true,
+        },
         view_options = {
           show_hidden = true,
         },

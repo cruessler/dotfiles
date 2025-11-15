@@ -31,6 +31,8 @@ export PATH
 export CDPATH=".:$HOME/repos"
 
 export EDITOR=nvim
+
+# see `.config/nvim/lua/plugins.lua` for what `enable_git_completion` does
 export GH_EDITOR="nvim -c 'lua vim.g.enable_git_completion=true'"
 export BROWSER=firefox
 

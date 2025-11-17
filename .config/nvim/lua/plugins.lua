@@ -95,7 +95,7 @@ require("lazy").setup({
           javascript = { "prettier" },
           typescript = { "prettier" },
           svelte = { "prettier" },
-          python = { "black" },
+          python = { "ruff_format" },
           lua = { "stylua" },
           sh = { "shellcheck" },
           zsh = { "shellcheck" },

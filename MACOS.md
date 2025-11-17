@@ -14,10 +14,12 @@ among other things.
   In the Karabiner settings, in “Simple modifications”, map `right_command` to
   `left_command`, otherwise many keyboard shortcuts such as `<right cmd-a>`
   will not work (if there’s any downsides to that, I don’t know of them yet)
+- Install theme for `iTerm2`: https://monokai.pro/iterm
 - Install theme for `Terminal.app`: https://monokai.pro/terminal
-- Install “Fira Code Nerd Font”: https://www.nerdfonts.com/font-downloads
 
 - Install `brew` (by default, it installs binaries to `/opt/homebrew/bin/`)
+- Install “Fira Code Nerd Font”: `/opt/homebrew/bin/brew font-fira-code-nerd-font`
+  Also available via https://www.nerdfonts.com/font-downloads
 - Configure `user.name` and `user.email` for git
 - Create a token for use with `gh auth login`
 - Install `pass`: `/opt/homebrew/bin/brew install pass`
@@ -25,7 +27,7 @@ among other things.
 - Install `stow`: `/opt/homebrew/bin/brew install stow`
 - Install `dotfiles`: `gh repo clone cruessler/dotfiles`, `make stow`
 - Install `asdf`: `/opt/homebrew/bin/brew install brew`
-- Install Ruby and Node
+- Install Ruby and Node: `asdf install`
   Installing Ruby through `ruby-build` requires `libyaml`:
   `/opt/homebrew/bin/brew install libyaml`
   https://github.com/rbenv/ruby-build/wiki#suggested-build-environment

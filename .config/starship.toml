@@ -13,6 +13,7 @@ format = """\
   $package\
   $elm\
   $nodejs\
+  $python\
   $ruby\
   $rust\
   $memory_usage\

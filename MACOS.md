@@ -24,6 +24,9 @@ among other things.
 - Create a token for use with `gh auth login`
 - Install `pass`: `/opt/homebrew/bin/brew install pass`
 - `make bootstrap_mac` (among other things, this creates `$HOME/bin`)
+- `make bootstrap_tmux` (this installs https://github.com/tmux-plugins/tpm)
+  In `tmux`, run `run ~/.tmux/plugins/tpm/tpm` if you want to start using `tpm`
+  without a `tmux` restart
 - Install `stow`: `/opt/homebrew/bin/brew install stow`
 - Install `dotfiles`: `gh repo clone cruessler/dotfiles`, `make stow`
 - Install `asdf`: `/opt/homebrew/bin/brew install brew`

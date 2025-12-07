@@ -1,0 +1,15 @@
+keybinds clear-defaults=true {
+    shared {
+        bind "F3" { GoToPreviousTab; }
+        bind "F4" { GoToNextTab; }
+    }
+    locked {
+        bind "Ctrl b" { SwitchToMode "normal"; }
+    }
+}
+
+theme "tokyo-night"
+
+default_mode "locked"
+
+default_shell "/usr/bin/fish"

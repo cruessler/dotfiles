@@ -7,6 +7,10 @@
   home.stateVersion = "25.11";
 
   home.packages = [
+    pkgs.khal
+    pkgs.khard
+    pkgs.vdirsyncer
+
     pkgs.zellij
   ];
 

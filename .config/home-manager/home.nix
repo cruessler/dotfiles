@@ -7,6 +7,29 @@
   home.stateVersion = "25.11";
 
   home.packages = [
+    pkgs.broot
+    pkgs.delta
+    pkgs.difftastic
+    pkgs.eza
+    pkgs.fd
+    pkgs.fzf
+    pkgs.hyperfine
+    pkgs.neovim
+    pkgs.poop
+    pkgs.ripgrep
+    pkgs.samply
+    pkgs.starship
+    pkgs.stylua
+    pkgs.tokei
+    pkgs.zoxide
+
+    pkgs.cargo-deny
+    pkgs.cargo-diet
+    pkgs.cargo-insta
+    pkgs.cargo-nextest
+    pkgs.cargo-sort
+    pkgs.cargo-watch
+
     pkgs.khal
     pkgs.khard
     pkgs.vdirsyncer

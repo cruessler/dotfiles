@@ -1,3 +1,7 @@
+# This file was initially created following:
+# https://nix-community.github.io/home-manager/index.xhtml
+#
+# Use `nix-channel --update; and home-manager switch` to update packages.
 { config, pkgs, ... }:
 
 {

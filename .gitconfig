@@ -15,6 +15,13 @@
 [branch]
   sort = -committerdate
 
+[remote]
+  # “When you pull from one place (e.g. your upstream) and push to another
+  # place (e.g. your own publishing repository), you would want to set
+  # remote.pushDefault to specify the remote to push to for all branches […].”
+  # https://git-scm.com/docs/git-config#Documentation/git-config.txt-branchnamepushRemote
+  pushDefault = origin
+
 [pull]
   rebase = true
 

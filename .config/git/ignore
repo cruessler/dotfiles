@@ -23,3 +23,6 @@ Session.vim
 
 # transient Elm files
 elm-stuff
+
+# https://en.wikipedia.org/wiki/.DS_Store
+.DS_Store

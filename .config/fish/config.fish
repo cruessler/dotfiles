@@ -5,7 +5,9 @@ fish_vi_key_bindings
 if status --is-interactive
   abbr --add --global d git diff
   abbr --add --global g git
-  abbr --add --global o xdg-open
+  # 2025-12-08
+  # changed to `open` as `xdg-open` is not available on a Mac
+  abbr --add --global o open
   abbr --add --global r 'cd (git root)'
   abbr --add --global s git status
   abbr --add --global dt git difftool

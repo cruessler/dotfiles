@@ -6,7 +6,7 @@
 
 # https://nix-community.github.io/home-manager/index.xhtml#_how_do_i_install_packages_from_nixpkgs_unstable
 let
-  pkgsUnstable = import <unstable> {};
+  pkgsUnstable = import <unstable> { };
 in
 {
   home.username = "christoph";

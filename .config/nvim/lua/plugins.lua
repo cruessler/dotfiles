@@ -94,6 +94,7 @@ require("lazy").setup({
           elixir = { "mix" },
           javascript = { "prettier" },
           lua = { "stylua" },
+          nix = { "nixfmt" },
           sh = { "shellcheck" },
           svelte = { "prettier" },
           typescript = { "prettier" },

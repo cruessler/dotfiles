@@ -23,7 +23,7 @@ in
     pkgs.fd
     pkgs.fzf
     pkgs.hyperfine
-    pkgs.neovim
+    pkgsUnstable.neovim
     pkgs.poop
     pkgs.ripgrep
     pkgs.samply

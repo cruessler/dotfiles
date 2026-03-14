@@ -4,6 +4,10 @@
 # Use `nix-channel --update; and home-manager switch` to update packages.
 { config, pkgs, ... }:
 
+# https://nix-community.github.io/home-manager/index.xhtml#_how_do_i_install_packages_from_nixpkgs_unstable
+let
+  pkgsUnstable = import <unstable> {};
+in
 {
   home.username = "christoph";
   home.homeDirectory = "/home/christoph";
@@ -12,6 +16,7 @@
 
   home.packages = [
     pkgs.broot
+    pkgsUnstable.bottom
     pkgs.delta
     pkgs.difftastic
     pkgs.eza
@@ -29,7 +34,9 @@
 
     pkgs.cargo-deny
     pkgs.cargo-diet
+    pkgsUnstable.cargo-fuzz
     pkgs.cargo-insta
+    pkgsUnstable.cargo-mutants
     pkgs.cargo-nextest
     pkgs.cargo-sort
     pkgs.cargo-watch

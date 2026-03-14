@@ -93,10 +93,10 @@ require("lazy").setup({
           css = { "prettier" },
           elixir = { "mix" },
           javascript = { "prettier" },
-          typescript = { "prettier" },
-          svelte = { "prettier" },
           lua = { "stylua" },
           sh = { "shellcheck" },
+          svelte = { "prettier" },
+          typescript = { "prettier" },
           zsh = { "shellcheck" },
         },
         format_on_save = {

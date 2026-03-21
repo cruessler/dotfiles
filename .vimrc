@@ -209,3 +209,24 @@ nmap <leader>to :read !date "+\%F"<CR>
 nnoremap _ -
 nnoremap j gj
 nnoremap k gk
+
+" set/unset `@is_vim` in tmux
+" tmux then can use `@is_vim` in an `if-shell` command
+" https://github.com/christoomey/vim-tmux-navigator/issues/295#issuecomment-1123455337
+function! s:set_is_vim()
+  call system("tmux set-option -p @is_vim yes")
+endfunction
+
+function! s:unset_is_vim()
+  call system("tmux set-option -p -u @is_vim")
+endfunction
+
+augroup tmux_navigator_is_vim
+  au!
+  autocmd VimEnter * call s:set_is_vim()
+  autocmd VimLeave * call s:unset_is_vim()
+  if exists('##VimSuspend')
+    autocmd VimSuspend * call s:unset_is_vim()
+    autocmd VimResume * call s:set_is_vim()
+  endif
+augroup END

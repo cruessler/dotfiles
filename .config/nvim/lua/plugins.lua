@@ -22,7 +22,6 @@ require("lazy").setup({
     "j-hui/fidget.nvim",
     opts = {},
   },
-  "justinmk/vim-sneak",
   "kshenoy/vim-signature",
   "mfussenegger/nvim-lint",
   {
@@ -207,6 +206,29 @@ require("lazy").setup({
     dependencies = "nvim-lua/plenary.nvim",
   },
 
+  {
+    "folke/flash.nvim",
+    event = "VeryLazy",
+    opts = {},
+    keys = {
+      {
+        "s",
+        mode = { "n", "x", "o" },
+        function()
+          require("flash").jump()
+        end,
+        desc = "Flash",
+      },
+      {
+        "r",
+        mode = "o",
+        function()
+          require("flash").remote()
+        end,
+        desc = "Remote Flash",
+      },
+    },
+  },
   {
     "folke/todo-comments.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },

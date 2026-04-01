@@ -82,7 +82,10 @@ require("lazy").setup({
     },
   },
   "rust-lang/rust.vim",
-  "sindrets/diffview.nvim",
+  {
+    "sindrets/diffview.nvim",
+    opts = { view = { merge_tool = { layout = "diff4_mixed" } } },
+  },
   {
     "stevearc/conform.nvim",
     config = function()

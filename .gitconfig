@@ -30,7 +30,7 @@
 
 [merge]
   conflictstyle = zdiff3
-  tool = vimdiff
+  tool = nvim -d
 
 [diff]
   # This option handles moved code better.

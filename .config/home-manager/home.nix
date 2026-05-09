@@ -52,6 +52,7 @@ in
 
     pkgs.zellij
 
+    # This is experimental, mostly to get to know `jail.nix` better.
     jailed-vibe
   ];
 

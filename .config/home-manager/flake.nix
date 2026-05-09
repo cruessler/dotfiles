@@ -16,19 +16,60 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    jail-nix.url = "sourcehut:~alexdavid/jail.nix";
+    mistral-vibe.url = "github:mistralai/mistral-vibe";
   };
 
   outputs =
-    { nixpkgs, home-manager, ... }:
+    {
+      nixpkgs,
+      home-manager,
+      jail-nix,
+      mistral-vibe,
+      ...
+    }:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
+      jail = jail-nix.lib.init pkgs;
+      # I also needed to run the following after I got an error message trying
+      # to run the jailed executable:
+      #
+      #     # the error message I was getting
+      #     bwrap: setting up uid map: Permission denied
+      #
+      #     ❯ sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0
+      #     kernel.apparmor_restrict_unprivileged_userns = 0
+      #
+      # https://ubuntu.com/blog/ubuntu-23-10-restricted-unprivileged-user-namespaces
+      #
+      # According to this [comment], the above is system-wide and there is an
+      # alternative that only affects `bwrap` (even though I also found other
+      # sources that discouraged it, arguing that it effectively disables
+      # AppArmor for `bwrap`).
+      #
+      # [comment]: https://github.com/akitaonrails/ai-jail/issues/34#issuecomment-4314837965
+      #
+      # I don’t know whether there’s a more proper way of getting the path.
+      #
+      # https://github.com/mistralai/mistral-vibe/blob/b23f49e5f44e95aa997439a74fd5b470d762ecb0/flake.nix#L83
+      jailed-vibe = jail "jailed-vibe" "${mistral-vibe.packages.${system}.default}/bin/vibe" (
+        with jail.combinators;
+        [
+          network
+          time-zone
+          mount-cwd
+          no-new-session
+        ]
+      );
     in
     {
       homeConfigurations."christoph" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
 
         modules = [ ./home.nix ];
+
+        extraSpecialArgs = { inherit jailed-vibe; };
       };
     };
 }

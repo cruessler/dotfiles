@@ -2,7 +2,12 @@
 # https://nix-community.github.io/home-manager/index.xhtml
 #
 # Use `nix-channel --update; and home-manager switch` to update packages.
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  jailed-vibe,
+  ...
+}:
 
 # https://nix-community.github.io/home-manager/index.xhtml#_how_do_i_install_packages_from_nixpkgs_unstable
 let
@@ -46,6 +51,8 @@ in
     pkgs.vdirsyncer
 
     pkgs.zellij
+
+    jailed-vibe
   ];
 
   programs.home-manager.enable = true;

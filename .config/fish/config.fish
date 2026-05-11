@@ -10,6 +10,7 @@ if status --is-interactive
   abbr --add --global s git status
   abbr --add --global dt git difftool
   abbr --add --global wt git_change_worktree
+  abbr --add --global tcp "tmux capture-pane -p -S - | $EDITOR -"
   abbr --add --global x exit
 end
 

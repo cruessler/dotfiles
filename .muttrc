@@ -66,7 +66,10 @@ macro index,pager A \
 auto_view text/html
 alternative_order text/plain text/html
 
-set my_tmp_html_path="/tmp/mutt-mail.html"
+# 2026-01-18
+# the Firefox snap does not have access to the system-wide `/tmp` directory,
+# but is has access to `$HOME`
+set my_tmp_html_path="$HOME/tmp/mutt-mail.html"
 macro attach V \
   "<pipe-entry>cat > $my_tmp_html_path && xdg-open $my_tmp_html_path<return>" \
   "view attachment as HTML in browser using xdg-open"

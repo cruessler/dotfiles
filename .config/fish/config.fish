@@ -33,6 +33,11 @@ if not functions -q fisher
   fisher
 end
 
+# https://mise.jdx.dev/getting-started.html#activate-mise
+if type -q mise
+  mise activate fish | source
+end
+
 # https://github.com/starship/starship
 if type -q starship
   starship init fish | source

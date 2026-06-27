@@ -1,7 +1,7 @@
 [tools]
 elixir = "1.17"
 erlang = "26.2"
-node = "24.12"
+node = "24"
 ruby = "3.3"
 
 [settings]

@@ -414,6 +414,12 @@ vim.api.nvim_set_keymap(
 )
 vim.api.nvim_set_keymap(
   "n",
+  "<leader>fC",
+  [[<cmd>lua require('telescope.builtin').git_bcommits()<CR>]],
+  { noremap = true, silent = true }
+)
+vim.api.nvim_set_keymap(
+  "n",
   "<leader>FF",
   [[<cmd>lua require('telescope.builtin').find_files()<CR>]],
   { noremap = true, silent = true }

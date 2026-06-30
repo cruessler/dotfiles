@@ -84,7 +84,7 @@ checksum = "sha256:0ae68406b42d7725661da979b1403ec9926da205c6770827f33aac9d8f26e
 url = "https://nodejs.org/dist/v24.18.0/node-v24.18.0-win-x64.zip"
 
 [[tools.ruby]]
-version = "3.3.2"
+version = "4.0.5"
 backend = "core:ruby"
 
 [tools.ruby.options]
@@ -93,25 +93,33 @@ ruby_build_repo = "https://github.com/rbenv/ruby-build.git"
 ruby_install = "false"
 
 [tools.ruby."platforms.linux-arm64"]
-checksum = "sha256:3be1d100ebf2a0ce60c2cd8d22cd9db4d64b3e04a1943be2c4ff7b520f2bcb5b"
-url = "https://cache.ruby-lang.org/pub/ruby/3.3/ruby-3.3.2.tar.gz"
+checksum = "sha256:7d6149079a63f8ae1d326c9fa65c6019ba2dc3155eae7b39159817911c88958e"
+url = "https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.5.tar.gz"
 
 [tools.ruby."platforms.linux-arm64-musl"]
-checksum = "sha256:3be1d100ebf2a0ce60c2cd8d22cd9db4d64b3e04a1943be2c4ff7b520f2bcb5b"
-url = "https://cache.ruby-lang.org/pub/ruby/3.3/ruby-3.3.2.tar.gz"
+checksum = "sha256:7d6149079a63f8ae1d326c9fa65c6019ba2dc3155eae7b39159817911c88958e"
+url = "https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.5.tar.gz"
 
 [tools.ruby."platforms.linux-x64"]
-checksum = "sha256:3be1d100ebf2a0ce60c2cd8d22cd9db4d64b3e04a1943be2c4ff7b520f2bcb5b"
-url = "https://cache.ruby-lang.org/pub/ruby/3.3/ruby-3.3.2.tar.gz"
+checksum = "sha256:7d6149079a63f8ae1d326c9fa65c6019ba2dc3155eae7b39159817911c88958e"
+url = "https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.5.tar.gz"
 
 [tools.ruby."platforms.linux-x64-musl"]
-checksum = "sha256:3be1d100ebf2a0ce60c2cd8d22cd9db4d64b3e04a1943be2c4ff7b520f2bcb5b"
-url = "https://cache.ruby-lang.org/pub/ruby/3.3/ruby-3.3.2.tar.gz"
+checksum = "sha256:7d6149079a63f8ae1d326c9fa65c6019ba2dc3155eae7b39159817911c88958e"
+url = "https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.5.tar.gz"
 
 [tools.ruby."platforms.macos-arm64"]
-checksum = "sha256:3be1d100ebf2a0ce60c2cd8d22cd9db4d64b3e04a1943be2c4ff7b520f2bcb5b"
-url = "https://cache.ruby-lang.org/pub/ruby/3.3/ruby-3.3.2.tar.gz"
+checksum = "sha256:7d6149079a63f8ae1d326c9fa65c6019ba2dc3155eae7b39159817911c88958e"
+url = "https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.5.tar.gz"
 
 [tools.ruby."platforms.macos-x64"]
-checksum = "sha256:3be1d100ebf2a0ce60c2cd8d22cd9db4d64b3e04a1943be2c4ff7b520f2bcb5b"
-url = "https://cache.ruby-lang.org/pub/ruby/3.3/ruby-3.3.2.tar.gz"
+checksum = "sha256:7d6149079a63f8ae1d326c9fa65c6019ba2dc3155eae7b39159817911c88958e"
+url = "https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.5.tar.gz"
+
+[[tools.ruby]]
+version = "4.0.5"
+backend = "core:ruby"
+
+[tools.ruby."platforms.windows-x64"]
+checksum = "sha256:74e31613fc71e6e23431dfc4d8b6ec2818a4dc1fd16e0983b074144c16719c8b"
+url = "https://github.com/oneclick/rubyinstaller2/releases/download/RubyInstaller-4.0.5-1/rubyinstaller-4.0.5-1-x64.7z"

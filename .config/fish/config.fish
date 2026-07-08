@@ -18,10 +18,6 @@ if status --is-interactive
   abbr --add --global poe poetry run poe
 end
 
-if type -q brew
-  source (brew --prefix asdf)/libexec/asdf.fish
-end
-
 if type -q jenv
   jenv init - | source
 end

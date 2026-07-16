@@ -37,7 +37,9 @@ in
     pkgs.tokei
     pkgs.zoxide
 
-    pkgs.cargo-deny
+    # https://dystroy.org/bacon/
+    pkgsUnstable.bacon
+    pkgsUnstable.cargo-deny
     pkgs.cargo-diet
     pkgsUnstable.cargo-fuzz
     pkgs.cargo-insta
@@ -45,6 +47,7 @@ in
     pkgs.cargo-nextest
     pkgs.cargo-sort
     pkgs.cargo-watch
+    pkgsUnstable.tombi
 
     pkgs.khal
     pkgs.khard

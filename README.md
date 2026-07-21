@@ -22,7 +22,7 @@ particular, it is assumed that:
 - `~/.vim/bundle/` contains Vim plugins, particularly vim-pathogen at
   `~/.vim/bundle/vim-pathogen/`
 - `~/.tmux/plugins/` contains tmux plugins
-- `~/.asdf/` contains asdf
+- `mise` is available in `$PATH`
 
 These dotfiles don’t contain personal information and sensitive data; those are
 supplied via includes wherever supported. In particular, the following files

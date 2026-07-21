@@ -13,8 +13,6 @@ cask "alacritty", args: { no_quarantine: true }
 cask "firefox"
 cask "font-fira-code-nerd-font"
 
-brew "asdf"
-
 brew "gh"
 # 2022-08-12
 # switched to `--HEAD` because `plugins.lua` contains configuration that only

@@ -33,6 +33,11 @@ if not functions -q fisher
   fisher
 end
 
+# https://github.com/junegunn/fzf#setting-up-shell-integration
+if type -q fzf
+  fzf --fish | source
+end
+
 # https://mise.jdx.dev/getting-started.html#activate-mise
 if type -q mise
   mise activate fish | source

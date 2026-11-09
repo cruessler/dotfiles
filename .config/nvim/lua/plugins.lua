@@ -346,21 +346,40 @@ require("lazy").setup({
   },
   {
     "nvim-treesitter/nvim-treesitter",
+    lazy = false,
     build = ":TSUpdate",
-    opts = {
-      ensure_installed = { "bash", "c", "html", "lua", "luadoc", "markdown", "vim", "vimdoc", "diff" },
-      auto_install = true,
-      highlight = {
-        enable = true,
-        disable = { "gitcommit" },
-        -- Ruby seems to depend on Vim’s syntax highlighting for indent rules.
-        -- https://github.com/nvim-lua/kickstart.nvim/blob/e2bfa0c66f474f7d8863a8bc05e3d5bdf704f7bf/init.lua#L810
-        additional_vim_regex_highlighting = { "ruby" },
-      },
-      indent = { enable = true, disable = { "ruby" } },
-    },
-    config = function(_, opts)
-      require("nvim-treesitter.configs").setup(opts)
+    config = function(_, _)
+      local languages = {
+        "bash",
+        "c",
+        "diff",
+        "elixir",
+        "heex",
+        "html",
+        "javascript",
+        "just",
+        "lua",
+        "luadoc",
+        "markdown",
+        "nix",
+        "rust",
+        "svelte",
+        "toml",
+        "typescript",
+        "vim",
+        "vimdoc",
+        "yaml",
+      }
+      require("nvim-treesitter").install(languages)
+
+      vim.api.nvim_create_autocmd("FileType", {
+        pattern = languages,
+        callback = function()
+          vim.treesitter.start()
+
+          vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+        end,
+      })
     end,
   },
 })

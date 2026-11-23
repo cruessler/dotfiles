@@ -65,6 +65,11 @@ require("lazy").setup({
             end,
           },
         },
+        -- The default value has `branch` as the first element.
+        lualine_b = { "diff", "diagnostics" },
+      },
+      options = {
+        theme = "molokai",
       },
     },
   },

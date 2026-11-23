@@ -282,7 +282,11 @@ require("lazy").setup({
     "folke/snacks.nvim",
     priority = 1000,
     lazy = false,
-    opts = {},
+    opts = {
+      scratch = {
+        ft = "markdown",
+      },
+    },
     keys = {
       {
         "<c-q>",
